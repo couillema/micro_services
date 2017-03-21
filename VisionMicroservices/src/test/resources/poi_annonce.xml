@@ -1,9 +1,0 @@
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-   <soap:Body>
-      <ns2:annoncePOIResponse xmlns:ns2="http://webservice.poi.chronopost.fr/">
-         <return>
-            <idAdresse>19329570</idAdresse>
-         </return>
-      </ns2:annoncePOIResponse>
-   </soap:Body>
-</soap:Envelope>
