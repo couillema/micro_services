@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestAll">
+
+	<test name="init">
+		<classes>
+			<class name="com.chronopost.vision.microservices.BuildCluster" />
+		</classes>
+	</test>
+
+	<test name="full">
+ 	
+ 		<packages>
+      		<package name="com.chronopost.vision.microservices.*">      		
+      		</package>
+    	</packages>
+	</test>
+
+</suite>

@@ -1,0 +1,39 @@
+[
+  {
+    "idenfiantPoint": "A",
+    "numPointDistri": 10,
+    "numPointTA": 10,
+    "diffETA": 10,
+    "diffGPS": 10,
+    "datePassage": 1455281011445,
+    "colisPresents": [
+      {
+        "no_lt": "XXXX000XXXX",
+        "caracteristiques": [
+          "A",
+          "B",
+          "C"
+        ],
+        "codeService": "BCO",
+        "codeEvenement": "TA"
+      }
+    ],
+    "colisPrevus": [
+      "A",
+      "B",
+      "C"
+    ],
+    "nomDestinataire": "John Doe",
+    "typeDestinataire": "particulier",
+    "dysfonctionnements": [
+      "A",
+      "B",
+      "C"
+    ],
+    "anomalies": [
+      "A",
+      "B",
+      "C"
+    ]
+  }
+]

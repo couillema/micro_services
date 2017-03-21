@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestInsertEvt">
+	<test name="init">
+		<classes>
+			<class name="com.chronopost.vision.microservices.BuildCluster" />
+		</classes>
+	</test>
+	<test name="fullPackage">
+ 		<packages>
+      		<package name="com.chronopost.vision.microservices.insertevt.v1.*">      		
+      		</package>
+    	</packages>
+	</test>
+
+</suite>

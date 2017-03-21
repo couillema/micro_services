@@ -1,0 +1,29 @@
+  "TOURNEE": {
+    "nbPtTA": 15,
+    "nbColisTA": 69,
+    "nbPtVisites": 52,
+    "nbPtTANonVisites": 87,
+    "nbColisHorsDateContractuelle": 3,
+    "colisHorsDateContractuelle": [
+      "XY114115955FR",
+      "BC203497956EE",
+      "GB423497312FR"
+    ],
+    "nbColisAvecConsigne": 5,
+    "nbColisRetour": 15,
+    "nbColisSecurisesRetour": 93,
+    "nbColisSpecifiques": 56,
+    "nbPtAnomalie": 16,
+    "nbColisTraites": 25,
+    "nbAnomalieTracabilite": 87,
+    "nbColisMisADispoBureai": 31,
+    "nbHorsDelai": 60,
+    "presentationsInfructueuses": {
+      "CO": 1,
+      "PA": 2,
+      "NA": 3
+    },
+    "nbColisAvecETA": 31,
+    "nbColisHorsETA": 65,
+    "nbColisAvecConsigneNonRespectee": 7
+  }

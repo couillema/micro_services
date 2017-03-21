@@ -1,0 +1,461 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: ${sys.appPort!13001}
+  adminConnectors:
+    - type: http
+      port: ${sys.adminPort!13002}
+  requestLog:
+    appenders: []
+logging:
+  level: INFO
+  loggers:
+    "com.chronopost.vision.microservices.colioutai": OFF
+  
+
+
+<#if env.SYS_PROFILE_NATURE??>
+<#if env.SYS_PROFILE_NATURE == 'DEV'>
+metrics:
+  reporters:
+    - type: graphite
+      durationUnit: milliseconds
+      rateUnit: seconds
+      useRegexFilters: false
+      frequency: 10 seconds   
+      host: lyn4e200.tlt
+      port: 2003
+      prefix: lyn4e200
+#    - type: csv
+#      durationUnit: milliseconds
+#      rateUnit: seconds
+#      useRegexFilters: false
+#      frequency: 10 seconds
+#      file: /tmp/metrics
+</#if>      
+</#if>
+cassandra:
+  clusterName: "Vision DEV Cluster"
+<#if env.SYS_PROFILE_NATURE??>
+  <#if env.SYS_PROFILE_NATURE == 'DEV'>
+  contactPoints: ["lyn2e141-svc.tlt","lyn2e142-svc.tlt","lyn2e143-svc.tlt","lyn2e144-svc.tlt","lyn2e149-svc.tlt"]  
+  <#else>  
+  contactPoints: ["dbsuvisioni1a.chronopost.fr", "dbsuvisioni1b.chronopost.fr", "dbsuvisioni6b.chronopost.fr"]
+  </#if>
+<#else>
+#  contactPoints: ["lyn4e131-svc.tlt","lyn4e132-svc.tlt","lyn4e133-svc.tlt","lyn4e134-svc.tlt","lyn4e135-svc.tlt","lyn4e136-svc.tlt"]
+  contactPoints: ["lyn2e141-svc.tlt","lyn2e142-svc.tlt","lyn2e143-svc.tlt","lyn2e144-svc.tlt","lyn2e149-svc.tlt"]
+</#if>
+  keyspace: "vision"
+  authProvider:
+    type: plainText 
+    username: vision_update
+    password: vision_update
+  queryOptions:
+    consistencyLevel: LOCAL_QUORUM
+  retryPolicy:
+    type: downgradingConsistency
+  loadBalancingPolicy:
+    type: tokenAware
+    shuffleReplicas: true
+    subPolicy:
+      type: dcAwareFailoverRoundRobin
+      localDC: B1D
+      backupDC: 8A3
+      minimumRequiredConsistencyLevel: LOCAL_QUORUM
+      switchBackDelayFactor: 0.5
+      noSwitchBackDowntimeDelay: 7200
+      keyspace: vision
+cassandraFluks:
+  clusterName: "Fluks Cluster"  
+<#if env.SYS_PROFILE_NATURE??>
+  <#if env.SYS_PROFILE_NATURE == 'DEV'>
+#  contactPoints: ["lyn4e131-svc.tlt","lyn4e132-svc.tlt","lyn4e133-svc.tlt","lyn4e134-svc.tlt","lyn4e135-svc.tlt","lyn4e136-svc.tlt"]
+  contactPoints: ["lyn2e141-svc.tlt","lyn2e142-svc.tlt","lyn2e143-svc.tlt","lyn2e144-svc.tlt","lyn2e149-svc.tlt"]    
+  keyspace: "fluks"
+  <#else>  
+  contactPoints: ["dbsuvisioni1a.chronopost.fr", "dbsuvisioni1b.chronopost.fr", "dbsuvisioni6b.chronopost.fr"]
+  keyspace: "fluks"
+  </#if>
+<#else>
+#  contactPoints: ["lyn4e131-svc.tlt","lyn4e132-svc.tlt","lyn4e133-svc.tlt","lyn4e134-svc.tlt","lyn4e135-svc.tlt","lyn4e136-svc.tlt"]
+  contactPoints: ["lyn2e141-svc.tlt","lyn2e142-svc.tlt","lyn2e143-svc.tlt","lyn2e144-svc.tlt","lyn2e149-svc.tlt"]  
+  keyspace: "fluks"
+</#if>  
+  authProvider:
+    type: plainText
+    username: fluks_update
+    password: fluks_update
+  queryOptions:
+    consistencyLevel: LOCAL_QUORUM
+  retryPolicy:
+    type: downgradingConsistency
+  loadBalancingPolicy:
+    type: tokenAware
+    shuffleReplicas: true
+    subPolicy:
+      type: dcAwareFailoverRoundRobin
+      localDC: B1D
+      backupDC: 8A3
+      minimumRequiredConsistencyLevel: LOCAL_QUORUM
+      switchBackDelayFactor: 0.5
+      noSwitchBackDowntimeDelay: 7200
+      keyspace: fluks
+sdkEndpoints:
+<#if env.SYS_PROFILE_NATURE??>
+  <#if env.SYS_PROFILE_NATURE == 'DEV'>
+  getLt: http://lyn4e200.tlt:${sys.appPort!13001}
+  getCodeTourneeFromLt: http://lyn4e200.tlt:${sys.appPort!13001}      
+  getDetailTournee: http://lyn4e200.tlt:${sys.appPort!13001}
+  insertLt: http://lyn4e200.tlt:${sys.appPort!13001}
+  colioutai: http://lyn4e200.tlt:${sys.appPort!13001}
+  suivibox: http://lyn4e200.tlt:${sys.appPort!13001}
+  traitementRetard: http://lyn4e200.tlt:${sys.appPort!13001}
+  syntheseTournee: http://lyn4e200.tlt:${sys.appPort!13001}
+  insertPointTournee: http://lyn4e200.tlt:${sys.appPort!13001}
+  insertAgenceColis: http://lyn4e200.tlt:${sys.appPort!13001}
+  genereEvt: http://lyn4e200.tlt:${sys.appPort!13001}
+  maintienIndexEvt: http://lyn4e200.tlt:${sys.appPort!13001}
+  updateTournee: http://lyn4e200.tlt:${sys.appPort!13001}
+  insertEvt: http://lyn4e200.tlt:${sys.appPort!13001}
+  consigne: http://lyn3e250.tlt:58911/consigne-ws-cxf/ConsigneServiceWS
+  calculRetard: http://lyn4e51.tlt:55011/calculretard-cxf/CalculRetardServiceWS
+  poi: http://lyn3e37.tlt:60551/poi-webservice/poi
+  ptv: http://wyn3e11.tlt:51090/chronopost-ws-xchrono/ws/XChrono
+  sgesws: http://lyn3e37.tlt:58811/sgesws/sgesWS
+  featureFlips: http://lyn4e200.tlt:${sys.appPort!13001}
+  genereEvt: http://lyn4e200.tlt:${sys.appPort!13001}
+  diffusionEvt: http://lyn4e200.tlt:${sys.appPort!13001}
+  updateSpecificationsColis: http://lyn4e200.tlt:${sys.appPort!13001}
+  <#elseif env.SYS_PROFILE_NATURE == 'PFI'>
+  getLt: http://127.0.0.1:${sys.appPort!13001}
+  getCodeTourneeFromLt: http://127.0.0.1:${sys.appPort!13001}      
+  getDetailTournee: http://127.0.0.1:${sys.appPort!13001}
+  insertLt: http://127.0.0.1:${sys.appPort!13001}
+  colioutai: http://127.0.0.1:${sys.appPort!13001}
+  suivibox: http://127.0.0.1:${sys.appPort!13001}
+  traitementRetard: http://127.0.0.1:${sys.appPort!13001}
+  syntheseTournee: http://127.0.0.1:${sys.appPort!13001}
+  insertPointTournee: http://127.0.0.1:${sys.appPort!13001}
+  insertAgenceColis: http://127.0.0.1:${sys.appPort!13001}
+  genereEvt: http://127.0.0.1:${sys.appPort!13001}
+  maintienIndexEvt: http://127.0.0.1:${sys.appPort!13001}
+  updateTournee: http://127.0.0.1:${sys.appPort!13001}
+  insertEvt: http://127.0.0.1:${sys.appPort!13001}
+  consigne: http://lyn3e250.tlt:58911/consigne-ws-cxf/ConsigneServiceWS
+  calculRetard: http://lyn3e51.tlt:55011/calculretard-cxf/CalculRetardServiceWS
+  poi: http://lyn3e37.tlt:60551/poi-webservice/poi
+  ptv: http://wyn3e11.tlt:51090/chronopost-ws-xchrono/ws/XChrono
+  sgesws: http://suivi.chronopost.fr/sgesws/sgesWS
+  featureFlips: http://microservicevision.chronopost.fr
+  genereEvt: http://127.0.0.1:${sys.appPort!13001}
+  diffusionEvt: http://127.0.0.1:${sys.appPort!13001}
+  updateSpecificationsColis: http://127.0.0.1:${sys.appPort!13001}
+  <#elseif env.SYS_PROFILE_NATURE == 'PROD'>
+  getLt: http://127.0.0.1:${sys.appPort!13001}
+  getCodeTourneeFromLt: http://127.0.0.1:${sys.appPort!13001}      
+  getDetailTournee: http://127.0.0.1:${sys.appPort!13001}
+  insertLt: http://127.0.0.1:${sys.appPort!13001}
+  colioutai: http://127.0.0.1:${sys.appPort!13001}
+  suivibox: http://127.0.0.1:${sys.appPort!13001}
+  traitementRetard: http://127.0.0.1:${sys.appPort!13001}
+  syntheseTournee: http://127.0.0.1:${sys.appPort!13001}
+  insertPointTournee: http://127.0.0.1:${sys.appPort!13001}
+  insertAgenceColis: http://127.0.0.1:${sys.appPort!13001}
+  genereEvt: http://127.0.0.1:${sys.appPort!13001}
+  maintienIndexEvt: http://127.0.0.1:${sys.appPort!13001}
+  updateTournee: http://127.0.0.1:${sys.appPort!13001}
+  insertEvt: http://127.0.0.1:${sys.appPort!13001}
+  consigne: http://wsshipping.chronopost.fr/consigne-ws-cxf/ConsigneServiceWS  
+  calculRetard: http://wsshipping.chronopost.fr/calculretard-cxf/CalculRetardServiceWS
+  poi: http://webpoi.intra-chronopost.fr/poi-webservice/poi
+  ptv: http://wyn1e11.tlt:51090/chronopost-ws-xchrono/ws/XChrono
+  sgesws: http://suivi.chronopost.fr/sgesws/sgesWS
+  featureFlips: http://microservicevision.chronopost.fr
+  genereEvt: http://127.0.0.1:${sys.appPort!13001}
+  diffusionEvt: http://127.0.0.1:${sys.appPort!13001}
+  updateSpecificationsColis: http://127.0.0.1:${sys.appPort!13001}
+  </#if>
+<#else>
+  getLt: http://127.0.0.1:${sys.appPort!13001}
+  getCodeTourneeFromLt: http://127.0.0.1:${sys.appPort!13001}      
+  getDetailTournee: http://127.0.0.1:${sys.appPort!13001}
+  insertLt: http://127.0.0.1:${sys.appPort!13001}
+  genereEvt: http://127.0.0.1:${sys.appPort!13001}
+  colioutai: http://127.0.0.1:${sys.appPort!13001}
+  suivibox: http://127.0.0.1:${sys.appPort!13001}
+  traitementRetard: http://127.0.0.1:${sys.appPort!13001}
+  syntheseTournee: http://127.0.0.1:${sys.appPort!13001}
+  insertPointTournee: http://127.0.0.1:${sys.appPort!13001}
+  insertAgenceColis: http://127.0.0.1:${sys.appPort!13001}
+  genereEvt: http://127.0.0.1:${sys.appPort!13001}
+  maintienIndexEvt: http://127.0.0.1:${sys.appPort!13001}
+  updateTournee: http://127.0.0.1:${sys.appPort!13001}
+  calculRetard: http://10.37.92.170/calculretard-cxf/CalculRetardServiceWS
+  insertEvt: http://127.0.0.1:${sys.appPort!13001}
+  consigne: http://lyn3e250.tlt:58911/consigne-ws-cxf/ConsigneServiceWS
+  poi: http://lyn3e37.tlt:60551/poi-webservice/poi  
+  ptv: http://wyn3e11.tlt:51090/chronopost-ws-xchrono/ws/XChrono
+  sgesws: http://lyn3e37.tlt:58811/sgesws/sgesWS
+  featureFlips: http://127.0.0.1:${sys.appPort!13001}
+  diffusionEvt: http://127.0.0.1:${sys.appPort!13001}
+  updateSpecificationsColis: http://127.0.0.1:${sys.appPort!13001}
+  </#if>  
+sdkTimeouts:
+  getLt: 10000
+  getCodeTourneeFromLt: 10000
+  getDetailTournee: 10000
+  getDetailTournee: 10000
+  colioutai: 10000
+  suivibox: 10000
+  traitementRetard: 10000
+  syntheseTournee: 10000
+  insertPointTournee: 10000
+  insertAgenceColis: 10000
+  genereEvt: 10000
+  maintienIndexEvt: 10000
+  insertEvt: 10000
+  insertLt: 10000
+  genereEvt: 10000
+  updateTournee: 10000
+  diffusionEvt: 10000
+  updateSpecificationsColis: 10000
+<#if env.SYS_PROFILE_NATURE??>
+proxyUrl: proxyweb.chronopost.fr
+proxyPort: 3128
+<#else>
+proxyUrl: proxywebi1.chronopost.fr
+proxyPort: 3128
+</#if>
+proxyTimeout: 10
+defaultHystrixConfig:
+#
+  hystrix.command.GetLtCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.GetLtCommand.maxQueueSize: 10000
+  hystrix.threadpool.GetLtCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.GetLtCommand.coreSize: 5    
+  hystrix.command.InsertEvtCsvIntoLtCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InsertEvtCsvIntoLtCommand.maxQueueSize: 10000
+  hystrix.threadpool.InsertEvtCsvIntoLtCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.InsertEvtCsvIntoLtCommand.coreSize: 5
+  hystrix.command.CalculRetardCommand.execution.isolation.thread.timeoutInMilliseconds: 9000
+  hystrix.threadpool.CalculRetardCommand.maxQueueSize: 10000
+  hystrix.threadpool.CalculRetardCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.CalculRetardCommand.coreSize: 20
+  hystrix.command.InitCalculRetardCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InitCalculRetardCommand.maxQueueSize: 10000
+  hystrix.threadpool.InitCalculRetardCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.InitCalculRetardCommand.coreSize: 5
+  hystrix.command.MaintienIdxEvtCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.MaintienIdxEvtCommand.maxQueueSize: 10000
+  hystrix.threadpool.MaintienIdxEvtCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.MaintienIdxEvtCommand.coreSize: 10
+  hystrix.command.UpdateTourneeCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.UpdateTourneeCommand.maxQueueSize: 10000
+  hystrix.threadpool.UpdateTourneeCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.UpdateTourneeCommand.coreSize: 5  
+  hystrix.command.InsertEvtsCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.command.InsertEvtsEtCompteurCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InsertEvtsCommand.maxQueueSize: 10000
+  hystrix.threadpool.InsertEvtsCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.InsertEvtsCommand.coreSize: 5
+  hystrix.command.UpdateSpecificationsColisCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.SpecifsColisCommand.maxQueueSize: 10000
+  hystrix.threadpool.SpecifsColisCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.SpecifsColisCommand.coreSize: 5
+  # Commandes Hystrix du service UpdateTournee
+  hystrix.command.InsertAgenceTourneeCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InsertAgenceTourneeCommand.maxQueueSize: 10000
+  hystrix.threadpool.InsertAgenceTourneeCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.InsertAgenceTourneeCommand.coreSize: 5
+  hystrix.command.InsertAgenceTourneeCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InsertAgenceTourneeCommand.maxQueueSize: 10000
+  hystrix.threadpool.InsertAgenceTourneeCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.InsertAgenceTourneeCommand.coreSize: 5  
+  hystrix.command.InsertColisTourneeAgenceCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InsertColisTourneeAgenceCommand.maxQueueSize: 10000
+  hystrix.threadpool.InsertColisTourneeAgenceCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.InsertColisTourneeAgenceCommand.coreSize: 5
+  hystrix.command.InsertInfoTourneeCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InsertInfoTourneeCommand.maxQueueSize: 10000
+  hystrix.threadpool.InsertInfoTourneeCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.InsertInfoTourneeCommand.coreSize: 5
+  hystrix.command.InsertTourneeC11Command.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InsertTourneeC11Command.maxQueueSize: 10000
+  hystrix.threadpool.InsertTourneeC11Command.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.InsertTourneeC11Command.coreSize: 5
+  hystrix.command.UpdateTourneeDaoCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.UpdateTourneeDaoCommand.maxQueueSize: 10000
+  hystrix.threadpool.UpdateTourneeDaoCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.UpdateTourneeDaoCommand.coreSize: 5
+  # Commandes Hystrix du service Colioutai
+  hystrix.command.InitServicePoiCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InitServicePoiCommand.maxQueueSize: 1000
+  hystrix.threadpool.InitServicePoiCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.InitServicePoiCommand.coreSize: 5
+  hystrix.command.InitServicePtvCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InitServicePtvCommand.maxQueueSize: 1000
+  hystrix.threadpool.InitServicePtvCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.InitServicePtvCommand.coreSize: 5
+  hystrix.command.InitServiceConsigneCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InitServiceConsigneCommand.maxQueueSize: 1000
+  hystrix.threadpool.InitServiceConsigneCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.InitServiceConsigneCommand.coreSize: 5
+  #
+  hystrix.command.ColioutaiPointCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.ColioutaiPointCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.ColioutaiPointCommand.maxQueueSize: 10000
+  hystrix.threadpool.ColioutaiPointCommand.coreSize: 20
+  #
+  hystrix.command.ColioutaiLtCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.ColioutaiLtCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.ColioutaiLtCommand.maxQueueSize: 10000
+  hystrix.threadpool.ColioutaiLtCommand.coreSize: 20
+  #
+  hystrix.command.ServicePoiCommand.execution.isolation.thread.timeoutInMilliseconds: 3000
+  hystrix.threadpool.ServicePoiCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.ServicePoiCommand.maxQueueSize: 1000
+  hystrix.threadpool.ServicePoiCommand.coreSize: 10
+  #
+  hystrix.command.ServiceGoogleCommand.execution.isolation.thread.timeoutInMilliseconds: 2000
+  hystrix.threadpool.ServiceGoogleCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.ServiceGoogleCommand.maxQueueSize: 1000
+  hystrix.threadpool.ServiceGoogleCommand.coreSize: 10
+  #
+  hystrix.command.ServiceConsigneCommand.execution.isolation.thread.timeoutInMilliseconds: 1000
+  hystrix.threadpool.ServiceConsigneCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.ServiceConsigneCommand.maxQueueSize: 1000
+  hystrix.threadpool.ServiceConsigneCommand.coreSize: 5
+  #
+  hystrix.command.TraitementRetardCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.TraitementRetardCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.TraitementRetardCommand.maxQueueSize: 1000
+  hystrix.threadpool.TraitementRetardCommand.coreSize: 5
+  #
+  hystrix.command.InsertPointTourneeCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InsertPointTourneeCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.InsertPointTourneeCommand.maxQueueSize: 1000
+  hystrix.threadpool.InsertPointTourneeCommand.coreSize: 5
+  #
+  hystrix.command.InsertAgenceColisCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InsertAgenceColisCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.InsertAgenceColisCommand.maxQueueSize: 1000
+  hystrix.threadpool.InsertAgenceColisCommand.coreSize: 5
+  #
+  hystrix.command.GenereEvtCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.GenereEvtCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.GenereEvtCommand.maxQueueSize: 1000
+  hystrix.threadpool.GenereEvtCommand.coreSize: 5
+  #
+  hystrix.command.UpdateTourneeCodeServiceCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.UpdateTourneeCodeServiceCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.UpdateTourneeCodeServiceCommand.maxQueueSize: 1000
+  hystrix.threadpool.UpdateTourneeCodeServiceCommand.coreSize: 5
+  #
+  hystrix.command.GetDetailTourneeCommand.execution.isolation.thread.timeoutInMilliseconds: 30000
+  hystrix.threadpool.GetDetailTourneeCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.GetDetailTourneeCommand.maxQueueSize: 1000
+  hystrix.threadpool.GetDetailTourneeCommand.coreSize: 10
+  # Commandes Hystrix de genererEvt
+  hystrix.command.InsertEvtCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.InsertEvtCommand.maxQueueSize: 10000
+  hystrix.threadpool.InsertEvtCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.InsertEvtCommand.coreSize: 5
+  hystrix.command.SGESCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.SGESCommand.maxQueueSize: 10000
+  hystrix.threadpool.SGESCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.SGESCommand.coreSize: 5
+  hystrix.command.CreateSGESCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.CreateSGESCommand.maxQueueSize: 10000
+  hystrix.threadpool.CreateSGESCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.CreateSGESCommand.coreSize: 5
+  # Commandes Hystrix de UpdateReferentiel
+  hystrix.command.UpdateReferentielInfoscompCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.UpdateReferentielInfoscompCommand.maxQueueSize: 10000
+  hystrix.threadpool.UpdateReferentielInfoscompCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.UpdateReferentielInfoscompCommand.coreSize: 5
+  hystrix.command.UpdateReferentielEvtCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.UpdateReferentielEvtCommand.maxQueueSize: 10000
+  hystrix.threadpool.UpdateReferentielEvtCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.UpdateReferentielEvtCommand.coreSize: 5
+  # Commandes Hystrix du service InsertPointTournee
+  hystrix.command.AddEvtDansPointCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+#  hystrix.threadpool.AddEvtDansPointCommand.maxQueueSize: 1000
+#  hystrix.threadpool.AddEvtDansPointCommand.queueSizeRejectionThreshold: 1000
+#  hystrix.threadpool.AddEvtDansPointCommand.coreSize: 5
+  hystrix.command.MiseAJourTourneeCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+#  hystrix.threadpool.MiseAJourTourneeCommand.maxQueueSize: 1000
+#  hystrix.threadpool.MiseAJourTourneeCommand.queueSizeRejectionThreshold: 1000
+#  hystrix.threadpool.MiseAJourTourneeCommand.coreSize: 5
+  hystrix.command.ComputeIdC11Command.execution.isolation.thread.timeoutInMilliseconds: 2000
+  hystrix.threadpool.ComputeIdC11Command.maxQueueSize: 1000
+  hystrix.threadpool.ComputeIdC11Command.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.ComputeIdC11Command.coreSize: 5
+  # Commandes Hystrix de SyntheseTournee
+  hystrix.command.SyntheseTourneeQuantiteCommand.execution.isolation.thread.timeoutInMilliseconds: 120000
+  hystrix.threadpool.SyntheseTourneeQuantiteCommand.maxQueueSize: 1000
+  hystrix.threadpool.SyntheseTourneeQuantiteCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.SyntheseTourneeQuantiteCommand.coreSize: 5
+  hystrix.command.SyntheseTourneeActiviteCommand.execution.isolation.thread.timeoutInMilliseconds: 120000
+  hystrix.threadpool.SyntheseTourneeActiviteCommand.maxQueueSize: 10000
+  hystrix.threadpool.SyntheseTourneeActiviteCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.SyntheseTourneeActiviteCommand.coreSize: 5
+# Commandes Hystrix de UpdateSpecificationsColis
+  hystrix.command.TraitementCodeServiceCommand.execution.isolation.thread.timeoutInMilliseconds: 1500
+
+  hystrix.threadpool.UpdateSpecificationsColisTraitementsCommand.maxQueueSize: 1000
+  hystrix.threadpool.UpdateSpecificationsColisTraitementsCommand.queueSizeRejectionThreshold: 1000
+  hystrix.threadpool.UpdateSpecificationsColisTraitementsCommand.coreSize: 5
+#  hystrix.threadpool.UpdateSpecificationsColisTraitementCodeServiceCommand.maxQueueSize: 1000
+#  hystrix.threadpool.  .queueSizeRejectionThreshold: 1000
+#  hystrix.threadpool.UpdateSpecificationsColisTraitementCodeServiceCommand.coreSize: 5
+  hystrix.command.TraitementEvenementCommand.execution.isolation.thread.timeoutInMilliseconds: 1500
+#  hystrix.threadpool.UpdateSpecificationsColisTraitementEvenementCommand.maxQueueSize: 1000
+#  hystrix.threadpool.UpdateSpecificationsColisTraitementEvenementCommand.queueSizeRejectionThreshold: 1000
+#  hystrix.threadpool.UpdateSpecificationsColisTraitementEvenementCommand.coreSize: 5
+  hystrix.command.TraitementConsigneCommand.execution.isolation.thread.timeoutInMilliseconds: 1500
+#  hystrix.threadpool.UpdateSpecificationsColisTraitementConsigneCommand.maxQueueSize: 1000
+#  hystrix.threadpool.UpdateSpecificationsColisTraitementConsigneCommand.queueSizeRejectionThreshold: 1000
+#  hystrix.threadpool.UpdateSpecificationsColisTraitementConsigneCommand.coreSize: 5
+  # Commandes Hystrix de DiffusionEvt
+  hystrix.command.SendEmsCommand.execution.isolation.thread.timeoutInMilliseconds: 10000
+  hystrix.threadpool.SendEmsCommand.maxQueueSize: 10000
+  hystrix.threadpool.SendEmsCommand.queueSizeRejectionThreshold: 10000
+  hystrix.threadpool.SendEmsCommand.coreSize: 5
+# Swagger
+swagger:
+ resourcePackage: com.chronopost.vision.microservices.insertevt.v1,com.chronopost.vision.microservices.lt.get,com.chronopost.vision.microservices.featureflips,com.chronopost.vision.microservices.colioutai.get.v2,com.chronopost.vision.microservices.lt.getcodetourneefromlt,com.chronopost.vision.microservices.lt.insert,com.chronopost.vision.microservices.suivibox,com.chronopost.vision.microservices.tournee.getalertestournees.v1,com.chronopost.vision.microservices.tournee.getdetailtournee.v1,com.chronopost.vision.microservices.tournee.updatetournee.v1,com.chronopost.vision.microservices.traitementRetard,com.chronopost.vision.microservices.maintienindexevt.v1,com.chronopost.vision.microservices.updatereferentiel,com.chronopost.vision.microservices.tournee.getsynthesetournees.v1,com.chronopost.vision.microservices.insertpointtournee.v1,com.chronopost.vision.microservices.insertagencecolis.v1,com.chronopost.vision.microservices.updatespecificationscolis.v1,com.chronopost.vision.microservices.diffusionevt.v1,com.chronopost.vision.microservices.getsyntheseagence.v1,com.chronopost.vision.microservices.insertC11,com.chronopost.vision.microservices.supervision,com.chronopost.vision.microservices.reference,com.chronopost.vision.microservices.getEvts,com.chronopost.vision.microservices.getC11,com.chronopost.vision.microservices.insertAlerte.v1
+# Infos de connexion JMS pour la diffusion des evts
+jmsDiffusion:
+  connectionFactory: TopicConnectionFactory
+  initialContextFactory: com.tibco.tibjms.naming.TibjmsInitialContextFactory
+<#if env.SYS_PROFILE_NATURE??>
+  <#if env.SYS_PROFILE_NATURE == 'PFI'>
+  providerUrl: tibjmsnaming://saems1pfi.intra-chronopost.fr:7231,tibjmsnaming://saems2pfi.intra-chronopost.fr:7231
+  user: vision
+  password: bw
+  <#elseif env.SYS_PROFILE_NATURE == 'PROD'>
+  providerUrl: tibjmsnaming://saems1.intra-chronopost.fr:7231,tibjmsnaming://saems2.intra-chronopost.fr:7231
+  user: vision
+  password: bw
+  <#else>
+  providerUrl: tibjmsnaming://saems1dev.intra-chronopost.fr:7231,tibjmsnaming://saems2dev.intra-chronopost.fr:7231
+  user: vision
+  password: bw
+  </#if>
+<#else>
+  providerUrl: tibjmsnaming://saems1dev.intra-chronopost.fr:7231,tibjmsnaming://saems2dev.intra-chronopost.fr:7231
+  user: vision
+  password: bw
+</#if>
+  topic: DiffusionVision.DiffusionEvt.T
+  queue: DiffusionVision.DiffusionEvt.buffer.Q
+<#if env.SYS_PROFILE_NATURE??>
+  <#if env.SYS_PROFILE_NATURE == 'PROD'>
+  ttl: 259200
+  <#else>
+  ttl: 3600
+  </#if>
+<#else>
+  ttl: 3600
+</#if>

@@ -1,0 +1,35 @@
+[
+  {
+    "tournee-vision": {
+      "id-c11": "44M0003122016000000",
+      "prise_en_charge": "TPEC1",
+      "temps-estime": "DurPre1",
+      "nb-km-estime": "DistPre1",
+      "temps-pause": "DurPau1",
+      "stt-id-poi": "IdPoiStt1",
+      "liste-points": {
+        "point": [
+          {
+            "contrainte-horaire": "11:00",
+            "dest-nom1": "nom1",
+            "dest-raison-sociale1": "raison1",
+            "dest-type": "type1",
+            "hr-debut-RDV": "11:30",
+            "hr-fin-RDV": "11:45",
+            "id-pt-c11": "point1",
+            "id_adresse": "idAd1",
+            "id_dest": "idDest1",
+            "is_SPOI": "spoi1",
+            "libelle_produit_point": "produit1",
+            "nb_objets": "10",
+            "numero-point": "num1",
+            "temps_stop_service": "duree1"
+          }
+        ]
+      },
+      "idsPoint": [
+        "point1"
+      ]
+    }
+  }
+]

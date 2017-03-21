@@ -1,0 +1,2543 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://cxf.consigne.soap.chronopost.fr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ConsigneServiceWSService" targetNamespace="http://cxf.consigne.soap.chronopost.fr/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://cxf.consigne.soap.chronopost.fr/" xmlns:ns1="http://cxf.calculretard.soap.chronopost.fr/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://cxf.consigne.soap.chronopost.fr/">
+<xs:import namespace="http://cxf.calculretard.soap.chronopost.fr/"/>
+<xs:element name="annulationConsigne" type="tns:annulationConsigne"/>
+<xs:element name="annulationConsigneResponse" type="tns:annulationConsigneResponse"/>
+<xs:element name="cacheReset" type="tns:cacheReset"/>
+<xs:element name="cacheResetResponse" type="tns:cacheResetResponse"/>
+<xs:element name="calculAvisage" type="tns:calculAvisage"/>
+<xs:element name="calculAvisageResponse" type="tns:calculAvisageResponse"/>
+<xs:element name="calculerCreneauxRDV" type="tns:calculerCreneauxRDV"/>
+<xs:element name="calculerCreneauxRDVResponse" type="tns:calculerCreneauxRDVResponse"/>
+<xs:element name="calculerDelaiInstance" type="tns:calculerDelaiInstance"/>
+<xs:element name="calculerDelaiInstanceResponse" type="tns:calculerDelaiInstanceResponse"/>
+<xs:element name="clotureConsigneSuiteADistri" type="tns:clotureConsigneSuiteADistri"/>
+<xs:element name="clotureConsigneSuiteADistriResponse" type="tns:clotureConsigneSuiteADistriResponse"/>
+<xs:element name="creationConsigne" type="tns:creationConsigne"/>
+<xs:element name="creationConsigneResponse" type="tns:creationConsigneResponse"/>
+<xs:element name="creationConsigneTAC" type="tns:creationConsigneTAC"/>
+<xs:element name="creationConsigneTACResponse" type="tns:creationConsigneTACResponse"/>
+<xs:element name="existeConsigne" type="tns:existeConsigne"/>
+<xs:element name="existeConsigneResponse" type="tns:existeConsigneResponse"/>
+<xs:element name="getAllInformationsColisConsigne" type="tns:getAllInformationsColisConsigne"/>
+<xs:element name="getAllInformationsColisConsigneById" type="tns:getAllInformationsColisConsigneById"/>
+<xs:element name="getAllInformationsColisConsigneByIdResponse" type="tns:getAllInformationsColisConsigneByIdResponse"/>
+<xs:element name="getAllInformationsColisConsigneResponse" type="tns:getAllInformationsColisConsigneResponse"/>
+<xs:element name="getColisParams" type="tns:getColisParams"/>
+<xs:element name="getColisParamsResponse" type="tns:getColisParamsResponse"/>
+<xs:element name="getColisRdvParams" type="tns:getColisRdvParams"/>
+<xs:element name="getColisRdvParamsResponse" type="tns:getColisRdvParamsResponse"/>
+<xs:element name="getDatesLivraison" type="tns:getDatesLivraison"/>
+<xs:element name="getDatesLivraisonResponse" type="tns:getDatesLivraisonResponse"/>
+<xs:element name="getDatesRetrait" type="tns:getDatesRetrait"/>
+<xs:element name="getDatesRetraitResponse" type="tns:getDatesRetraitResponse"/>
+<xs:element name="getElement" type="tns:getElement"/>
+<xs:element name="getElementResponse" type="tns:getElementResponse"/>
+<xs:element name="getElementsAutorises" type="tns:getElementsAutorises"/>
+<xs:element name="getElementsAutorisesResponse" type="tns:getElementsAutorisesResponse"/>
+<xs:element name="getInformationsColisConsigne" type="tns:getInformationsColisConsigne"/>
+<xs:element name="getInformationsColisConsigneById" type="tns:getInformationsColisConsigneById"/>
+<xs:element name="getInformationsColisConsigneByIdResponse" type="tns:getInformationsColisConsigneByIdResponse"/>
+<xs:element name="getInformationsColisConsigneResponse" type="tns:getInformationsColisConsigneResponse"/>
+<xs:element name="getInstancesAutorisees" type="tns:getInstancesAutorisees"/>
+<xs:element name="getInstancesAutoriseesAvecCodePostal" type="tns:getInstancesAutoriseesAvecCodePostal"/>
+<xs:element name="getInstancesAutoriseesAvecCodePostalResponse" type="tns:getInstancesAutoriseesAvecCodePostalResponse"/>
+<xs:element name="getInstancesAutoriseesResponse" type="tns:getInstancesAutoriseesResponse"/>
+<xs:element name="getMenusAutorises" type="tns:getMenusAutorises"/>
+<xs:element name="getMenusAutorisesAvecCodePostal" type="tns:getMenusAutorisesAvecCodePostal"/>
+<xs:element name="getMenusAutorisesAvecCodePostalResponse" type="tns:getMenusAutorisesAvecCodePostalResponse"/>
+<xs:element name="getMenusAutorisesResponse" type="tns:getMenusAutorisesResponse"/>
+<xs:element name="getStatutColis" type="tns:getStatutColis"/>
+<xs:element name="getStatutColisResponse" type="tns:getStatutColisResponse"/>
+<xs:element name="getTexteConsigne" type="tns:getTexteConsigne"/>
+<xs:element name="getTexteConsigneResponse" type="tns:getTexteConsigneResponse"/>
+<xs:element name="inscriptionMAS" type="tns:inscriptionMAS"/>
+<xs:element name="inscriptionMASResponse" type="tns:inscriptionMASResponse"/>
+<xs:element name="modificationConsigne" type="tns:modificationConsigne"/>
+<xs:element name="modificationConsigneResponse" type="tns:modificationConsigneResponse"/>
+<xs:element name="priseDeConsigneIsable" type="tns:priseDeConsigneIsable"/>
+<xs:element name="priseDeConsigneIsableAvecProcess" type="tns:priseDeConsigneIsableAvecProcess"/>
+<xs:element name="priseDeConsigneIsableAvecProcessResponse" type="tns:priseDeConsigneIsableAvecProcessResponse"/>
+<xs:element name="priseDeConsigneIsableAvecShortlink" type="tns:priseDeConsigneIsableAvecShortlink"/>
+<xs:element name="priseDeConsigneIsableAvecShortlinkResponse" type="tns:priseDeConsigneIsableAvecShortlinkResponse"/>
+<xs:element name="priseDeConsigneIsableResponse" type="tns:priseDeConsigneIsableResponse"/>
+<xs:element name="rechercherAgence" type="tns:rechercherAgence"/>
+<xs:element name="rechercherAgenceResponse" type="tns:rechercherAgenceResponse"/>
+<xs:element name="rechercherLibelleDivers" type="tns:rechercherLibelleDivers"/>
+<xs:element name="rechercherLibelleDiversResponse" type="tns:rechercherLibelleDiversResponse"/>
+<xs:element name="rechercherZCA" type="tns:rechercherZCA"/>
+<xs:element name="rechercherZCAResponse" type="tns:rechercherZCAResponse"/>
+<xs:element name="recupererColisADestockerNumber" type="tns:recupererColisADestockerNumber"/>
+<xs:element name="recupererColisADestockerNumberResponse" type="tns:recupererColisADestockerNumberResponse"/>
+<xs:element name="recupererListColisDelocs" type="tns:recupererListColisDelocs"/>
+<xs:element name="recupererListColisDelocsResponse" type="tns:recupererListColisDelocsResponse"/>
+<xs:element name="recupererListeColisADestocker" type="tns:recupererListeColisADestocker"/>
+<xs:element name="recupererListeColisADestockerResponse" type="tns:recupererListeColisADestockerResponse"/>
+<xs:element name="recupererListeColisAvecConsigneAvecTypePourSite" type="tns:recupererListeColisAvecConsigneAvecTypePourSite"/>
+<xs:element name="recupererListeColisAvecConsigneAvecTypePourSiteResponse" type="tns:recupererListeColisAvecConsigneAvecTypePourSiteResponse"/>
+<xs:element name="recupererListeColisAvecConsignePourSite" type="tns:recupererListeColisAvecConsignePourSite"/>
+<xs:element name="recupererListeColisAvecConsignePourSiteResponse" type="tns:recupererListeColisAvecConsignePourSiteResponse"/>
+<xs:element name="recupererListeColisAvecInfosPourSite" type="tns:recupererListeColisAvecInfosPourSite"/>
+<xs:element name="recupererListeColisAvecInfosPourSiteNumber" type="tns:recupererListeColisAvecInfosPourSiteNumber"/>
+<xs:element name="recupererListeColisAvecInfosPourSiteNumberResponse" type="tns:recupererListeColisAvecInfosPourSiteNumberResponse"/>
+<xs:element name="recupererListeColisAvecInfosPourSiteResponse" type="tns:recupererListeColisAvecInfosPourSiteResponse"/>
+<xs:element name="testAppelGrc" type="tns:testAppelGrc"/>
+<xs:element name="testAppelGrcResponse" type="tns:testAppelGrcResponse"/>
+<xs:element name="testCreationCL" type="tns:testCreationCL"/>
+<xs:element name="testCreationCLResponse" type="tns:testCreationCLResponse"/>
+<xs:element name="verificationZCA" type="tns:verificationZCA"/>
+<xs:element name="verificationZCAResponse" type="tns:verificationZCAResponse"/>
+<xs:complexType name="recupererListColisDelocs">
+<xs:sequence>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recupererListColisDelocsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultListColisDelocs"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultListColisDelocs">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="list" nillable="true" type="tns:colisDelocs"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="resultConsigne">
+<xs:sequence>
+<xs:element name="code" type="xs:int"/>
+<xs:element minOccurs="0" name="idConsigne" type="xs:integer"/>
+<xs:element minOccurs="0" name="text" type="xs:string"/>
+<xs:element name="value" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="colisDelocs">
+<xs:sequence>
+<xs:element minOccurs="0" name="dateCreation" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getMenusAutorisesAvecCodePostal">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+<xs:element minOccurs="0" name="contrat" type="xs:string"/>
+<xs:element minOccurs="0" name="codePostal" type="xs:string"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getMenusAutorisesAvecCodePostalResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultMenus"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultMenus">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="menus" nillable="true" type="tns:codeLibelle"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="codeLibelle">
+<xs:sequence>
+<xs:element minOccurs="0" name="code" type="xs:string"/>
+<xs:element minOccurs="0" name="libelle" type="xs:string"/>
+<xs:element minOccurs="0" name="subMenuCode" type="xs:string"/>
+<xs:element minOccurs="0" name="subMenuLibelle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getDatesRetrait">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getDatesRetraitResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultDatesRetrait"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultDatesRetrait">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="dates" nillable="true" type="tns:dateRetrait"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="dateRetrait">
+<xs:sequence>
+<xs:element minOccurs="0" name="date" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="libelle" type="xs:string"/>
+<xs:element minOccurs="0" name="typeConsigne" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="clotureConsigneSuiteADistri">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="clotureConsigneSuiteADistriResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recupererListeColisADestocker">
+<xs:sequence>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recupererListeColisADestockerResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultListeColisADestocker"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultListeColisADestocker">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="liste" nillable="true" type="tns:colisADestocker"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="colisADestocker">
+<xs:sequence>
+<xs:element minOccurs="0" name="destinataire" type="xs:string"/>
+<xs:element name="destockEnSoiree" type="xs:boolean"/>
+<xs:element minOccurs="0" name="expediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="finInstance" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="jourDSTK" type="xs:string"/>
+<xs:element minOccurs="0" name="libelleConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="lieuDeStockage" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="zone" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="creationConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+<xs:element minOccurs="0" name="typeConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="consigne" type="tns:paramConsigne"/>
+<xs:element minOccurs="0" name="destinataire" type="tns:paramDestinataire"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element minOccurs="0" name="dossierGRC" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="paramConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="applicationOrigine" type="xs:string"/>
+<xs:element minOccurs="0" name="codeCreneauRdv" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreneauMax" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateCreneauMin" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateRelivraison" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="motifTic" type="xs:string"/>
+<xs:element minOccurs="0" name="nomOrigine" type="xs:string"/>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+<xs:element minOccurs="0" name="typeAuthentification" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="paramDestinataire">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresse" type="xs:string"/>
+<xs:element minOccurs="0" name="aideLivraison" type="xs:string"/>
+<xs:element minOccurs="0" name="batiment" type="xs:string"/>
+<xs:element minOccurs="0" name="codePays" type="xs:string"/>
+<xs:element minOccurs="0" name="codePointRetrait" type="xs:string"/>
+<xs:element minOccurs="0" name="cp" type="xs:string"/>
+<xs:element minOccurs="0" name="cpltAdresse" type="xs:string"/>
+<xs:element minOccurs="0" name="digicode1" type="xs:string"/>
+<xs:element minOccurs="0" name="digicode2" type="xs:string"/>
+<xs:element minOccurs="0" name="elementsModifies" type="xs:string"/>
+<xs:element minOccurs="0" name="email" type="xs:string"/>
+<xs:element minOccurs="0" name="etage" type="xs:string"/>
+<xs:element minOccurs="0" name="idContrat" type="xs:string"/>
+<xs:element minOccurs="0" name="idPoi" type="xs:long"/>
+<xs:element minOccurs="0" name="interphone" type="xs:string"/>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+<xs:element minOccurs="0" name="nomPointRetrait" type="xs:string"/>
+<xs:element minOccurs="0" name="nomPrenom" type="xs:string"/>
+<xs:element minOccurs="0" name="rs" type="xs:string"/>
+<xs:element minOccurs="0" name="telephone" type="xs:string"/>
+<xs:element minOccurs="0" name="typeAdresse" type="xs:string"/>
+<xs:element minOccurs="0" name="ville" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="creationConsigneResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rechercherZCA">
+<xs:sequence>
+<xs:element minOccurs="0" name="cp" type="xs:string"/>
+<xs:element minOccurs="0" name="ville" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rechercherZCAResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getMenusAutorises">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+<xs:element minOccurs="0" name="contrat" type="xs:string"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getMenusAutorisesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultMenus"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getElementsAutorises">
+<xs:sequence>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+<xs:element minOccurs="0" name="menu" type="xs:string"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getElementsAutorisesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultElements"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultElements">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="elements" nillable="true" type="tns:element"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="element">
+<xs:complexContent>
+<xs:extension base="tns:codeLibelle">
+<xs:sequence>
+<xs:element minOccurs="0" name="acces" type="xs:string"/>
+<xs:element minOccurs="0" name="commentaire" type="xs:string"/>
+<xs:element minOccurs="0" name="exemple" type="xs:string"/>
+<xs:element minOccurs="0" name="infoBulle" type="xs:string"/>
+<xs:element name="longueurMax" type="xs:int"/>
+<xs:element name="longueurMin" type="xs:int"/>
+<xs:element name="ordreAffichage" type="xs:int"/>
+<xs:element minOccurs="0" name="regexp" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="getInformationsColisConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element name="modeManuel" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getInformationsColisConsigneResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultInformationsConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultInformationsConsigne">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="informationsColisConsigne" type="tns:informationsColisConsigne"/>
+<xs:element minOccurs="0" name="informationsComplementairesConsigne" type="tns:informationsComplementairesConsigne"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="informationsColisConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="actionEffectuee" type="xs:string"/>
+<xs:element minOccurs="0" name="aideRelivraison" type="xs:string"/>
+<xs:element name="avisageDestinataire" type="xs:boolean"/>
+<xs:element name="avisageExpediteur" type="xs:boolean"/>
+<xs:element minOccurs="0" name="batiment" type="xs:string"/>
+<xs:element minOccurs="0" name="codeEmetteur" type="xs:string"/>
+<xs:element minOccurs="0" name="codePaysDestinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="codePaysExpediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="codePointRetrait" type="xs:string"/>
+<xs:element minOccurs="0" name="codePostalDestinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="codePostalExpediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="codeService" type="tns:codeService"/>
+<xs:element name="colisSoiree" type="xs:boolean"/>
+<xs:element name="consigneATraiter" type="xs:boolean"/>
+<xs:element name="consigneClient" type="xs:boolean"/>
+<xs:element name="consigneEnCours" type="xs:boolean"/>
+<xs:element name="consigneTraitee" type="xs:boolean"/>
+<xs:element minOccurs="0" name="contrat" type="xs:string"/>
+<xs:element name="contratPerimetreNL" type="xs:boolean"/>
+<xs:element name="contratPerimetrePIA" type="xs:boolean"/>
+<xs:element minOccurs="0" name="creneauRDVMax" type="xs:string"/>
+<xs:element minOccurs="0" name="creneauRDVMin" type="xs:string"/>
+<xs:element minOccurs="0" name="dateConsigne" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateFinInstance" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="datePriseEnCompteConsigne" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateRelivraison" type="xs:dateTime"/>
+<xs:element name="delaiInstance" type="xs:int"/>
+<xs:element minOccurs="0" name="dernierEvenementChauffeur" type="xs:string"/>
+<xs:element minOccurs="0" name="digicode1" type="xs:string"/>
+<xs:element minOccurs="0" name="digicode2" type="xs:string"/>
+<xs:element minOccurs="0" name="emetteur" type="xs:string"/>
+<xs:element minOccurs="0" name="etage" type="xs:string"/>
+<xs:element minOccurs="0" name="evenementLePlusSignificatif" type="tns:evenement"/>
+<xs:element name="existeConsigne" type="xs:boolean"/>
+<xs:element name="idConsigne" type="xs:long"/>
+<xs:element name="informationsColis" type="xs:boolean"/>
+<xs:element minOccurs="0" name="libelleConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="libellePaysDestinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="libellePaysExpediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="libelleTe" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="listeAction" nillable="true" type="tns:action"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="listeEvenement" nillable="true" type="tns:evenement"/>
+<xs:element minOccurs="0" name="mailDestinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="mailExpediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="nom1Destinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="nom1Expediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="nom2Destinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="nom2Expediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="nomPointRetrait" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroAvisDePassage" type="xs:string"/>
+<xs:element minOccurs="0" name="parametrageConsigneNonLivre" type="tns:parametrageConsigneNonLivreV2"/>
+<xs:element minOccurs="0" name="parametrageConsignePEC" type="tns:parametrageConsignePECV2"/>
+<xs:element minOccurs="0" name="parametrageConsigneTA" type="tns:parametrageConsigneTAV2"/>
+<xs:element minOccurs="0" name="referenceDestinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="referenceExpediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="rs" type="xs:string"/>
+<xs:element minOccurs="0" name="rue1Destinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="rue1Expediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="rue2Destinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="rue2Expediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="rue3Destinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="rue3Expediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="telephoneDestinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="telephoneExpediteur" type="xs:string"/>
+<xs:element minOccurs="0" name="typeAdresse" type="xs:string"/>
+<xs:element minOccurs="0" name="typeColisInstance" type="xs:string"/>
+<xs:element minOccurs="0" name="typeConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="typeFlux" type="xs:string"/>
+<xs:element minOccurs="0" name="villeDestinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="villeExpediteur" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="codeService">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeProduit" type="xs:string"/>
+<xs:element minOccurs="0" name="codeService" type="xs:string"/>
+<xs:element minOccurs="0" name="isAvisageDestiNL" type="xs:boolean"/>
+<xs:element minOccurs="0" name="isAvisageDestiPEC" type="xs:boolean"/>
+<xs:element minOccurs="0" name="isAvisageDestiPIA" type="xs:boolean"/>
+<xs:element minOccurs="0" name="isAvisageDestiTA" type="xs:boolean"/>
+<xs:element minOccurs="0" name="isConsigneAgence" type="xs:boolean"/>
+<xs:element minOccurs="0" name="isConsignePoste" type="xs:boolean"/>
+<xs:element minOccurs="0" name="isConsigneRelais" type="xs:boolean"/>
+<xs:element minOccurs="0" name="isTicDestiNL" type="xs:boolean"/>
+<xs:element minOccurs="0" name="isTicDestiPEC" type="xs:boolean"/>
+<xs:element minOccurs="0" name="isTicDestiPIA" type="xs:boolean"/>
+<xs:element minOccurs="0" name="isTicDestiReprog" type="xs:boolean"/>
+<xs:element minOccurs="0" name="isTicDestiTA" type="xs:boolean"/>
+<xs:element minOccurs="0" name="typeInstanceCodeService" type="xs:string"/>
+<xs:element minOccurs="0" name="typeProduitCodeService" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="evenement">
+<xs:sequence>
+<xs:element minOccurs="0" name="codePostal" type="xs:string"/>
+<xs:element minOccurs="0" name="createur" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="departementNpc" type="xs:string"/>
+<xs:element name="idbco" type="xs:int"/>
+<xs:element minOccurs="0" name="libelleBureau" type="xs:string"/>
+<xs:element minOccurs="0" name="libelleCommercial" type="xs:string"/>
+<xs:element minOccurs="0" name="libelleCourt" type="xs:string"/>
+<xs:element minOccurs="0" name="lieu" type="xs:string"/>
+<xs:element minOccurs="0" name="noLt" type="xs:string"/>
+<xs:element minOccurs="0" name="noLtPorteurInformation" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="action">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeAction" type="xs:string"/>
+<xs:element minOccurs="0" name="codeLieuStockage" type="xs:string"/>
+<xs:element minOccurs="0" name="couleur" type="xs:string"/>
+<xs:element minOccurs="0" name="libelleLieuStockage" type="xs:string"/>
+<xs:element minOccurs="0" name="masqueEtiquette" type="xs:string"/>
+<xs:element minOccurs="0" name="nouvelEtat" type="xs:string"/>
+<xs:element name="ordreAffichage" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="parametrageConsigneNonLivreV2">
+<xs:sequence>
+<xs:element name="expeAAviser" type="xs:boolean"/>
+<xs:element minOccurs="0" name="masExpeEMail" type="xs:string"/>
+<xs:element minOccurs="0" name="masExpeTelephone" type="xs:string"/>
+<xs:element name="NLReprogrammationRDV" type="xs:boolean"/>
+<xs:element name="NLSAVDerogatoire" type="xs:boolean"/>
+<xs:element name="NLannulerLaConsigne" type="xs:boolean"/>
+<xs:element name="NLchangerAdresse" type="xs:boolean"/>
+<xs:element name="NLcompleterAdresse" type="xs:boolean"/>
+<xs:element name="NLconsigneDestiAutoriseeSuiteIncidentLivraison" type="xs:boolean"/>
+<xs:element name="NLdetruireColisParExpe" type="xs:boolean"/>
+<xs:element name="NLmiseADispositionAgence" type="xs:boolean"/>
+<xs:element name="NLmiseADispositionBP" type="xs:boolean"/>
+<xs:element name="NLmiseADispositionPointRelais" type="xs:boolean"/>
+<xs:element name="NLrecupererColisAuPlusvite" type="xs:boolean"/>
+<xs:element name="NLremisAUnTiers" type="xs:boolean"/>
+<xs:element name="NLremisAUnVoisin" type="xs:boolean"/>
+<xs:element name="NLreprogrammerLivraison" type="xs:boolean"/>
+<xs:element name="NLretournerColisParExpe" type="xs:boolean"/>
+<xs:element name="PIASAVDerogatoire" type="xs:boolean"/>
+<xs:element name="PIAconsigneDestiAutorisee" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="parametrageConsignePECV2">
+<xs:sequence>
+<xs:element name="PECReprogrammationRDV" type="xs:boolean"/>
+<xs:element name="PECannulerLaConsigne" type="xs:boolean"/>
+<xs:element name="PECchangerAdresse" type="xs:boolean"/>
+<xs:element name="PECcompleterAdresse" type="xs:boolean"/>
+<xs:element name="PECconsigneDestiAutoriseeEnPreAlerte" type="xs:boolean"/>
+<xs:element name="PECdetruireColis" type="xs:boolean"/>
+<xs:element name="PECmiseADispositionAgence" type="xs:boolean"/>
+<xs:element name="PECmiseADispositionBP" type="xs:boolean"/>
+<xs:element name="PECmiseADispositionPointRelais" type="xs:boolean"/>
+<xs:element name="PECrecupererColisAuPlusvite" type="xs:boolean"/>
+<xs:element name="PECremisAUnTiers" type="xs:boolean"/>
+<xs:element name="PECremisAUnVoisin" type="xs:boolean"/>
+<xs:element name="PECreprogrammerLivraison" type="xs:boolean"/>
+<xs:element name="PECretournerColis" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="parametrageConsigneTAV2">
+<xs:sequence>
+<xs:element name="TAReprogrammationRDV" type="xs:boolean"/>
+<xs:element name="TAannulerLaConsigne" type="xs:boolean"/>
+<xs:element name="TAchangerAdresse" type="xs:boolean"/>
+<xs:element name="TAcompleterAdresse" type="xs:boolean"/>
+<xs:element name="TAconsigneDestiAutoriseeEnPreAlerte" type="xs:boolean"/>
+<xs:element name="TAdetruireColis" type="xs:boolean"/>
+<xs:element name="TAmiseADispositionAgence" type="xs:boolean"/>
+<xs:element name="TAmiseADispositionBP" type="xs:boolean"/>
+<xs:element name="TAmiseADispositionPointRelais" type="xs:boolean"/>
+<xs:element name="TArecupererColisAuPlusvite" type="xs:boolean"/>
+<xs:element name="TAremisAUnTiers" type="xs:boolean"/>
+<xs:element name="TAremisAUnVoisin" type="xs:boolean"/>
+<xs:element name="TAreprogrammerLivraison" type="xs:boolean"/>
+<xs:element name="TAretournerColis" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="informationsComplementairesConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="applicationOrigine" type="xs:string"/>
+<xs:element minOccurs="0" name="dossierGrc" type="xs:string"/>
+<xs:element minOccurs="0" name="libelleAgence" type="xs:string"/>
+<xs:element minOccurs="0" name="libelleProfil" type="xs:string"/>
+<xs:element minOccurs="0" name="libelleTypeConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="lieuStockage" type="xs:string"/>
+<xs:element minOccurs="0" name="motifTac" type="xs:string"/>
+<xs:element minOccurs="0" name="motifTic" type="xs:string"/>
+<xs:element minOccurs="0" name="nomOrigine" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="priseEnCompte" type="xs:string"/>
+<xs:element minOccurs="0" name="typeAuthentification" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="priseDeConsigneIsable">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+<xs:element minOccurs="0" name="niveauDeControle" type="xs:int"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="priseDeConsigneIsableResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="existeConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="demandeInfos" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="existeConsigneResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultExisteConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultExisteConsigne">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="consigne" type="tns:pdcConsigne"/>
+<xs:element minOccurs="0" name="destinataire" type="tns:pdcDestinataire"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="pdcConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="applicationorigine" type="xs:string"/>
+<xs:element minOccurs="0" name="codeCreneauRdv" type="xs:string"/>
+<xs:element minOccurs="0" name="codeService" type="xs:string"/>
+<xs:element minOccurs="0" name="codeTournee" type="xs:string"/>
+<xs:element minOccurs="0" name="consigneEnvoyePsm" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateCreneauMax" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateCreneauMin" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateFinInstance" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateFinInstancePrecedente" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateLivrPrevuePrecedente" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateLivraisonPrevue" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dossierGrc" type="xs:string"/>
+<xs:element name="idConsigne" type="xs:long"/>
+<xs:element minOccurs="0" name="motifTac" type="xs:string"/>
+<xs:element minOccurs="0" name="motifTic" type="xs:string"/>
+<xs:element minOccurs="0" name="nomorigine" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroAvdp" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroLt" type="xs:string"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element minOccurs="0" name="pdcAction" type="tns:pdcAction"/>
+<xs:element minOccurs="0" name="pdcActionByCodeActionPrecedente" type="tns:pdcAction"/>
+<xs:element minOccurs="0" name="pdcDestinataire" type="tns:pdcDestinataire"/>
+<xs:element minOccurs="0" name="pdcProfil" type="tns:pdcProfil"/>
+<xs:element minOccurs="0" name="pdcTypeColisInstance" type="tns:pdcTypeColisInstance"/>
+<xs:element minOccurs="0" name="pdcTypeConsigne" type="tns:pdcTypeConsigne"/>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+<xs:element minOccurs="0" name="priseEnCompte" type="xs:string"/>
+<xs:element minOccurs="0" name="process" type="xs:string"/>
+<xs:element minOccurs="0" name="typeAuthentification" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcAction">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeAction" type="xs:string"/>
+<xs:element minOccurs="0" name="codeInfocomp2SansConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="codeInfocomp2SiConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="codeInfocompEvt2SansCons" type="xs:string"/>
+<xs:element minOccurs="0" name="codeInfocompEvt2SiCons" type="xs:string"/>
+<xs:element minOccurs="0" name="codeInfocompSansConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="codeInfocompSiConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="couleur" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="evt2SansConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="evt2SiConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="evtSansConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="evtSiConsigne" type="xs:string"/>
+<xs:element name="idLibelleCourt" type="xs:long"/>
+<xs:element name="idLibelleLong" type="xs:long"/>
+<xs:element minOccurs="0" name="libelleCourt" type="xs:string"/>
+<xs:element minOccurs="0" name="libelleLong" type="xs:string"/>
+<xs:element minOccurs="0" name="masqueEtiquette" type="xs:string"/>
+<xs:element minOccurs="0" name="masqueEtiquetteSansConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="nouvelEtat" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element name="ordreAffichage" type="xs:int"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcConsignes" nillable="true" type="tns:pdcConsigne"/>
+<xs:element minOccurs="0" name="pdcLieuStockage" type="tns:pdcLieuStockage"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcTraitementActions" nillable="true" type="tns:pdcTraitementAction"/>
+<xs:element minOccurs="0" name="valInfocomp2SansConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="valInfocomp2SiConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="valInfocompEvt2SansCons" type="xs:string"/>
+<xs:element minOccurs="0" name="valInfocompEvt2SiCons" type="xs:string"/>
+<xs:element minOccurs="0" name="valeurInfocompSansConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="valeurInfocompSiConsigne" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcLieuStockage">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeLieu" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element name="idLibelle" type="xs:long"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcActions" nillable="true" type="tns:pdcAction"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcTypeColisInstances" nillable="true" type="tns:pdcTypeColisInstance"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcTypeColisInstance">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeTypecolis" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element name="delaiInstance" type="xs:int"/>
+<xs:element name="idLibelle" type="xs:long"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element minOccurs="0" name="ordre" type="xs:int"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcConsignes" nillable="true" type="tns:pdcConsigne"/>
+<xs:element minOccurs="0" name="pdcLieuStockage" type="tns:pdcLieuStockage"/>
+<xs:element minOccurs="0" name="regexpCodeServices" type="xs:string"/>
+<xs:element minOccurs="0" name="regexpContrats1" type="xs:string"/>
+<xs:element minOccurs="0" name="regexpContrats2" type="xs:string"/>
+<xs:element minOccurs="0" name="regexpNumerolt" type="xs:string"/>
+<xs:element minOccurs="0" name="regexpPays" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcTraitementAction">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="tns:pdcTraitementActionId"/>
+<xs:element minOccurs="0" name="pdcAction" type="tns:pdcAction"/>
+<xs:element minOccurs="0" name="pdcTraitementTac" type="tns:pdcTraitementTac"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcTraitementActionId">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeAction" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroRegle" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcTraitementTac">
+<xs:sequence>
+<xs:element minOccurs="0" name="casMetier" type="xs:string"/>
+<xs:element minOccurs="0" name="contratNl" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="contratPia" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dernierEvtSignificatif" type="xs:string"/>
+<xs:element minOccurs="0" name="destiAvise" type="xs:unsignedShort"/>
+<xs:element name="dlcDepassee" type="xs:boolean"/>
+<xs:element minOccurs="0" name="ecartDateLivraison" type="xs:string"/>
+<xs:element minOccurs="0" name="ecartDateRdv" type="xs:string"/>
+<xs:element minOccurs="0" name="existeConsigne" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="expeAvise" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="infosLtPresentes" type="xs:unsignedShort"/>
+<xs:element name="numeroRegle" type="xs:int"/>
+<xs:element minOccurs="0" name="occDernierEvtSignificatif" type="xs:string"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcTraitementActions" nillable="true" type="tns:pdcTraitementAction"/>
+<xs:element minOccurs="0" name="pdcTypeConsigne" type="tns:pdcTypeConsigne"/>
+<xs:element minOccurs="0" name="savDerogatoireNl" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="savDerogatoirePia" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="typeInstance" type="xs:string"/>
+<xs:element minOccurs="0" name="typologieProduit" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcTypeConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element name="idLibelleCourt" type="xs:long"/>
+<xs:element name="idLibelleLong" type="xs:long"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcConsignes" nillable="true" type="tns:pdcConsigne"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcDelaiConsignes" nillable="true" type="tns:pdcDelaiConsigne"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcTexteConsignes" nillable="true" type="tns:pdcTexteConsigne"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcTraitementTacs" nillable="true" type="tns:pdcTraitementTac"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcDelaiConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresseDeloc" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="categorieEvt" type="xs:string"/>
+<xs:element name="delaiApresHlt" type="xs:int"/>
+<xs:element name="delaiAvantHlt" type="xs:int"/>
+<xs:element name="idDelaiConsigne" type="xs:long"/>
+<xs:element name="livraisonSamedi" type="xs:unsignedShort"/>
+<xs:element name="ordre" type="xs:int"/>
+<xs:element minOccurs="0" name="pdcTypeConsigne" type="tns:pdcTypeConsigne"/>
+<xs:element minOccurs="0" name="regexpPaysDestinataire" type="xs:string"/>
+<xs:element minOccurs="0" name="regexpPaysExpediteur" type="xs:string"/>
+<xs:element name="sameday" type="xs:boolean"/>
+<xs:element name="soireeJplus1" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcTexteConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeProfil" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="tns:pdcTexteConsigneId"/>
+<xs:element minOccurs="0" name="pdcProfil" type="tns:pdcProfil"/>
+<xs:element minOccurs="0" name="pdcTypeConsigne" type="tns:pdcTypeConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcTexteConsigneId">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="idLibelle" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcProfil">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeProfil" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element name="idLibelle" type="xs:long"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcAccesMenus" nillable="true" type="tns:pdcAccesMenu"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcConsignes" nillable="true" type="tns:pdcConsigne"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcElementMenus" nillable="true" type="tns:pdcElementMenu"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcStatutColises" nillable="true" type="tns:pdcStatutColis"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcTexteConsignes" nillable="true" type="tns:pdcTexteConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcAccesMenu">
+<xs:sequence>
+<xs:element minOccurs="0" name="categorieEvt" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="existeCpvInfoslt" type="xs:unsignedShort"/>
+<xs:element name="idAccesMenu" type="xs:long"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element minOccurs="0" name="pdcCpInterdits" type="tns:pdcCpInterdits"/>
+<xs:element minOccurs="0" name="pdcMenu" type="tns:pdcMenu"/>
+<xs:element minOccurs="0" name="pdcProfil" type="tns:pdcProfil"/>
+<xs:element minOccurs="0" name="postesCompAntAutor" type="xs:string"/>
+<xs:element minOccurs="0" name="postesCompDelocAutor" type="xs:string"/>
+<xs:element minOccurs="0" name="regexpPaysDesti" type="xs:string"/>
+<xs:element minOccurs="0" name="regexpPaysExpe" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcCpInterdits">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeCpInterdits" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="liste" type="xs:string"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcAccesMenus" nillable="true" type="tns:pdcAccesMenu"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcMenu">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeMenu" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element name="idLibelle" type="xs:long"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element minOccurs="0" name="ordreAffichage" type="xs:int"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcAccesMenus" nillable="true" type="tns:pdcAccesMenu"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcElementMenus" nillable="true" type="tns:pdcElementMenu"/>
+<xs:element minOccurs="0" name="sousMenu" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcElementMenu">
+<xs:sequence>
+<xs:element minOccurs="0" name="acces" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="tns:pdcElementMenuId"/>
+<xs:element minOccurs="0" name="pdcMenu" type="tns:pdcMenu"/>
+<xs:element minOccurs="0" name="pdcProfil" type="tns:pdcProfil"/>
+<xs:element minOccurs="0" name="pdcTypeElement" type="tns:pdcTypeElement"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcElementMenuId">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeElement" type="xs:string"/>
+<xs:element minOccurs="0" name="codeMenu" type="xs:string"/>
+<xs:element minOccurs="0" name="codeProfil" type="xs:string"/>
+<xs:element minOccurs="0" name="visible" type="xs:unsignedShort"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcTypeElement">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeElement" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element name="idLibelle" type="xs:long"/>
+<xs:element minOccurs="0" name="idLibelleCommentaire" type="xs:long"/>
+<xs:element minOccurs="0" name="idLibelleExemple" type="xs:long"/>
+<xs:element minOccurs="0" name="idLibelleInfoBulle" type="xs:long"/>
+<xs:element name="longueurMax" type="xs:int"/>
+<xs:element minOccurs="0" name="longueurMin" type="xs:int"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element name="ordreAffichage" type="xs:int"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcElementMenus" nillable="true" type="tns:pdcElementMenu"/>
+<xs:element minOccurs="0" name="regexp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcStatutColis">
+<xs:sequence>
+<xs:element minOccurs="0" name="autorisationDest" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="autorisationExp" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateModification" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="eligibiliteEvtClient" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="eligibiliteEvtSc" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="evtSignificatif" type="xs:string"/>
+<xs:element name="idLibelle" type="xs:long"/>
+<xs:element name="idStatutColis" type="xs:long"/>
+<xs:element minOccurs="0" name="menuOuvert" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element name="ordre" type="xs:int"/>
+<xs:element minOccurs="0" name="pdcProfil" type="tns:pdcProfil"/>
+<xs:element minOccurs="0" name="picto" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pdcDestinataire">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresse" type="xs:string"/>
+<xs:element minOccurs="0" name="aideLivraison" type="xs:string"/>
+<xs:element minOccurs="0" name="batiment" type="xs:string"/>
+<xs:element minOccurs="0" name="codePays" type="xs:string"/>
+<xs:element minOccurs="0" name="codePointRetrait" type="xs:string"/>
+<xs:element minOccurs="0" name="cp" type="xs:string"/>
+<xs:element minOccurs="0" name="cpltAdresse" type="xs:string"/>
+<xs:element minOccurs="0" name="dateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="digicode1" type="xs:string"/>
+<xs:element minOccurs="0" name="digicode2" type="xs:string"/>
+<xs:element minOccurs="0" name="elementsModifies" type="xs:string"/>
+<xs:element minOccurs="0" name="email" type="xs:string"/>
+<xs:element minOccurs="0" name="etage" type="xs:string"/>
+<xs:element minOccurs="0" name="idContrat" type="xs:string"/>
+<xs:element name="idDestinataire" type="xs:long"/>
+<xs:element minOccurs="0" name="idPoi" type="xs:long"/>
+<xs:element minOccurs="0" name="interphone" type="xs:string"/>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+<xs:element minOccurs="0" name="nomPointRetrait" type="xs:string"/>
+<xs:element minOccurs="0" name="nomPrenom" type="xs:string"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="pdcConsignes" nillable="true" type="tns:pdcConsigne"/>
+<xs:element minOccurs="0" name="rs" type="xs:string"/>
+<xs:element minOccurs="0" name="telephone" type="xs:string"/>
+<xs:element minOccurs="0" name="typeAdresse" type="xs:string"/>
+<xs:element minOccurs="0" name="ville" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="cacheReset">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="cacheResetResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="verificationZCA">
+<xs:sequence>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+<xs:element minOccurs="0" name="cp" type="xs:string"/>
+<xs:element minOccurs="0" name="ville" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="verificationZCAResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recupererColisADestockerNumber">
+<xs:sequence>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recupererColisADestockerNumberResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllInformationsColisConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element name="modeManuel" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllInformationsColisConsigneResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultInformationsConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="priseDeConsigneIsableAvecShortlink">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+<xs:element minOccurs="0" name="niveauDeControle" type="xs:int"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="priseDeConsigneIsableAvecShortlinkResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigneEtShortlink"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultConsigneEtShortlink">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresseLivraison" type="tns:paramDestinataire"/>
+<xs:element minOccurs="0" name="derniereInstruction" type="xs:string"/>
+<xs:element minOccurs="0" name="heureLimitePriseDeConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="shortlink" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="getInstancesAutoriseesAvecCodePostal">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+<xs:element minOccurs="0" name="codePostal" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getInstancesAutoriseesAvecCodePostalResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultInstance"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultInstance">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="instancesAutorisees" type="tns:instancesAutorisees"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="instancesAutorisees">
+<xs:sequence>
+<xs:element name="instanceAgenceAutorisee" type="xs:boolean"/>
+<xs:element name="instanceAgenceAutoriseeCS" type="xs:boolean"/>
+<xs:element name="instancePointRelaisAutorisee" type="xs:boolean"/>
+<xs:element name="instancePointRelaisAutoriseeCS" type="xs:boolean"/>
+<xs:element name="instancePosteAutorisee" type="xs:boolean"/>
+<xs:element name="instancePosteAutoriseeCS" type="xs:boolean"/>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getColisParams">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getColisParamsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultColisParams"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultColisParams">
+<xs:complexContent>
+<xs:extension base="tns:abstractResult">
+<xs:sequence>
+<xs:element name="isColisSoiree" type="xs:boolean"/>
+<xs:element name="isEnJ" type="xs:boolean"/>
+<xs:element minOccurs="0" name="numeroLt" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="abstractResult">
+<xs:sequence>
+<xs:element name="code" type="xs:int"/>
+<xs:element minOccurs="0" name="text" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getElement">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeElement" type="xs:string"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getElementResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultElement"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultElement">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="element" type="tns:element"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="getInstancesAutorisees">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getInstancesAutoriseesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultInstance"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="calculerCreneauxRDV">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="typeConsigne" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="calculerCreneauxRDVResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultCalculCreneaux"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultCalculCreneaux">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="creneauxRDV" type="tns:creneauxRDV"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="creneauxRDV">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeCreneau" type="xs:string"/>
+<xs:element minOccurs="0" name="creneauMax" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="creneauMin" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modificationConsigne">
+<xs:sequence>
+<xs:element name="idConsigne" type="xs:long"/>
+<xs:element minOccurs="0" name="priseEnCompte" type="xs:string"/>
+<xs:element minOccurs="0" name="codeAction" type="xs:string"/>
+<xs:element minOccurs="0" name="dateFinInstance" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateRelivraison" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="typeColisInstance" type="xs:string"/>
+<xs:element minOccurs="0" name="causePassageManuel" type="xs:string"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modificationConsigneResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="creationConsigneTAC">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="priseEnCompte" type="xs:string"/>
+<xs:element minOccurs="0" name="typeConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="codeAction" type="xs:string"/>
+<xs:element minOccurs="0" name="dateFinInstance" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateRelivraison" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="typeColisInstance" type="xs:string"/>
+<xs:element minOccurs="0" name="causePassageManuel" type="xs:string"/>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+<xs:element minOccurs="0" name="operateur" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="creationConsigneTACResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="testCreationCL">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="testCreationCLResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="priseDeConsigneIsableAvecProcess">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+<xs:element minOccurs="0" name="niveauDeControle" type="xs:int"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="priseDeConsigneIsableAvecProcessResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigneEtProcess"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultConsigneEtProcess">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="process" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="recupererListeColisAvecConsigneAvecTypePourSite">
+<xs:sequence>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+<xs:element minOccurs="0" name="typeIdColis" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recupererListeColisAvecConsigneAvecTypePourSiteResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultListeColisAvecConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultListeColisAvecConsigne">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="liste" nillable="true" type="tns:colisAvecConsigne"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="colisAvecConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="typeDeConsigne" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="calculerDelaiInstance">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="calculerDelaiInstanceResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultDelaiInstance"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultDelaiInstance">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element name="delai" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="getTexteConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTexteConsigneResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getDatesLivraison">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="typeConsigne" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getDatesLivraisonResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultDatesLivraison"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultDatesLivraison">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="dates" nillable="true" type="xs:dateTime"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="recupererListeColisAvecInfosPourSite">
+<xs:sequence>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recupererListeColisAvecInfosPourSiteResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultListeColisAvecConsigneEtInfos"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultListeColisAvecConsigneEtInfos">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="liste" nillable="true" type="tns:colisAvecConsigneEtInfos"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="colisAvecConsigneEtInfos">
+<xs:sequence>
+<xs:element minOccurs="0" name="cpDestination" type="xs:string"/>
+<xs:element minOccurs="0" name="dateConsigne" type="xs:string"/>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="process" type="xs:string"/>
+<xs:element minOccurs="0" name="typeDeConsigne" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rechercherAgence">
+<xs:sequence>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rechercherAgenceResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultAgence"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultAgence">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="point" type="tns:point"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="point">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="adresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="adresse3" type="xs:string"/>
+<xs:element minOccurs="0" name="codePostal" type="xs:string"/>
+<xs:element minOccurs="0" name="dateArriveColis" type="xs:anySimpleType"/>
+<xs:element minOccurs="0" name="horairesOuvertureJeudi" type="xs:string"/>
+<xs:element minOccurs="0" name="horairesOuvertureLundi" type="xs:string"/>
+<xs:element minOccurs="0" name="horairesOuvertureMardi" type="xs:string"/>
+<xs:element minOccurs="0" name="horairesOuvertureMercredi" type="xs:string"/>
+<xs:element minOccurs="0" name="horairesOuvertureSamedi" type="xs:string"/>
+<xs:element minOccurs="0" name="horairesOuvertureVendredi" type="xs:string"/>
+<xs:element minOccurs="0" name="horairesOuverturesFormates" type="xs:string"/>
+<xs:element minOccurs="0" name="identifiantChronopost" type="xs:string"/>
+<xs:element minOccurs="0" name="localite" type="xs:string"/>
+<xs:element minOccurs="0" name="nomEnseigne" type="xs:string"/>
+<xs:element minOccurs="0" name="typeDePoint" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getInformationsColisConsigneById">
+<xs:sequence>
+<xs:element minOccurs="0" name="idConsigne" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getInformationsColisConsigneByIdResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultInformationsConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getStatutColis">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+<xs:element name="auMoinsUnMenuOuvert" type="xs:boolean"/>
+<xs:element minOccurs="0" name="zipCodeDesti" type="xs:string"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getStatutColisResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultStatutColis"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultStatutColis">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="statut" type="tns:codeLibelle"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="getColisRdvParams">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getColisRdvParamsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultRDV"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultRDV">
+<xs:complexContent>
+<xs:extension base="tns:abstractResult">
+<xs:sequence>
+<xs:element name="colisRdv" type="xs:boolean"/>
+<xs:element minOccurs="0" name="delaiMaxReprog" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="annulationConsigne">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="motif" type="xs:string"/>
+<xs:element name="groupage" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="annulationConsigneResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="testAppelGrc">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="testAppelGrcResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllInformationsColisConsigneById">
+<xs:sequence>
+<xs:element minOccurs="0" name="idConsigne" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllInformationsColisConsigneByIdResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultInformationsConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="calculAvisage">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="profil" type="xs:string"/>
+<xs:element minOccurs="0" name="niveauDeControle" type="xs:int"/>
+<xs:element minOccurs="0" name="libelleMAS" type="xs:string"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+<xs:element minOccurs="0" name="version" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="calculAvisageResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultAvisage"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultAvisage">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresseLivraison" type="tns:paramDestinataire"/>
+<xs:element name="code" type="xs:int"/>
+<xs:element minOccurs="0" name="DLC" type="xs:string"/>
+<xs:element minOccurs="0" name="dateFinInstance" type="xs:string"/>
+<xs:element minOccurs="0" name="dateFinInstanceDepassee" type="xs:string"/>
+<xs:element minOccurs="0" name="delaiInstance" type="xs:string"/>
+<xs:element minOccurs="0" name="resultCalculerRetardCxf" type="ns1:resultCalculerRetardPourNumeroLt"/>
+<xs:element minOccurs="0" name="resultConsigneEtShortlink" type="tns:resultConsigneEtShortlink"/>
+<xs:element minOccurs="0" name="statutDLC" type="xs:string"/>
+<xs:element minOccurs="0" name="text" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="inscriptionMAS">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLT" type="xs:string"/>
+<xs:element minOccurs="0" name="email" type="xs:string"/>
+<xs:element minOccurs="0" name="typeEvt" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="inscriptionMASResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rechercherLibelleDivers">
+<xs:sequence>
+<xs:element minOccurs="0" name="code" type="xs:string"/>
+<xs:element minOccurs="0" name="locale" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rechercherLibelleDiversResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultConsigne"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recupererListeColisAvecInfosPourSiteNumber">
+<xs:sequence>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recupererListeColisAvecInfosPourSiteNumberResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recupererListeColisAvecConsignePourSite">
+<xs:sequence>
+<xs:element minOccurs="0" name="posteComptable" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recupererListeColisAvecConsignePourSiteResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultListeColis"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultListeColis">
+<xs:complexContent>
+<xs:extension base="tns:resultConsigne">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="lt" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://cxf.calculretard.soap.chronopost.fr/" targetNamespace="http://cxf.calculretard.soap.chronopost.fr/" version="1.0">
+<xs:element name="calculerRetardPourNumeroLt" type="tns:calculerRetardPourNumeroLt"/>
+<xs:element name="calculerRetardPourNumeroLtResponse" type="tns:calculerRetardPourNumeroLtResponse"/>
+<xs:complexType name="resultCalculerRetardPourNumeroLt">
+<xs:sequence>
+<xs:element minOccurs="0" name="analyse" type="tns:analyse"/>
+<xs:element minOccurs="0" name="calculDateDeLivraisonEstimee" type="tns:calculDateDeLivraisonEstimee"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="calculDateDeLivraisonEstimeeDebug" nillable="true" type="tns:calculDateDeLivraisonEstimee"/>
+<xs:element name="resultCode" type="xs:int"/>
+<xs:element minOccurs="0" name="resultRetard" type="tns:resultRetard"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="analyse">
+<xs:sequence>
+<xs:element name="enRetardDateEstimeeDepassee" type="xs:int"/>
+<xs:element name="enRetardDateEstimeeSupDateContractuelle" type="xs:int"/>
+<xs:element name="enRetardDateHeureEstimeeDepassee" type="xs:int"/>
+<xs:element name="enRetardDateHeureEstimeeSupDateHeureContractuelle" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="calculDateDeLivraisonEstimee">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeRaisonDeNonCalculDateDeLivraisonEstimee" type="xs:string"/>
+<xs:element minOccurs="0" name="dateDeLivraisonEstimee" type="xs:string"/>
+<xs:element name="dateDeLivraisonEstimeeCalculee" type="xs:boolean"/>
+<xs:element minOccurs="0" name="dernierEvenement" type="xs:string"/>
+<xs:element minOccurs="0" name="evenementPourCalculDateDeLivraisonEstimee" type="xs:string"/>
+<xs:element minOccurs="0" name="heureMaxDeLivraisonEstimee" type="xs:string"/>
+<xs:element minOccurs="0" name="heureMinDeLivraisonEstimee" type="xs:string"/>
+<xs:element minOccurs="0" name="ligneParametragePourCalculDateDeLivraisonEstimee" type="xs:string"/>
+<xs:element minOccurs="0" name="raisonDeNonCalculDateDeLivraisonEstimee" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="resultRetard">
+<xs:sequence>
+<xs:element minOccurs="0" name="codeProduit" type="xs:string"/>
+<xs:element minOccurs="0" name="dateDeDepot" type="xs:string"/>
+<xs:element name="dateDeDepotDeterminee" type="xs:boolean"/>
+<xs:element minOccurs="0" name="dateDeDistribution" type="xs:string"/>
+<xs:element name="dateDeDistributionDeterminee" type="xs:boolean"/>
+<xs:element minOccurs="0" name="dateDeLivraisonPrevue" type="xs:string"/>
+<xs:element name="dateDeLivraisonPrevueCalculee" type="xs:boolean"/>
+<xs:element name="enRetard" type="xs:boolean"/>
+<xs:element name="fenetreHoraireDisponible" type="xs:boolean"/>
+<xs:element minOccurs="0" name="heureMax" type="xs:string"/>
+<xs:element minOccurs="0" name="heureMin" type="xs:string"/>
+<xs:element minOccurs="0" name="infosSupplementairesSurRaisonDeNonCalcul" type="xs:string"/>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+<xs:element minOccurs="0" name="perimetreLi" type="xs:string"/>
+<xs:element name="produitDetermine" type="xs:boolean"/>
+<xs:element minOccurs="0" name="raisonDeNonCalcul" type="tns:raisonDeNonCalcul"/>
+<xs:element name="retardCalcule" type="xs:boolean"/>
+<xs:element name="supplementSamedi" type="xs:boolean"/>
+<xs:element minOccurs="0" name="typeMas" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="raisonDeNonCalcul">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="calculerRetardPourNumeroLtResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:resultCalculerRetardPourNumeroLt"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="calculerRetardPourNumeroLt">
+<xs:sequence>
+<xs:element minOccurs="0" name="numeroLt" type="xs:string"/>
+<xs:element minOccurs="0" name="debug" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getColisRdvParams">
+    <wsdl:part element="tns:getColisRdvParams" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="existeConsigne">
+    <wsdl:part element="tns:existeConsigne" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inscriptionMAS">
+    <wsdl:part element="tns:inscriptionMAS" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculerCreneauxRDV">
+    <wsdl:part element="tns:calculerCreneauxRDV" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="creationConsigneTACResponse">
+    <wsdl:part element="tns:creationConsigneTACResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMenusAutorisesAvecCodePostal">
+    <wsdl:part element="tns:getMenusAutorisesAvecCodePostal" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllInformationsColisConsigneResponse">
+    <wsdl:part element="tns:getAllInformationsColisConsigneResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="priseDeConsigneIsableAvecShortlinkResponse">
+    <wsdl:part element="tns:priseDeConsigneIsableAvecShortlinkResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="annulationConsigne">
+    <wsdl:part element="tns:annulationConsigne" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verificationZCAResponse">
+    <wsdl:part element="tns:verificationZCAResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="creationConsigneTAC">
+    <wsdl:part element="tns:creationConsigneTAC" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTexteConsigne">
+    <wsdl:part element="tns:getTexteConsigne" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cacheResetResponse">
+    <wsdl:part element="tns:cacheResetResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="creationConsigne">
+    <wsdl:part element="tns:creationConsigne" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListColisDelocsResponse">
+    <wsdl:part element="tns:recupererListColisDelocsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clotureConsigneSuiteADistri">
+    <wsdl:part element="tns:clotureConsigneSuiteADistri" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatesLivraison">
+    <wsdl:part element="tns:getDatesLivraison" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cacheReset">
+    <wsdl:part element="tns:cacheReset" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInstancesAutoriseesAvecCodePostal">
+    <wsdl:part element="tns:getInstancesAutoriseesAvecCodePostal" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercherLibelleDiversResponse">
+    <wsdl:part element="tns:rechercherLibelleDiversResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="priseDeConsigneIsableAvecProcess">
+    <wsdl:part element="tns:priseDeConsigneIsableAvecProcess" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="testCreationCL">
+    <wsdl:part element="tns:testCreationCL" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererColisADestockerNumber">
+    <wsdl:part element="tns:recupererColisADestockerNumber" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatesLivraisonResponse">
+    <wsdl:part element="tns:getDatesLivraisonResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercherLibelleDivers">
+    <wsdl:part element="tns:rechercherLibelleDivers" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListeColisAvecInfosPourSite">
+    <wsdl:part element="tns:recupererListeColisAvecInfosPourSite" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="priseDeConsigneIsableResponse">
+    <wsdl:part element="tns:priseDeConsigneIsableResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListeColisAvecInfosPourSiteNumber">
+    <wsdl:part element="tns:recupererListeColisAvecInfosPourSiteNumber" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatutColis">
+    <wsdl:part element="tns:getStatutColis" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMenusAutorises">
+    <wsdl:part element="tns:getMenusAutorises" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculerDelaiInstance">
+    <wsdl:part element="tns:calculerDelaiInstance" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatesRetrait">
+    <wsdl:part element="tns:getDatesRetrait" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInstancesAutoriseesResponse">
+    <wsdl:part element="tns:getInstancesAutoriseesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListeColisADestocker">
+    <wsdl:part element="tns:recupererListeColisADestocker" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculAvisage">
+    <wsdl:part element="tns:calculAvisage" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="testCreationCLResponse">
+    <wsdl:part element="tns:testCreationCLResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculAvisageResponse">
+    <wsdl:part element="tns:calculAvisageResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getColisRdvParamsResponse">
+    <wsdl:part element="tns:getColisRdvParamsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMenusAutorisesResponse">
+    <wsdl:part element="tns:getMenusAutorisesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllInformationsColisConsigneById">
+    <wsdl:part element="tns:getAllInformationsColisConsigneById" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getElementResponse">
+    <wsdl:part element="tns:getElementResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListeColisADestockerResponse">
+    <wsdl:part element="tns:recupererListeColisADestockerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllInformationsColisConsigneByIdResponse">
+    <wsdl:part element="tns:getAllInformationsColisConsigneByIdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getColisParamsResponse">
+    <wsdl:part element="tns:getColisParamsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInformationsColisConsigne">
+    <wsdl:part element="tns:getInformationsColisConsigne" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercherZCAResponse">
+    <wsdl:part element="tns:rechercherZCAResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getElement">
+    <wsdl:part element="tns:getElement" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMenusAutorisesAvecCodePostalResponse">
+    <wsdl:part element="tns:getMenusAutorisesAvecCodePostalResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculerCreneauxRDVResponse">
+    <wsdl:part element="tns:calculerCreneauxRDVResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getElementsAutorises">
+    <wsdl:part element="tns:getElementsAutorises" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInformationsColisConsigneByIdResponse">
+    <wsdl:part element="tns:getInformationsColisConsigneByIdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInstancesAutorisees">
+    <wsdl:part element="tns:getInstancesAutorisees" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modificationConsigneResponse">
+    <wsdl:part element="tns:modificationConsigneResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercherAgence">
+    <wsdl:part element="tns:rechercherAgence" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercherZCA">
+    <wsdl:part element="tns:rechercherZCA" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="testAppelGrcResponse">
+    <wsdl:part element="tns:testAppelGrcResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="testAppelGrc">
+    <wsdl:part element="tns:testAppelGrc" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTexteConsigneResponse">
+    <wsdl:part element="tns:getTexteConsigneResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDatesRetraitResponse">
+    <wsdl:part element="tns:getDatesRetraitResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getElementsAutorisesResponse">
+    <wsdl:part element="tns:getElementsAutorisesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="existeConsigneResponse">
+    <wsdl:part element="tns:existeConsigneResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="annulationConsigneResponse">
+    <wsdl:part element="tns:annulationConsigneResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInformationsColisConsigneById">
+    <wsdl:part element="tns:getInformationsColisConsigneById" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercherAgenceResponse">
+    <wsdl:part element="tns:rechercherAgenceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListeColisAvecConsigneAvecTypePourSite">
+    <wsdl:part element="tns:recupererListeColisAvecConsigneAvecTypePourSite" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllInformationsColisConsigne">
+    <wsdl:part element="tns:getAllInformationsColisConsigne" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListeColisAvecConsignePourSite">
+    <wsdl:part element="tns:recupererListeColisAvecConsignePourSite" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="inscriptionMASResponse">
+    <wsdl:part element="tns:inscriptionMASResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInstancesAutoriseesAvecCodePostalResponse">
+    <wsdl:part element="tns:getInstancesAutoriseesAvecCodePostalResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="priseDeConsigneIsableAvecProcessResponse">
+    <wsdl:part element="tns:priseDeConsigneIsableAvecProcessResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="priseDeConsigneIsable">
+    <wsdl:part element="tns:priseDeConsigneIsable" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculerDelaiInstanceResponse">
+    <wsdl:part element="tns:calculerDelaiInstanceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getInformationsColisConsigneResponse">
+    <wsdl:part element="tns:getInformationsColisConsigneResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListeColisAvecInfosPourSiteResponse">
+    <wsdl:part element="tns:recupererListeColisAvecInfosPourSiteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getColisParams">
+    <wsdl:part element="tns:getColisParams" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="creationConsigneResponse">
+    <wsdl:part element="tns:creationConsigneResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListeColisAvecInfosPourSiteNumberResponse">
+    <wsdl:part element="tns:recupererListeColisAvecInfosPourSiteNumberResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListColisDelocs">
+    <wsdl:part element="tns:recupererListColisDelocs" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatutColisResponse">
+    <wsdl:part element="tns:getStatutColisResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verificationZCA">
+    <wsdl:part element="tns:verificationZCA" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clotureConsigneSuiteADistriResponse">
+    <wsdl:part element="tns:clotureConsigneSuiteADistriResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListeColisAvecConsigneAvecTypePourSiteResponse">
+    <wsdl:part element="tns:recupererListeColisAvecConsigneAvecTypePourSiteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="priseDeConsigneIsableAvecShortlink">
+    <wsdl:part element="tns:priseDeConsigneIsableAvecShortlink" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modificationConsigne">
+    <wsdl:part element="tns:modificationConsigne" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererListeColisAvecConsignePourSiteResponse">
+    <wsdl:part element="tns:recupererListeColisAvecConsignePourSiteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recupererColisADestockerNumberResponse">
+    <wsdl:part element="tns:recupererColisADestockerNumberResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ConsigneServiceWS">
+    <wsdl:operation name="recupererListColisDelocs">
+      <wsdl:input message="tns:recupererListColisDelocs" name="recupererListColisDelocs">
+    </wsdl:input>
+      <wsdl:output message="tns:recupererListColisDelocsResponse" name="recupererListColisDelocsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMenusAutorisesAvecCodePostal">
+      <wsdl:input message="tns:getMenusAutorisesAvecCodePostal" name="getMenusAutorisesAvecCodePostal">
+    </wsdl:input>
+      <wsdl:output message="tns:getMenusAutorisesAvecCodePostalResponse" name="getMenusAutorisesAvecCodePostalResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatesRetrait">
+      <wsdl:input message="tns:getDatesRetrait" name="getDatesRetrait">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatesRetraitResponse" name="getDatesRetraitResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clotureConsigneSuiteADistri">
+      <wsdl:input message="tns:clotureConsigneSuiteADistri" name="clotureConsigneSuiteADistri">
+    </wsdl:input>
+      <wsdl:output message="tns:clotureConsigneSuiteADistriResponse" name="clotureConsigneSuiteADistriResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererListeColisADestocker">
+      <wsdl:input message="tns:recupererListeColisADestocker" name="recupererListeColisADestocker">
+    </wsdl:input>
+      <wsdl:output message="tns:recupererListeColisADestockerResponse" name="recupererListeColisADestockerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creationConsigne">
+      <wsdl:input message="tns:creationConsigne" name="creationConsigne">
+    </wsdl:input>
+      <wsdl:output message="tns:creationConsigneResponse" name="creationConsigneResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechercherZCA">
+      <wsdl:input message="tns:rechercherZCA" name="rechercherZCA">
+    </wsdl:input>
+      <wsdl:output message="tns:rechercherZCAResponse" name="rechercherZCAResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMenusAutorises">
+      <wsdl:input message="tns:getMenusAutorises" name="getMenusAutorises">
+    </wsdl:input>
+      <wsdl:output message="tns:getMenusAutorisesResponse" name="getMenusAutorisesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getElementsAutorises">
+      <wsdl:input message="tns:getElementsAutorises" name="getElementsAutorises">
+    </wsdl:input>
+      <wsdl:output message="tns:getElementsAutorisesResponse" name="getElementsAutorisesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformationsColisConsigne">
+      <wsdl:input message="tns:getInformationsColisConsigne" name="getInformationsColisConsigne">
+    </wsdl:input>
+      <wsdl:output message="tns:getInformationsColisConsigneResponse" name="getInformationsColisConsigneResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="priseDeConsigneIsable">
+      <wsdl:input message="tns:priseDeConsigneIsable" name="priseDeConsigneIsable">
+    </wsdl:input>
+      <wsdl:output message="tns:priseDeConsigneIsableResponse" name="priseDeConsigneIsableResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="existeConsigne">
+      <wsdl:input message="tns:existeConsigne" name="existeConsigne">
+    </wsdl:input>
+      <wsdl:output message="tns:existeConsigneResponse" name="existeConsigneResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cacheReset">
+      <wsdl:input message="tns:cacheReset" name="cacheReset">
+    </wsdl:input>
+      <wsdl:output message="tns:cacheResetResponse" name="cacheResetResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificationZCA">
+      <wsdl:input message="tns:verificationZCA" name="verificationZCA">
+    </wsdl:input>
+      <wsdl:output message="tns:verificationZCAResponse" name="verificationZCAResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererColisADestockerNumber">
+      <wsdl:input message="tns:recupererColisADestockerNumber" name="recupererColisADestockerNumber">
+    </wsdl:input>
+      <wsdl:output message="tns:recupererColisADestockerNumberResponse" name="recupererColisADestockerNumberResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllInformationsColisConsigne">
+      <wsdl:input message="tns:getAllInformationsColisConsigne" name="getAllInformationsColisConsigne">
+    </wsdl:input>
+      <wsdl:output message="tns:getAllInformationsColisConsigneResponse" name="getAllInformationsColisConsigneResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="priseDeConsigneIsableAvecShortlink">
+      <wsdl:input message="tns:priseDeConsigneIsableAvecShortlink" name="priseDeConsigneIsableAvecShortlink">
+    </wsdl:input>
+      <wsdl:output message="tns:priseDeConsigneIsableAvecShortlinkResponse" name="priseDeConsigneIsableAvecShortlinkResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInstancesAutoriseesAvecCodePostal">
+      <wsdl:input message="tns:getInstancesAutoriseesAvecCodePostal" name="getInstancesAutoriseesAvecCodePostal">
+    </wsdl:input>
+      <wsdl:output message="tns:getInstancesAutoriseesAvecCodePostalResponse" name="getInstancesAutoriseesAvecCodePostalResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getColisParams">
+      <wsdl:input message="tns:getColisParams" name="getColisParams">
+    </wsdl:input>
+      <wsdl:output message="tns:getColisParamsResponse" name="getColisParamsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getElement">
+      <wsdl:input message="tns:getElement" name="getElement">
+    </wsdl:input>
+      <wsdl:output message="tns:getElementResponse" name="getElementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInstancesAutorisees">
+      <wsdl:input message="tns:getInstancesAutorisees" name="getInstancesAutorisees">
+    </wsdl:input>
+      <wsdl:output message="tns:getInstancesAutoriseesResponse" name="getInstancesAutoriseesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculerCreneauxRDV">
+      <wsdl:input message="tns:calculerCreneauxRDV" name="calculerCreneauxRDV">
+    </wsdl:input>
+      <wsdl:output message="tns:calculerCreneauxRDVResponse" name="calculerCreneauxRDVResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificationConsigne">
+      <wsdl:input message="tns:modificationConsigne" name="modificationConsigne">
+    </wsdl:input>
+      <wsdl:output message="tns:modificationConsigneResponse" name="modificationConsigneResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creationConsigneTAC">
+      <wsdl:input message="tns:creationConsigneTAC" name="creationConsigneTAC">
+    </wsdl:input>
+      <wsdl:output message="tns:creationConsigneTACResponse" name="creationConsigneTACResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testCreationCL">
+      <wsdl:input message="tns:testCreationCL" name="testCreationCL">
+    </wsdl:input>
+      <wsdl:output message="tns:testCreationCLResponse" name="testCreationCLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="priseDeConsigneIsableAvecProcess">
+      <wsdl:input message="tns:priseDeConsigneIsableAvecProcess" name="priseDeConsigneIsableAvecProcess">
+    </wsdl:input>
+      <wsdl:output message="tns:priseDeConsigneIsableAvecProcessResponse" name="priseDeConsigneIsableAvecProcessResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererListeColisAvecConsigneAvecTypePourSite">
+      <wsdl:input message="tns:recupererListeColisAvecConsigneAvecTypePourSite" name="recupererListeColisAvecConsigneAvecTypePourSite">
+    </wsdl:input>
+      <wsdl:output message="tns:recupererListeColisAvecConsigneAvecTypePourSiteResponse" name="recupererListeColisAvecConsigneAvecTypePourSiteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculerDelaiInstance">
+      <wsdl:input message="tns:calculerDelaiInstance" name="calculerDelaiInstance">
+    </wsdl:input>
+      <wsdl:output message="tns:calculerDelaiInstanceResponse" name="calculerDelaiInstanceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTexteConsigne">
+      <wsdl:input message="tns:getTexteConsigne" name="getTexteConsigne">
+    </wsdl:input>
+      <wsdl:output message="tns:getTexteConsigneResponse" name="getTexteConsigneResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatesLivraison">
+      <wsdl:input message="tns:getDatesLivraison" name="getDatesLivraison">
+    </wsdl:input>
+      <wsdl:output message="tns:getDatesLivraisonResponse" name="getDatesLivraisonResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererListeColisAvecInfosPourSite">
+      <wsdl:input message="tns:recupererListeColisAvecInfosPourSite" name="recupererListeColisAvecInfosPourSite">
+    </wsdl:input>
+      <wsdl:output message="tns:recupererListeColisAvecInfosPourSiteResponse" name="recupererListeColisAvecInfosPourSiteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechercherAgence">
+      <wsdl:input message="tns:rechercherAgence" name="rechercherAgence">
+    </wsdl:input>
+      <wsdl:output message="tns:rechercherAgenceResponse" name="rechercherAgenceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformationsColisConsigneById">
+      <wsdl:input message="tns:getInformationsColisConsigneById" name="getInformationsColisConsigneById">
+    </wsdl:input>
+      <wsdl:output message="tns:getInformationsColisConsigneByIdResponse" name="getInformationsColisConsigneByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatutColis">
+      <wsdl:input message="tns:getStatutColis" name="getStatutColis">
+    </wsdl:input>
+      <wsdl:output message="tns:getStatutColisResponse" name="getStatutColisResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getColisRdvParams">
+      <wsdl:input message="tns:getColisRdvParams" name="getColisRdvParams">
+    </wsdl:input>
+      <wsdl:output message="tns:getColisRdvParamsResponse" name="getColisRdvParamsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="annulationConsigne">
+      <wsdl:input message="tns:annulationConsigne" name="annulationConsigne">
+    </wsdl:input>
+      <wsdl:output message="tns:annulationConsigneResponse" name="annulationConsigneResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testAppelGrc">
+      <wsdl:input message="tns:testAppelGrc" name="testAppelGrc">
+    </wsdl:input>
+      <wsdl:output message="tns:testAppelGrcResponse" name="testAppelGrcResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllInformationsColisConsigneById">
+      <wsdl:input message="tns:getAllInformationsColisConsigneById" name="getAllInformationsColisConsigneById">
+    </wsdl:input>
+      <wsdl:output message="tns:getAllInformationsColisConsigneByIdResponse" name="getAllInformationsColisConsigneByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculAvisage">
+      <wsdl:input message="tns:calculAvisage" name="calculAvisage">
+    </wsdl:input>
+      <wsdl:output message="tns:calculAvisageResponse" name="calculAvisageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inscriptionMAS">
+      <wsdl:input message="tns:inscriptionMAS" name="inscriptionMAS">
+    </wsdl:input>
+      <wsdl:output message="tns:inscriptionMASResponse" name="inscriptionMASResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechercherLibelleDivers">
+      <wsdl:input message="tns:rechercherLibelleDivers" name="rechercherLibelleDivers">
+    </wsdl:input>
+      <wsdl:output message="tns:rechercherLibelleDiversResponse" name="rechercherLibelleDiversResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererListeColisAvecInfosPourSiteNumber">
+      <wsdl:input message="tns:recupererListeColisAvecInfosPourSiteNumber" name="recupererListeColisAvecInfosPourSiteNumber">
+    </wsdl:input>
+      <wsdl:output message="tns:recupererListeColisAvecInfosPourSiteNumberResponse" name="recupererListeColisAvecInfosPourSiteNumberResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererListeColisAvecConsignePourSite">
+      <wsdl:input message="tns:recupererListeColisAvecConsignePourSite" name="recupererListeColisAvecConsignePourSite">
+    </wsdl:input>
+      <wsdl:output message="tns:recupererListeColisAvecConsignePourSiteResponse" name="recupererListeColisAvecConsignePourSiteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsigneServiceWSServiceSoapBinding" type="tns:ConsigneServiceWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getDatesRetrait">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDatesRetrait">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDatesRetraitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMenusAutorisesAvecCodePostal">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getMenusAutorisesAvecCodePostal">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMenusAutorisesAvecCodePostalResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererListColisDelocs">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="recupererListColisDelocs">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="recupererListColisDelocsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clotureConsigneSuiteADistri">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="clotureConsigneSuiteADistri">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clotureConsigneSuiteADistriResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererListeColisADestocker">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="recupererListeColisADestocker">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="recupererListeColisADestockerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creationConsigne">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="creationConsigne">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="creationConsigneResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getElementsAutorises">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getElementsAutorises">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getElementsAutorisesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMenusAutorises">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getMenusAutorises">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMenusAutorisesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechercherZCA">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="rechercherZCA">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rechercherZCAResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformationsColisConsigne">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInformationsColisConsigne">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInformationsColisConsigneResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="existeConsigne">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="existeConsigne">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="existeConsigneResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="priseDeConsigneIsable">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="priseDeConsigneIsable">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="priseDeConsigneIsableResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cacheReset">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cacheReset">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cacheResetResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificationZCA">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="verificationZCA">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verificationZCAResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllInformationsColisConsigne">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllInformationsColisConsigne">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllInformationsColisConsigneResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererColisADestockerNumber">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="recupererColisADestockerNumber">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="recupererColisADestockerNumberResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getColisParams">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getColisParams">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getColisParamsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInstancesAutoriseesAvecCodePostal">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInstancesAutoriseesAvecCodePostal">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInstancesAutoriseesAvecCodePostalResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="priseDeConsigneIsableAvecShortlink">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="priseDeConsigneIsableAvecShortlink">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="priseDeConsigneIsableAvecShortlinkResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInstancesAutorisees">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInstancesAutorisees">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInstancesAutoriseesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getElement">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getElement">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getElementResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculerCreneauxRDV">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="calculerCreneauxRDV">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="calculerCreneauxRDVResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificationConsigne">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="modificationConsigne">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modificationConsigneResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creationConsigneTAC">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="creationConsigneTAC">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="creationConsigneTACResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testCreationCL">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="testCreationCL">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="testCreationCLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="priseDeConsigneIsableAvecProcess">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="priseDeConsigneIsableAvecProcess">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="priseDeConsigneIsableAvecProcessResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculerDelaiInstance">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="calculerDelaiInstance">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="calculerDelaiInstanceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererListeColisAvecConsigneAvecTypePourSite">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="recupererListeColisAvecConsigneAvecTypePourSite">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="recupererListeColisAvecConsigneAvecTypePourSiteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatesLivraison">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDatesLivraison">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDatesLivraisonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTexteConsigne">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTexteConsigne">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTexteConsigneResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechercherAgence">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="rechercherAgence">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rechercherAgenceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererListeColisAvecInfosPourSite">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="recupererListeColisAvecInfosPourSite">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="recupererListeColisAvecInfosPourSiteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformationsColisConsigneById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getInformationsColisConsigneById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getInformationsColisConsigneByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="annulationConsigne">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="annulationConsigne">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="annulationConsigneResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getColisRdvParams">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getColisRdvParams">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getColisRdvParamsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatutColis">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getStatutColis">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getStatutColisResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculAvisage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="calculAvisage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="calculAvisageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllInformationsColisConsigneById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllInformationsColisConsigneById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllInformationsColisConsigneByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testAppelGrc">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="testAppelGrc">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="testAppelGrcResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inscriptionMAS">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="inscriptionMAS">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="inscriptionMASResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechercherLibelleDivers">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="rechercherLibelleDivers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rechercherLibelleDiversResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererListeColisAvecConsignePourSite">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="recupererListeColisAvecConsignePourSite">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="recupererListeColisAvecConsignePourSiteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recupererListeColisAvecInfosPourSiteNumber">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="recupererListeColisAvecInfosPourSiteNumber">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="recupererListeColisAvecInfosPourSiteNumberResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsigneServiceWSService">
+    <wsdl:port binding="tns:ConsigneServiceWSServiceSoapBinding" name="ConsigneServiceWSPort">
+      <soap:address location="http://lyn3e250.tlt:58911/consigne-ws-cxf/ConsigneServiceWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

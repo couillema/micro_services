@@ -1,0 +1,16 @@
+
+#
+# .svcjavarc
+# environnement for weblogic admin/managed servers
+# HTE 18/10/05: création
+#
+
+export SVC_HOME=$CONF_HOME/../
+
+#java home
+export JAVA_HOME=$J2SE_HOME/j2sdk1.7
+
+#
+# EOF
+#
+

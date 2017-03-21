@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cxf="http://cxf.sgesws.chronopost.fr/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cxf:genererEvenementICNTResponse>
+         <!--Optional:-->
+         <return>
+            <errorCode>404</errorCode>
+            <!--Optional:-->
+            <errorMessage>Erreur renvoyée dans le XML du webservice SGES pour des raisons de test</errorMessage>
+         </return>
+      </cxf:genererEvenementICNTResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

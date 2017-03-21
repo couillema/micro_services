@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="SGESServiceWSService" targetNamespace="http://cxf.sgesws.chronopost.fr/" xmlns:ns1="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://cxf.sgesws.chronopost.fr/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://cxf.sgesws.chronopost.fr/" xmlns="http://cxf.sgesws.chronopost.fr/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:complexType name="resultWS">
+<xs:sequence>
+<xs:element name="errorCode" type="xs:int" />
+<xs:element minOccurs="0" name="errorMessage" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:element name="genererEvenementICNT" type="genererEvenementICNT" />
+<xs:complexType name="genererEvenementICNT">
+<xs:sequence>
+<xs:element minOccurs="0" name="typeClient" type="xs:string" />
+<xs:element minOccurs="0" name="codeSiteClient" type="xs:string" />
+<xs:element minOccurs="0" name="idPosteClient" type="xs:string" />
+<xs:element minOccurs="0" name="operateur" type="xs:string" />
+<xs:element minOccurs="0" name="numeroObjet" type="xs:string" />
+<xs:element minOccurs="0" name="nouveauNumeroObjet" type="xs:string" />
+<xs:element minOccurs="0" name="tournee" type="xs:string" />
+<xs:element minOccurs="0" name="typeEvenement" type="xs:string" />
+<xs:element minOccurs="0" name="statusCode" type="xs:string" />
+<xs:element minOccurs="0" name="dateEvenement" type="xs:string" />
+<xs:element minOccurs="0" name="heureEvenement" type="xs:string" />
+<xs:element minOccurs="0" name="ic1Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic1Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic2Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic2Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic3Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic3Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic4Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic4Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic5Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic5Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic6Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic6Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic7Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic7Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic8Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic8Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic9Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic9Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic10Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic10Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic11Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic11Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic12Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic12Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic13Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic13Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic14Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic14Value" type="xs:string" />
+<xs:element minOccurs="0" name="ic15Code" type="xs:string" />
+<xs:element minOccurs="0" name="ic15Value" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:element name="genererEvenementICNTResponse" type="genererEvenementICNTResponse" />
+<xs:complexType name="genererEvenementICNTResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="resultWS" />
+</xs:sequence>
+</xs:complexType>
+<xs:element name="genererEvenement" type="genererEvenement" />
+<xs:complexType name="genererEvenement">
+<xs:sequence>
+<xs:element minOccurs="0" name="typeClient" type="xs:string" />
+<xs:element minOccurs="0" name="codeSiteClient" type="xs:string" />
+<xs:element minOccurs="0" name="idPosteClient" type="xs:string" />
+<xs:element minOccurs="0" name="operateur" type="xs:string" />
+<xs:element minOccurs="0" name="numeroObjet" type="xs:string" />
+<xs:element minOccurs="0" name="nouveauNumeroObjet" type="xs:string" />
+<xs:element minOccurs="0" name="tournee" type="xs:string" />
+<xs:element minOccurs="0" name="typeEvenement" type="xs:string" />
+<xs:element minOccurs="0" name="statusCode" type="xs:string" />
+<xs:element minOccurs="0" name="dateEvenement" type="xs:dateTime" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="listeInfosComp" />
+</xs:sequence>
+</xs:complexType>
+<xs:element name="genererEvenementResponse" type="genererEvenementResponse" />
+<xs:complexType name="genererEvenementResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="resultWS" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="genererEvenementResponse">
+    <wsdl:part element="tns:genererEvenementResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="genererEvenementICNT">
+    <wsdl:part element="tns:genererEvenementICNT" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="genererEvenement">
+    <wsdl:part element="tns:genererEvenement" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="genererEvenementICNTResponse">
+    <wsdl:part element="tns:genererEvenementICNTResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SGESServiceWS">
+    <wsdl:operation name="genererEvenementICNT">
+      <wsdl:input message="tns:genererEvenementICNT" name="genererEvenementICNT">
+    </wsdl:input>
+      <wsdl:output message="tns:genererEvenementICNTResponse" name="genererEvenementICNTResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genererEvenement">
+      <wsdl:input message="tns:genererEvenement" name="genererEvenement">
+    </wsdl:input>
+      <wsdl:output message="tns:genererEvenementResponse" name="genererEvenementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SGESServiceWSServiceSoapBinding" type="tns:SGESServiceWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="genererEvenementICNT">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="genererEvenementICNT">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="genererEvenementICNTResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genererEvenement">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="genererEvenement">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="genererEvenementResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SGESServiceWSService">
+    <wsdl:port binding="tns:SGESServiceWSServiceSoapBinding" name="SGESServiceWSPort">
+      <soap:address location="http://lyn3e37.tlt:58811/sgesws/sgesWS" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestUpdSPecifColis">
+	<test name="init">
+		<classes>
+			<class name="com.chronopost.vision.microservices.BuildCluster" />
+		</classes>
+	</test>
+	<test name="fullPackage">
+		<classes>
+			<class
+				name="com.chronopost.vision.microservices.tournee.getsynthesetournees.v1.SyntheseTourneeDaoTest" />
+			<class
+				name="com.chronopost.vision.microservices.tournee.getsynthesetournees.v1.MapperTest" />
+			<class
+				name="com.chronopost.vision.microservices.tournee.getsynthesetournees.v1.SyntheseTourneeServiceActiviteTest" />
+			<class
+				name="com.chronopost.vision.microservices.tournee.getsynthesetournees.v1.SyntheseTourneeServiceQuantiteTest" />
+			<class
+				name="com.chronopost.vision.microservices.tournee.getsynthesetournees.v1.SyntheseTourneeServiceActiviteEtQuantiteTest" />
+			<class
+				name="com.chronopost.vision.microservices.tournee.getsynthesetournees.v1.SyntheseTourneeResourceTest" />
+		</classes>
+	</test>
+
+</suite>

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://cxf.calculretard.soap.chronopost.fr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="CalculRetardServiceWS" targetNamespace="http://cxf.calculretard.soap.chronopost.fr/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://cxf.calculretard.soap.chronopost.fr/" elementFormDefault="unqualified" targetNamespace="http://cxf.calculretard.soap.chronopost.fr/" version="1.0">
+
+  <xs:element name="calculerRetardPourNumeroLt" type="tns:calculerRetardPourNumeroLt" />
+
+  <xs:element name="calculerRetardPourNumeroLtResponse" type="tns:calculerRetardPourNumeroLtResponse" />
+
+  <xs:complexType name="calculerRetardPourNumeroLt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numeroLt" type="xs:string" />
+      <xs:element minOccurs="0" name="debug" type="xs:string" />
+      <xs:element minOccurs="0" name="version" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="calculerRetardPourNumeroLtResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:resultCalculerRetardPourNumeroLt" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resultCalculerRetardPourNumeroLt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="analyse" type="tns:analyse" />
+      <xs:element minOccurs="0" name="calculDateDeLivraisonEstimee" type="tns:calculDateDeLivraisonEstimee" />
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="calculDateDeLivraisonEstimeeDebug" nillable="true" type="tns:calculDateDeLivraisonEstimee" />
+      <xs:element name="resultCode" type="xs:int" />
+      <xs:element minOccurs="0" name="resultRetard" type="tns:resultRetard" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="analyse">
+    <xs:sequence>
+      <xs:element name="enRetardDateEstimeeDepassee" type="xs:int" />
+      <xs:element name="enRetardDateEstimeeSupDateContractuelle" type="xs:int" />
+      <xs:element name="enRetardDateHeureEstimeeDepassee" type="xs:int" />
+      <xs:element name="enRetardDateHeureEstimeeSupDateHeureContractuelle" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="calculDateDeLivraisonEstimee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codeEtape" type="xs:string" />
+      <xs:element minOccurs="0" name="codeRaisonDeNonCalculDateDeLivraisonEstimee" type="xs:string" />
+      <xs:element minOccurs="0" name="dateDeLivraisonEstimee" type="xs:string" />
+      <xs:element name="dateDeLivraisonEstimeeCalculee" type="xs:boolean" />
+      <xs:element minOccurs="0" name="dernierEvenement" type="xs:string" />
+      <xs:element minOccurs="0" name="evenementPourCalculDateDeLivraisonEstimee" type="xs:string" />
+      <xs:element minOccurs="0" name="heureMaxDeLivraisonEstimee" type="xs:string" />
+      <xs:element minOccurs="0" name="heureMinDeLivraisonEstimee" type="xs:string" />
+      <xs:element minOccurs="0" name="informations" type="xs:string" />
+      <xs:element minOccurs="0" name="ligneParametragePourCalculDateDeLivraisonEstimee" type="xs:string" />
+      <xs:element minOccurs="0" name="raisonDeNonCalculDateDeLivraisonEstimee" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resultRetard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codeProduit" type="xs:string" />
+      <xs:element minOccurs="0" name="dateDeDepot" type="xs:string" />
+      <xs:element name="dateDeDepotDeterminee" type="xs:boolean" />
+      <xs:element minOccurs="0" name="dateDeDistribution" type="xs:string" />
+      <xs:element name="dateDeDistributionDeterminee" type="xs:boolean" />
+      <xs:element minOccurs="0" name="dateDeLivraisonPrevue" type="xs:string" />
+      <xs:element name="dateDeLivraisonPrevueCalculee" type="xs:boolean" />
+      <xs:element name="enRetard" type="xs:boolean" />
+      <xs:element name="fenetreHoraireDisponible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="heureMax" type="xs:string" />
+      <xs:element minOccurs="0" name="heureMin" type="xs:string" />
+      <xs:element minOccurs="0" name="infosSupplementairesSurRaisonDeNonCalcul" type="xs:string" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+      <xs:element minOccurs="0" name="perimetreLi" type="xs:string" />
+      <xs:element name="produitDetermine" type="xs:boolean" />
+      <xs:element minOccurs="0" name="raisonDeNonCalcul" type="tns:raisonDeNonCalcul" />
+      <xs:element name="retardCalcule" type="xs:boolean" />
+      <xs:element name="supplementSamedi" type="xs:boolean" />
+      <xs:element minOccurs="0" name="typeMas" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType final="extension restriction" name="raisonDeNonCalcul">
+    <xs:sequence />
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="calculerRetardPourNumeroLtResponse">
+    <wsdl:part element="tns:calculerRetardPourNumeroLtResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculerRetardPourNumeroLt">
+    <wsdl:part element="tns:calculerRetardPourNumeroLt" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CalculRetardWS">
+    <wsdl:operation name="calculerRetardPourNumeroLt">
+      <wsdl:input message="tns:calculerRetardPourNumeroLt" name="calculerRetardPourNumeroLt">
+    </wsdl:input>
+      <wsdl:output message="tns:calculerRetardPourNumeroLtResponse" name="calculerRetardPourNumeroLtResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculRetardServiceWSSoapBinding" type="tns:CalculRetardWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="calculerRetardPourNumeroLt">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="calculerRetardPourNumeroLt">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="calculerRetardPourNumeroLtResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculRetardServiceWS">
+    <wsdl:port binding="tns:CalculRetardServiceWSSoapBinding" name="CalculRetardWSPort">
+      <soap:address location="http://10.37.92.170/calculretard-cxf/CalculRetardServiceWS" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

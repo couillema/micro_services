@@ -1,0 +1,22 @@
+{
+	"contrat-vision" : {
+	    "der_msg": true,
+	    "liste-contrats": [
+	      {
+	        "caracteristiques": "Attractif",
+	        "no_contrat": 58352601
+	      },
+	      {
+	        "caracteristiques": "Attractif",
+	        "no_contrat": 52539901
+	      },
+	      {
+	        "caracteristiques": "Sensible",
+	        "no_contrat": 45584101
+	      }
+	    ],
+	    "nb_contrats": 3,
+	    "version": 1488204278609,
+	    "xmlns": "http://www.tibco.com/schemas/DiffusionAttractifs_bw/Echanges/DiffusionAttractifs/FROM_TERADA/0_Ressources/InputsFormats/Schema.xsd"
+	}
+}

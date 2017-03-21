@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cxf="http://cxf.sgesws.chronopost.fr/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cxf:genererEvenementICNTResponse>
+         <return>
+            <errorCode>0</errorCode>
+         </return>
+      </cxf:genererEvenementICNTResponse>
+   </soapenv:Body>
+</soapenv:Envelope>>

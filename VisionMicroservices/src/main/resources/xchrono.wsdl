@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xchrono.ws.chronopost.ptvgroup.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="XChronoWSService" targetNamespace="http://xchrono.ws.chronopost.ptvgroup.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xchrono.ws.chronopost.ptvgroup.com/" xmlns:ns2="http://result.service.xchrono.ws.chronopost.ptvgroup.com/" xmlns:ns1="http://data.service.xchrono.ws.chronopost.ptvgroup.com/" elementFormDefault="unqualified" targetNamespace="http://xchrono.ws.chronopost.ptvgroup.com/" version="1.0">
+<xs:import namespace="http://data.service.xchrono.ws.chronopost.ptvgroup.com/"/>
+<xs:import namespace="http://result.service.xchrono.ws.chronopost.ptvgroup.com/"/>
+<xs:element name="etatModule" type="tns:etatModule"/>
+<xs:element name="etatModuleResponse" type="tns:etatModuleResponse"/>
+<xs:element name="optimisation" type="tns:optimisation"/>
+<xs:element name="optimisationResponse" type="tns:optimisationResponse"/>
+<xs:element name="statistique" type="tns:statistique"/>
+<xs:element name="statistiqueResponse" type="tns:statistiqueResponse"/>
+<xs:complexType name="optimisation">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns1:tournee"/>
+      <xs:element minOccurs="0" ref="ns1:heureDepart"/>
+      <xs:element minOccurs="0" ref="ns1:pause"/>
+      <xs:element minOccurs="0" ref="ns1:listePoints"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="optimisationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:optimisation"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="statistique">
+    <xs:sequence>
+      <xs:element form="qualified" name="reinitialiser" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="statistiqueResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:statistique"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="etatModule">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="etatModuleResponse">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="etatModule" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://result.service.xchrono.ws.chronopost.ptvgroup.com/" xmlns:ns1="http://data.service.xchrono.ws.chronopost.ptvgroup.com/" targetNamespace="http://result.service.xchrono.ws.chronopost.ptvgroup.com/" version="1.0">
+<xs:import namespace="http://data.service.xchrono.ws.chronopost.ptvgroup.com/"/>
+<xs:element name="optimisation" type="tns:OptimizationResult"/>
+<xs:element name="statistique" type="tns:Statistics"/>
+<xs:complexType name="OptimizationResult">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="tournee" type="tns:TourResult"/>
+      <xs:element form="qualified" minOccurs="0" name="parcoursBrut" type="tns:RouteResult"/>
+      <xs:element form="qualified" minOccurs="0" name="parcoursOptim" type="tns:RouteResult"/>
+      <xs:element form="qualified" minOccurs="0" name="listePoints" type="tns:ArrayOfPointResult"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="TourResult">
+    <xs:complexContent>
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence/>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="BaseResult">
+    <xs:sequence/>
+    <xs:attribute name="codeErreur" type="xs:int" use="required"/>
+    <xs:attribute name="descriptionErreur" type="xs:string"/>
+  </xs:complexType>
+<xs:complexType name="RouteResult">
+    <xs:sequence>
+      <xs:element form="qualified" name="heureDepart" type="xs:string"/>
+      <xs:element form="qualified" name="heureArrivee" type="xs:string"/>
+      <xs:element form="qualified" name="distance" type="tns:IntValue"/>
+      <xs:element form="qualified" name="peage" type="tns:IntValue"/>
+      <xs:element form="qualified" name="TPL" type="tns:IntValue"/>
+      <xs:element form="qualified" name="trace" type="tns:WkbGeometry"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="IntValue">
+    <xs:sequence/>
+    <xs:attribute name="value" type="xs:int" use="required"/>
+  </xs:complexType>
+<xs:complexType name="WkbGeometry">
+    <xs:sequence/>
+    <xs:attribute name="wkb" type="xs:string" use="required"/>
+  </xs:complexType>
+<xs:complexType name="ArrayOfPointResult">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="point" type="tns:PointResult"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="PointResult">
+    <xs:complexContent>
+      <xs:extension base="ns1:IdentifiedType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="adresse" type="tns:GeocodedAddress"/>
+          <xs:element form="qualified" name="tempsArret" type="ns1:TimeSpan"/>
+          <xs:element form="qualified" minOccurs="0" name="parcoursBrutInfo" type="tns:PointRouteInfoResult"/>
+          <xs:element form="qualified" minOccurs="0" name="parcoursOptimInfo" type="tns:PointRouteInfoResult"/>
+        </xs:sequence>
+        <xs:attribute name="pointDepart" type="xs:boolean" use="required"/>
+        <xs:attribute name="pointArrivee" type="xs:boolean" use="required"/>
+        <xs:attribute name="geocodage" type="tns:GeocodingResult" use="required"/>
+        <xs:attribute name="long" type="xs:double" use="required"/>
+        <xs:attribute name="lat" type="xs:double" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="GeocodedAddress">
+    <xs:sequence/>
+    <xs:attribute name="rue" type="xs:string"/>
+    <xs:attribute name="commune" type="xs:string"/>
+    <xs:attribute name="codePostal" type="xs:string"/>
+    <xs:attribute name="pays" type="xs:string"/>
+  </xs:complexType>
+<xs:complexType name="PointRouteInfoResult">
+    <xs:sequence/>
+    <xs:attribute name="ETA" type="xs:string" use="required"/>
+    <xs:attribute name="distance" type="xs:int" use="required"/>
+    <xs:attribute name="rang" type="xs:int"/>
+    <xs:attribute name="hd" type="xs:boolean" use="required"/>
+  </xs:complexType>
+<xs:complexType name="Statistics">
+    <xs:complexContent>
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="globale" type="tns:GlobalStatistics"/>
+          <xs:element form="qualified" minOccurs="0" name="eta" type="tns:OptimizationDetailedStatistics"/>
+          <xs:element form="qualified" minOccurs="0" name="etaSansGeocodage" type="tns:OptimizationDetailedStatistics"/>
+          <xs:element form="qualified" minOccurs="0" name="ordonnancement" type="tns:OptimizationDetailedStatistics"/>
+          <xs:element form="qualified" minOccurs="0" name="ordonnancementSansGeocodage" type="tns:OptimizationDetailedStatistics"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="GlobalStatistics">
+    <xs:sequence/>
+    <xs:attribute name="dernierDemarrage" type="xs:dateTime" use="required"/>
+    <xs:attribute name="nbTourSucces" type="xs:int" use="required"/>
+    <xs:attribute name="nbTourErreur" type="xs:int" use="required"/>
+    <xs:attribute name="tempsTotalCalcul" type="xs:int" use="required"/>
+  </xs:complexType>
+<xs:complexType name="OptimizationDetailedStatistics">
+    <xs:sequence/>
+    <xs:attribute name="nbSucces" type="xs:int" use="required"/>
+    <xs:attribute name="tempsMinCalcul" type="xs:int" use="required"/>
+    <xs:attribute name="tempsMaxCalcul" type="xs:int" use="required"/>
+    <xs:attribute name="tempsTotalCalcul" type="xs:int" use="required"/>
+  </xs:complexType>
+<xs:simpleType name="GeocodingResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="OPTIM"/>
+      <xs:enumeration value="CHR"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://data.service.xchrono.ws.chronopost.ptvgroup.com/" targetNamespace="http://data.service.xchrono.ws.chronopost.ptvgroup.com/" version="1.0">
+<xs:element name="heureDepart" type="tns:Time"/>
+<xs:element name="listePoints" type="tns:ArrayOfPoint"/>
+<xs:element name="pause" type="tns:TimeSlot"/>
+<xs:element name="tournee" type="tns:TourParams"/>
+<xs:complexType name="TourParams">
+    <xs:sequence/>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="ETAbrut" type="xs:boolean" use="required"/>
+    <xs:attribute name="ETAoptim" type="xs:boolean" use="required"/>
+    <xs:attribute name="xRouteOptim" type="xs:boolean" use="required"/>
+    <xs:attribute name="ponderationDeplacement" type="xs:double" use="required"/>
+    <xs:attribute name="profil" type="xs:string" use="required"/>
+    <xs:attribute name="peages" type="xs:boolean" use="required"/>
+    <xs:attribute name="trafic" type="xs:boolean"/>
+  </xs:complexType>
+<xs:complexType name="Time">
+    <xs:sequence/>
+    <xs:attribute name="time" type="xs:string" use="required"/>
+  </xs:complexType>
+<xs:complexType name="TimeSlot">
+    <xs:sequence/>
+    <xs:attribute name="debut" type="xs:string" use="required"/>
+    <xs:attribute name="fin" type="xs:string" use="required"/>
+  </xs:complexType>
+<xs:complexType name="ArrayOfPoint">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="point" type="tns:Point"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="Point">
+    <xs:complexContent>
+      <xs:extension base="tns:IdentifiedType">
+        <xs:sequence>
+          <xs:element form="qualified" name="adresse" type="tns:Address"/>
+          <xs:element form="qualified" minOccurs="0" name="preseance" type="tns:ArrayOfPrecedence"/>
+          <xs:element form="qualified" minOccurs="0" name="listeCreneaux" type="tns:ArrayOfDayTimeSlot"/>
+          <xs:element form="qualified" minOccurs="0" name="arret" type="tns:TimeSpan"/>
+          <xs:element form="qualified" minOccurs="0" name="priorite" type="tns:Priority"/>
+          <xs:element form="qualified" minOccurs="0" name="rdv" type="tns:TimeSlot"/>
+        </xs:sequence>
+        <xs:attribute name="pointDepart" type="xs:boolean" use="required"/>
+        <xs:attribute name="pointArrivee" type="xs:boolean" use="required"/>
+        <xs:attribute name="long" type="xs:double"/>
+        <xs:attribute name="lat" type="xs:double"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="IdentifiedType">
+    <xs:sequence/>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+  </xs:complexType>
+<xs:complexType name="Address">
+    <xs:sequence/>
+    <xs:attribute name="geocodage" type="xs:boolean"/>
+    <xs:attribute name="rue1" type="xs:string"/>
+    <xs:attribute name="rue2" type="xs:string"/>
+    <xs:attribute name="commune" type="xs:string"/>
+    <xs:attribute name="codePostal" type="xs:string"/>
+    <xs:attribute name="pays" type="xs:string"/>
+  </xs:complexType>
+<xs:complexType name="ArrayOfPrecedence">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="numPoint" type="tns:Precedence"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="Precedence">
+    <xs:complexContent>
+      <xs:extension base="tns:IdentifiedType">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="ArrayOfDayTimeSlot">
+    <xs:sequence>
+      <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="creneau" type="tns:DayTimeSlot"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="DayTimeSlot">
+    <xs:sequence/>
+    <xs:attribute name="priorite" type="xs:int" use="required"/>
+    <xs:attribute name="debutMatin" type="xs:string"/>
+    <xs:attribute name="finMatin" type="xs:string"/>
+    <xs:attribute name="debutAprem" type="xs:string"/>
+    <xs:attribute name="finAprem" type="xs:string"/>
+  </xs:complexType>
+<xs:complexType name="TimeSpan">
+    <xs:sequence/>
+    <xs:attribute name="time" type="xs:int" use="required"/>
+  </xs:complexType>
+<xs:complexType name="Priority">
+    <xs:sequence/>
+    <xs:attribute name="id" type="xs:int" use="required"/>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="optimisation">
+    <wsdl:part element="tns:optimisation" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="statistiqueResponse">
+    <wsdl:part element="tns:statistiqueResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="statistique">
+    <wsdl:part element="tns:statistique" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="etatModuleResponse">
+    <wsdl:part element="tns:etatModuleResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="optimisationResponse">
+    <wsdl:part element="tns:optimisationResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="etatModule">
+    <wsdl:part element="tns:etatModule" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="XChronoWS">
+    <wsdl:operation name="optimisation">
+      <wsdl:input message="tns:optimisation" name="optimisation">
+    </wsdl:input>
+      <wsdl:output message="tns:optimisationResponse" name="optimisationResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="statistique">
+      <wsdl:input message="tns:statistique" name="statistique">
+    </wsdl:input>
+      <wsdl:output message="tns:statistiqueResponse" name="statistiqueResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="etatModule">
+      <wsdl:input message="tns:etatModule" name="etatModule">
+    </wsdl:input>
+      <wsdl:output message="tns:etatModuleResponse" name="etatModuleResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="XChronoWSServiceSoapBinding" type="tns:XChronoWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="statistique">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="statistique">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="statistiqueResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="optimisation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="optimisation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="optimisationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="etatModule">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="etatModule">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="etatModuleResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="XChronoWSService">
+    <wsdl:port binding="tns:XChronoWSServiceSoapBinding" name="XChronoWSPort">
+      <soap:address location="http://wyn3e11.tlt:51090/chronopost-ws-xchrono/ws/XChrono"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

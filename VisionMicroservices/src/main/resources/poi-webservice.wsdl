@@ -1,0 +1,647 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="poiWebService" targetNamespace="http://impl.webservice.poi.chronopost.fr/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://impl.webservice.poi.chronopost.fr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://webservice.poi.chronopost.fr/">
+   <wsdl:import location="poiservice.wsdl" namespace="http://webservice.poi.chronopost.fr/"/>
+   <wsdl:binding name="poiWebServiceSoapBinding" type="ns1:PoiService">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="getAgenceByCodeSite">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getAgenceByCodeSite">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getAgenceByCodeSiteResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getTypesPoints">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getTypesPoints">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getTypesPointsResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getPointsByAgenceAndTournee">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getPointsByAgenceAndTournee">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getPointsByAgenceAndTourneeResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getVoieByCleCp">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getVoieByCleCp">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getVoieByCleCpResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="modifierPOI">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="modifierPOI">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="modifierPOIResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="updateAgenceTourneeListe">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="updateAgenceTourneeListe">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="updateAgenceTourneeListeResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getConfigByAgence">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getConfigByAgence">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getConfigByAgenceResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getListAgencesTournee">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getListAgencesTournee">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getListAgencesTourneeResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getCalendriersById">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getCalendriersById">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getCalendriersByIdResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="findDestinataireDetailByIdChrono">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="findDestinataireDetailByIdChrono">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="findDestinataireDetailByIdChronoResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="recherchePOIDetail">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="recherchePOIDetail">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="recherchePOIDetailResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getMotifsFermeture">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getMotifsFermeture">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getMotifsFermetureResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="annoncePOI">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="annoncePOI">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="annoncePOIResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getByCpVilleLibVoie">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getByCpVilleLibVoie">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getByCpVilleLibVoieResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="recherchePOIDetailList">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="recherchePOIDetailList">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="recherchePOIDetailListResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="afficherPoiDetails">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="afficherPoiDetails">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="afficherPoiDetailsResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getPoiById">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getPoiById">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getPoiByIdResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="findAdresseById">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="findAdresseById">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="findAdresseByIdResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getCommuneByCp">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getCommuneByCp">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getCommuneByCpResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="creerPOI">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="creerPOI">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="creerPOIResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAgenceByTrigramme">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getAgenceByTrigramme">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getAgenceByTrigrammeResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getListTourneesByAgence">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getListTourneesByAgence">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getListTourneesByAgenceResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getByDestinataire">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getByDestinataire">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getByDestinataireResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteByCodeTournee">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="deleteByCodeTournee">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="deleteByCodeTourneeResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="supprimerPointRelais">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="supprimerPointRelais">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="supprimerPointRelaisResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getVoiesByMatriculeHexavia">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getVoiesByMatriculeHexavia">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getVoiesByMatriculeHexaviaResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="updateCalendriers">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="updateCalendriers">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="updateCalendriersResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getCalendriersByDestinataire">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getCalendriersByDestinataire">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getCalendriersByDestinataireResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getDestinataireFromIdAdrAndRaisonSociale">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getDestinataireFromIdAdrAndRaisonSociale">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getDestinataireFromIdAdrAndRaisonSocialeResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="creerAliasPOI">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="creerAliasPOI">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="creerAliasPOIResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="updatePeriodesFermeture">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="updatePeriodesFermeture">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="updatePeriodesFermetureResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteAliasByIdPoiEtLibelle">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="deleteAliasByIdPoiEtLibelle">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="deleteAliasByIdPoiEtLibelleResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="importDestinatairePOI">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="importDestinatairePOI">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="importDestinatairePOIResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="isZCA">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="isZCA">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="isZCAResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="annoncePOIMulti">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="annoncePOIMulti">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="annoncePOIMultiResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getPointsRelaisEnRejet">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getPointsRelaisEnRejet">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getPointsRelaisEnRejetResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getStatistiqueTauxRemplissageEtAlias">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getStatistiqueTauxRemplissageEtAlias">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getStatistiqueTauxRemplissageEtAliasResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="seachDestinataireByIdAdresse">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="seachDestinataireByIdAdresse">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="seachDestinataireByIdAdresseResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAgences">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getAgences">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getAgencesResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="supprimerPOI">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="supprimerPOI">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="supprimerPOIResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="envoyerMail">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="envoyerMail">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="envoyerMailResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="Exception">
+            <soap:fault name="Exception" use="literal"/>
+         </wsdl:fault>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAgenceFromCP">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getAgenceFromCP">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getAgenceFromCPResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getTourneesByAgence">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getTourneesByAgence">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getTourneesByAgenceResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="updateNomRS">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="updateNomRS">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="updateNomRSResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="annoncePoiIhm">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="annoncePoiIhm">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="annoncePoiIhmResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getCpByCommune">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getCpByCommune">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getCpByCommuneResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getStatistiqueOrigineDonnees">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getStatistiqueOrigineDonnees">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getStatistiqueOrigineDonneesResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="rechercheExactePOI">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="rechercheExactePOI">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="rechercheExactePOIResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="recherchePOI">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="recherchePOI">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="recherchePOIResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="modifierPointRelais">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="modifierPointRelais">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="modifierPointRelaisResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getDestinataireFromIdAdr">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getDestinataireFromIdAdr">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getDestinataireFromIdAdrResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getListePointsRelaisByAgence">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="getListePointsRelaisByAgence">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getListePointsRelaisByAgenceResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="saveConfigTemplate">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input name="saveConfigTemplate">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="saveConfigTemplateResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ServiceException">
+            <soap:fault name="ServiceException" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="poiWebService">
+      <wsdl:port binding="tns:poiWebServiceSoapBinding" name="PoiServiceImplPort">
+         <soap:address location="http://lyn3e37.tlt:60551/poi-webservice/poi"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

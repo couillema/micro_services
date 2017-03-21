@@ -1,0 +1,596 @@
+{
+  "18067": {
+    "nbPtTA": 15,
+    "nbColisTA": 69,
+    "nbPtVisites": 52,
+    "nbPtTANonVisites": 87,
+    "nbColisHorsDateContractuelle": 6,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 15,
+    "nbColisSecurisesRetour": 93,
+    "nbColisSpecifiques": 56,
+    "nbPtAnomalie": 16,
+    "nbColisTraites": 25,
+    "nbAnomalieTracabilite": 87,
+    "nbColisMisADispoBureai": 31,
+    "nbHorsDelai": 60,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 31,
+    "nbColisHorsETA": 65,
+    "nbColisAvecConsigneNonRespectee": 7
+  },
+  "86365": {
+    "nbPtTA": 70,
+    "nbColisTA": 27,
+    "nbPtVisites": 32,
+    "nbPtTANonVisites": 58,
+    "nbColisHorsDateContractuelle": 67,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 47,
+    "nbColisSecurisesRetour": 23,
+    "nbColisSpecifiques": 54,
+    "nbPtAnomalie": 56,
+    "nbColisTraites": 48,
+    "nbAnomalieTracabilite": 84,
+    "nbColisMisADispoBureai": 98,
+    "nbHorsDelai": 1,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 26,
+    "nbColisHorsETA": 10,
+    "nbColisAvecConsigneNonRespectee": 16
+  },
+  "297146": {
+    "nbPtTA": 79,
+    "nbColisTA": 80,
+    "nbPtVisites": 94,
+    "nbPtTANonVisites": 82,
+    "nbColisHorsDateContractuelle": 99,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 13,
+    "nbColisSecurisesRetour": 27,
+    "nbColisSpecifiques": 49,
+    "nbPtAnomalie": 59,
+    "nbColisTraites": 23,
+    "nbAnomalieTracabilite": 64,
+    "nbColisMisADispoBureai": 92,
+    "nbHorsDelai": 96,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 23,
+    "nbColisHorsETA": 23,
+    "nbColisAvecConsigneNonRespectee": 1
+  },
+  "365258": {
+    "nbPtTA": 72,
+    "nbColisTA": 30,
+    "nbPtVisites": 97,
+    "nbPtTANonVisites": 29,
+    "nbColisHorsDateContractuelle": 20,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 26,
+    "nbColisSecurisesRetour": 26,
+    "nbColisSpecifiques": 98,
+    "nbPtAnomalie": 69,
+    "nbColisTraites": 9,
+    "nbAnomalieTracabilite": 15,
+    "nbColisMisADispoBureai": 68,
+    "nbHorsDelai": 92,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 57,
+    "nbColisHorsETA": 65,
+    "nbColisAvecConsigneNonRespectee": 29
+  },
+  "389326": {
+    "nbPtTA": 0,
+    "nbColisTA": 53,
+    "nbPtVisites": 59,
+    "nbPtTANonVisites": 96,
+    "nbColisHorsDateContractuelle": 13,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 49,
+    "nbColisSecurisesRetour": 23,
+    "nbColisSpecifiques": 64,
+    "nbPtAnomalie": 20,
+    "nbColisTraites": 58,
+    "nbAnomalieTracabilite": 47,
+    "nbColisMisADispoBureai": 29,
+    "nbHorsDelai": 95,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 59,
+    "nbColisHorsETA": 7,
+    "nbColisAvecConsigneNonRespectee": 48
+  },
+  "395215": {
+    "nbPtTA": 26,
+    "nbColisTA": 36,
+    "nbPtVisites": 81,
+    "nbPtTANonVisites": 61,
+    "nbColisHorsDateContractuelle": 17,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 97,
+    "nbColisSecurisesRetour": 36,
+    "nbColisSpecifiques": 88,
+    "nbPtAnomalie": 10,
+    "nbColisTraites": 11,
+    "nbAnomalieTracabilite": 70,
+    "nbColisMisADispoBureai": 40,
+    "nbHorsDelai": 17,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 5,
+    "nbColisHorsETA": 14,
+    "nbColisAvecConsigneNonRespectee": 92
+  },
+  "411359": {
+    "nbPtTA": 18,
+    "nbColisTA": 35,
+    "nbPtVisites": 50,
+    "nbPtTANonVisites": 74,
+    "nbColisHorsDateContractuelle": 49,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 91,
+    "nbColisSecurisesRetour": 83,
+    "nbColisSpecifiques": 48,
+    "nbPtAnomalie": 44,
+    "nbColisTraites": 51,
+    "nbAnomalieTracabilite": 50,
+    "nbColisMisADispoBureai": 14,
+    "nbHorsDelai": 89,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 67,
+    "nbColisHorsETA": 26,
+    "nbColisAvecConsigneNonRespectee": 11
+  },
+  "443004": {
+    "nbPtTA": 66,
+    "nbColisTA": 32,
+    "nbPtVisites": 55,
+    "nbPtTANonVisites": 88,
+    "nbColisHorsDateContractuelle": 7,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 91,
+    "nbColisSecurisesRetour": 48,
+    "nbColisSpecifiques": 6,
+    "nbPtAnomalie": 5,
+    "nbColisTraites": 73,
+    "nbAnomalieTracabilite": 63,
+    "nbColisMisADispoBureai": 87,
+    "nbHorsDelai": 95,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 62,
+    "nbColisHorsETA": 78,
+    "nbColisAvecConsigneNonRespectee": 3
+  },
+  "479709": {
+    "nbPtTA": 30,
+    "nbColisTA": 40,
+    "nbPtVisites": 98,
+    "nbPtTANonVisites": 74,
+    "nbColisHorsDateContractuelle": 15,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 7,
+    "nbColisSecurisesRetour": 74,
+    "nbColisSpecifiques": 46,
+    "nbPtAnomalie": 30,
+    "nbColisTraites": 23,
+    "nbAnomalieTracabilite": 71,
+    "nbColisMisADispoBureai": 68,
+    "nbHorsDelai": 5,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 8,
+    "nbColisHorsETA": 73,
+    "nbColisAvecConsigneNonRespectee": 94
+  },
+  "484299": {
+    "nbPtTA": 6,
+    "nbColisTA": 27,
+    "nbPtVisites": 29,
+    "nbPtTANonVisites": 76,
+    "nbColisHorsDateContractuelle": 90,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 72,
+    "nbColisSecurisesRetour": 57,
+    "nbColisSpecifiques": 38,
+    "nbPtAnomalie": 13,
+    "nbColisTraites": 95,
+    "nbAnomalieTracabilite": 88,
+    "nbColisMisADispoBureai": 85,
+    "nbHorsDelai": 55,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 74,
+    "nbColisHorsETA": 82,
+    "nbColisAvecConsigneNonRespectee": 63
+  },
+  "493823": {
+    "nbPtTA": 73,
+    "nbColisTA": 60,
+    "nbPtVisites": 52,
+    "nbPtTANonVisites": 57,
+    "nbColisHorsDateContractuelle": 24,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 15,
+    "nbColisSecurisesRetour": 1,
+    "nbColisSpecifiques": 48,
+    "nbPtAnomalie": 35,
+    "nbColisTraites": 58,
+    "nbAnomalieTracabilite": 59,
+    "nbColisMisADispoBureai": 5,
+    "nbHorsDelai": 62,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 91,
+    "nbColisHorsETA": 8,
+    "nbColisAvecConsigneNonRespectee": 49
+  },
+  "525844": {
+    "nbPtTA": 1,
+    "nbColisTA": 88,
+    "nbPtVisites": 1,
+    "nbPtTANonVisites": 41,
+    "nbColisHorsDateContractuelle": 54,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 43,
+    "nbColisSecurisesRetour": 54,
+    "nbColisSpecifiques": 37,
+    "nbPtAnomalie": 37,
+    "nbColisTraites": 74,
+    "nbAnomalieTracabilite": 82,
+    "nbColisMisADispoBureai": 84,
+    "nbHorsDelai": 8,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 28,
+    "nbColisHorsETA": 60,
+    "nbColisAvecConsigneNonRespectee": 46
+  },
+  "781216": {
+    "nbPtTA": 42,
+    "nbColisTA": 23,
+    "nbPtVisites": 71,
+    "nbPtTANonVisites": 89,
+    "nbColisHorsDateContractuelle": 7,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 92,
+    "nbColisSecurisesRetour": 13,
+    "nbColisSpecifiques": 92,
+    "nbPtAnomalie": 7,
+    "nbColisTraites": 60,
+    "nbAnomalieTracabilite": 17,
+    "nbColisMisADispoBureai": 3,
+    "nbHorsDelai": 50,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 6,
+    "nbColisHorsETA": 74,
+    "nbColisAvecConsigneNonRespectee": 61
+  },
+  "786195": {
+    "nbPtTA": 25,
+    "nbColisTA": 64,
+    "nbPtVisites": 46,
+    "nbPtTANonVisites": 34,
+    "nbColisHorsDateContractuelle": 89,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 48,
+    "nbColisSecurisesRetour": 8,
+    "nbColisSpecifiques": 28,
+    "nbPtAnomalie": 49,
+    "nbColisTraites": 3,
+    "nbAnomalieTracabilite": 45,
+    "nbColisMisADispoBureai": 2,
+    "nbHorsDelai": 18,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 40,
+    "nbColisHorsETA": 85,
+    "nbColisAvecConsigneNonRespectee": 75
+  },
+  "825043": {
+    "nbPtTA": 29,
+    "nbColisTA": 96,
+    "nbPtVisites": 9,
+    "nbPtTANonVisites": 19,
+    "nbColisHorsDateContractuelle": 68,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 16,
+    "nbColisSecurisesRetour": 61,
+    "nbColisSpecifiques": 74,
+    "nbPtAnomalie": 46,
+    "nbColisTraites": 30,
+    "nbAnomalieTracabilite": 39,
+    "nbColisMisADispoBureai": 12,
+    "nbHorsDelai": 77,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 3,
+    "nbColisHorsETA": 63,
+    "nbColisAvecConsigneNonRespectee": 28
+  },
+  "882437": {
+    "nbPtTA": 17,
+    "nbColisTA": 37,
+    "nbPtVisites": 46,
+    "nbPtTANonVisites": 74,
+    "nbColisHorsDateContractuelle": 60,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 40,
+    "nbColisSecurisesRetour": 66,
+    "nbColisSpecifiques": 97,
+    "nbPtAnomalie": 64,
+    "nbColisTraites": 54,
+    "nbAnomalieTracabilite": 39,
+    "nbColisMisADispoBureai": 59,
+    "nbHorsDelai": 41,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 10,
+    "nbColisHorsETA": 71,
+    "nbColisAvecConsigneNonRespectee": 52
+  },
+  "950929": {
+    "nbPtTA": 85,
+    "nbColisTA": 13,
+    "nbPtVisites": 2,
+    "nbPtTANonVisites": 37,
+    "nbColisHorsDateContractuelle": 55,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 80,
+    "nbColisSecurisesRetour": 53,
+    "nbColisSpecifiques": 80,
+    "nbPtAnomalie": 93,
+    "nbColisTraites": 77,
+    "nbAnomalieTracabilite": 60,
+    "nbColisMisADispoBureai": 98,
+    "nbHorsDelai": 65,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 93,
+    "nbColisHorsETA": 13,
+    "nbColisAvecConsigneNonRespectee": 90
+  },
+  "968303": {
+    "nbPtTA": 27,
+    "nbColisTA": 79,
+    "nbPtVisites": 64,
+    "nbPtTANonVisites": 14,
+    "nbColisHorsDateContractuelle": 49,
+    "colisHorsDateContractuelle": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisAvecConsigne": [
+      "3",
+      "2",
+      "1"
+    ],
+    "nbColisRetour": 57,
+    "nbColisSecurisesRetour": 87,
+    "nbColisSpecifiques": 17,
+    "nbPtAnomalie": 90,
+    "nbColisTraites": 68,
+    "nbAnomalieTracabilite": 39,
+    "nbColisMisADispoBureai": 83,
+    "nbHorsDelai": 71,
+    "presentationsInfructueuses": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "nbColisAvecETA": 37,
+    "nbColisHorsETA": 78,
+    "nbColisAvecConsigneNonRespectee": 83
+  }
+}

@@ -1,0 +1,1950 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://webservice.poi.chronopost.fr/" name="PoiService" targetNamespace="http://webservice.poi.chronopost.fr/">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webservice.poi.chronopost.fr/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://webservice.poi.chronopost.fr/">
+<xs:element name="afficherPoiDetails" type="tns:afficherPoiDetails"/>
+<xs:element name="afficherPoiDetailsResponse" type="tns:afficherPoiDetailsResponse"/>
+<xs:element name="annoncePOI" type="tns:annoncePOI"/>
+<xs:element name="annoncePOIMulti" type="tns:annoncePOIMulti"/>
+<xs:element name="annoncePOIMultiResponse" type="tns:annoncePOIMultiResponse"/>
+<xs:element name="annoncePOIResponse" type="tns:annoncePOIResponse"/>
+<xs:element name="annoncePoiIhm" type="tns:annoncePoiIhm"/>
+<xs:element name="annoncePoiIhmResponse" type="tns:annoncePoiIhmResponse"/>
+<xs:element name="callProcedureTmpPsm" type="tns:callProcedureTmpPsm"/>
+<xs:element name="callProcedureTmpPsmResponse" type="tns:callProcedureTmpPsmResponse"/>
+<xs:element name="checkNumManquantOnAdresse" type="tns:checkNumManquantOnAdresse"/>
+<xs:element name="checkNumManquantOnAdresseResponse" type="tns:checkNumManquantOnAdresseResponse"/>
+<xs:element name="checkPOIOnAddress" type="tns:checkPOIOnAddress"/>
+<xs:element name="checkPOIOnAddressResponse" type="tns:checkPOIOnAddressResponse"/>
+<xs:element name="creerAliasPOI" type="tns:creerAliasPOI"/>
+<xs:element name="creerAliasPOIResponse" type="tns:creerAliasPOIResponse"/>
+<xs:element name="creerPOI" type="tns:creerPOI"/>
+<xs:element name="creerPOIResponse" type="tns:creerPOIResponse"/>
+<xs:element name="deleteAliasByIdPoiEtLibelle" type="tns:deleteAliasByIdPoiEtLibelle"/>
+<xs:element name="deleteAliasByIdPoiEtLibelleResponse" type="tns:deleteAliasByIdPoiEtLibelleResponse"/>
+<xs:element name="deleteByCodeTournee" type="tns:deleteByCodeTournee"/>
+<xs:element name="deleteByCodeTourneeResponse" type="tns:deleteByCodeTourneeResponse"/>
+<xs:element name="destinataireInfo" type="tns:destinataireInfoDto"/>
+<xs:element name="envoyerMail" type="tns:envoyerMail"/>
+<xs:element name="envoyerMailResponse" type="tns:envoyerMailResponse"/>
+<xs:element name="findAdresseById" type="tns:findAdresseById"/>
+<xs:element name="findAdresseByIdResponse" type="tns:findAdresseByIdResponse"/>
+<xs:element name="findDestinataireDetailByIdChrono" type="tns:findDestinataireDetailByIdChrono"/>
+<xs:element name="findDestinataireDetailByIdChronoResponse" type="tns:findDestinataireDetailByIdChronoResponse"/>
+<xs:element name="findMultiDestinataireByIdChrono" type="tns:findMultiDestinataireByIdChrono"/>
+<xs:element name="findMultiDestinataireByIdChronoResponse" type="tns:findMultiDestinataireByIdChronoResponse"/>
+<xs:element name="getAddressByCEA" type="tns:getAddressByCEA"/>
+<xs:element name="getAddressByCEAResponse" type="tns:getAddressByCEAResponse"/>
+<xs:element name="getAgenceByCodeSite" type="tns:getAgenceByCodeSite"/>
+<xs:element name="getAgenceByCodeSiteResponse" type="tns:getAgenceByCodeSiteResponse"/>
+<xs:element name="getAgenceByTrigramme" type="tns:getAgenceByTrigramme"/>
+<xs:element name="getAgenceByTrigrammeResponse" type="tns:getAgenceByTrigrammeResponse"/>
+<xs:element name="getAgenceFromCP" type="tns:getAgenceFromCP"/>
+<xs:element name="getAgenceFromCPResponse" type="tns:getAgenceFromCPResponse"/>
+<xs:element name="getAgences" type="tns:getAgences"/>
+<xs:element name="getAgencesResponse" type="tns:getAgencesResponse"/>
+<xs:element name="getByCpVilleLibVoie" type="tns:getByCpVilleLibVoie"/>
+<xs:element name="getByCpVilleLibVoieResponse" type="tns:getByCpVilleLibVoieResponse"/>
+<xs:element name="getByDestinataire" type="tns:getByDestinataire"/>
+<xs:element name="getByDestinataireResponse" type="tns:getByDestinataireResponse"/>
+<xs:element name="getCalendriersByDestinataire" type="tns:getCalendriersByDestinataire"/>
+<xs:element name="getCalendriersByDestinataireResponse" type="tns:getCalendriersByDestinataireResponse"/>
+<xs:element name="getCalendriersById" type="tns:getCalendriersById"/>
+<xs:element name="getCalendriersByIdResponse" type="tns:getCalendriersByIdResponse"/>
+<xs:element name="getCommuneByCp" type="tns:getCommuneByCp"/>
+<xs:element name="getCommuneByCpResponse" type="tns:getCommuneByCpResponse"/>
+<xs:element name="getConfigByAgence" type="tns:getConfigByAgence"/>
+<xs:element name="getConfigByAgenceResponse" type="tns:getConfigByAgenceResponse"/>
+<xs:element name="getCpByCommune" type="tns:getCpByCommune"/>
+<xs:element name="getCpByCommuneResponse" type="tns:getCpByCommuneResponse"/>
+<xs:element name="getDestinataireFromIdAdr" type="tns:getDestinataireFromIdAdr"/>
+<xs:element name="getDestinataireFromIdAdrAndRaisonSociale" type="tns:getDestinataireFromIdAdrAndRaisonSociale"/>
+<xs:element name="getDestinataireFromIdAdrAndRaisonSocialeResponse" type="tns:getDestinataireFromIdAdrAndRaisonSocialeResponse"/>
+<xs:element name="getDestinataireFromIdAdrResponse" type="tns:getDestinataireFromIdAdrResponse"/>
+<xs:element name="getListAgencesTournee" type="tns:getListAgencesTournee"/>
+<xs:element name="getListAgencesTourneeResponse" type="tns:getListAgencesTourneeResponse"/>
+<xs:element name="getListNumVoie" type="tns:getListNumVoie"/>
+<xs:element name="getListNumVoieResponse" type="tns:getListNumVoieResponse"/>
+<xs:element name="getListTourneesByAgence" type="tns:getListTourneesByAgence"/>
+<xs:element name="getListTourneesByAgenceResponse" type="tns:getListTourneesByAgenceResponse"/>
+<xs:element name="getListePointsRelaisByAgence" type="tns:getListePointsRelaisByAgence"/>
+<xs:element name="getListePointsRelaisByAgenceResponse" type="tns:getListePointsRelaisByAgenceResponse"/>
+<xs:element name="getMotifsFermeture" type="tns:getMotifsFermeture"/>
+<xs:element name="getMotifsFermetureResponse" type="tns:getMotifsFermetureResponse"/>
+<xs:element name="getNbRejectedPoints" type="tns:getNbRejectedPoints"/>
+<xs:element name="getNbRejectedPointsResponse" type="tns:getNbRejectedPointsResponse"/>
+<xs:element name="getNumTelDoublons" type="tns:getNumTelDoublons"/>
+<xs:element name="getNumTelDoublonsByCP" type="tns:getNumTelDoublonsByCP"/>
+<xs:element name="getNumTelDoublonsByCPResponse" type="tns:getNumTelDoublonsByCPResponse"/>
+<xs:element name="getNumTelDoublonsByIdTournee" type="tns:getNumTelDoublonsByIdTournee"/>
+<xs:element name="getNumTelDoublonsByIdTourneeResponse" type="tns:getNumTelDoublonsByIdTourneeResponse"/>
+<xs:element name="getNumTelDoublonsResponse" type="tns:getNumTelDoublonsResponse"/>
+<xs:element name="getPoiById" type="tns:getPoiById"/>
+<xs:element name="getPoiByIdResponse" type="tns:getPoiByIdResponse"/>
+<xs:element name="getPointsByAgenceAndTournee" type="tns:getPointsByAgenceAndTournee"/>
+<xs:element name="getPointsByAgenceAndTourneeResponse" type="tns:getPointsByAgenceAndTourneeResponse"/>
+<xs:element name="getPointsRelaisEnRejet" type="tns:getPointsRelaisEnRejet"/>
+<xs:element name="getPointsRelaisEnRejetResponse" type="tns:getPointsRelaisEnRejetResponse"/>
+<xs:element name="getPsmRejectedPoints" type="tns:getPsmRejectedPoints"/>
+<xs:element name="getPsmRejectedPointsResponse" type="tns:getPsmRejectedPointsResponse"/>
+<xs:element name="getRejectedPointsByTournee" type="tns:getRejectedPointsByTournee"/>
+<xs:element name="getRejectedPointsByTourneeResponse" type="tns:getRejectedPointsByTourneeResponse"/>
+<xs:element name="getStatistiqueOrigineDonnees" type="tns:getStatistiqueOrigineDonnees"/>
+<xs:element name="getStatistiqueOrigineDonneesResponse" type="tns:getStatistiqueOrigineDonneesResponse"/>
+<xs:element name="getStatistiqueTauxRemplissageEtAlias" type="tns:getStatistiqueTauxRemplissageEtAlias"/>
+<xs:element name="getStatistiqueTauxRemplissageEtAliasResponse" type="tns:getStatistiqueTauxRemplissageEtAliasResponse"/>
+<xs:element name="getTourneesByAgence" type="tns:getTourneesByAgence"/>
+<xs:element name="getTourneesByAgenceResponse" type="tns:getTourneesByAgenceResponse"/>
+<xs:element name="getTypesPoints" type="tns:getTypesPoints"/>
+<xs:element name="getTypesPointsResponse" type="tns:getTypesPointsResponse"/>
+<xs:element name="getVoieByCleCp" type="tns:getVoieByCleCp"/>
+<xs:element name="getVoieByCleCpResponse" type="tns:getVoieByCleCpResponse"/>
+<xs:element name="getVoiesByMatriculeHexavia" type="tns:getVoiesByMatriculeHexavia"/>
+<xs:element name="getVoiesByMatriculeHexaviaResponse" type="tns:getVoiesByMatriculeHexaviaResponse"/>
+<xs:element name="horaireDto" type="tns:horaireDto"/>
+<xs:element name="importDestinatairePOI" type="tns:importDestinatairePOI"/>
+<xs:element name="importDestinatairePOIResponse" type="tns:importDestinatairePOIResponse"/>
+<xs:element name="isZCA" type="tns:isZCA"/>
+<xs:element name="isZCAResponse" type="tns:isZCAResponse"/>
+<xs:element name="modifierPOI" type="tns:modifierPOI"/>
+<xs:element name="modifierPOIResponse" type="tns:modifierPOIResponse"/>
+<xs:element name="modifierPointRelais" type="tns:modifierPointRelais"/>
+<xs:element name="modifierPointRelaisResponse" type="tns:modifierPointRelaisResponse"/>
+<xs:element name="purgeHorairesByTournee" type="tns:purgeHorairesByTournee"/>
+<xs:element name="purgeHorairesByTourneeResponse" type="tns:purgeHorairesByTourneeResponse"/>
+<xs:element name="rechercheExactePOI" type="tns:rechercheExactePOI"/>
+<xs:element name="rechercheExactePOIResponse" type="tns:rechercheExactePOIResponse"/>
+<xs:element name="recherchePOI" type="tns:recherchePOI"/>
+<xs:element name="recherchePOIDetail" type="tns:recherchePOIDetail"/>
+<xs:element name="recherchePOIDetailList" type="tns:recherchePOIDetailList"/>
+<xs:element name="recherchePOIDetailListResponse" type="tns:recherchePOIDetailListResponse"/>
+<xs:element name="recherchePOIDetailResponse" type="tns:recherchePOIDetailResponse"/>
+<xs:element name="recherchePOIResponse" type="tns:recherchePOIResponse"/>
+<xs:element name="removeTmpPsm" type="tns:removeTmpPsm"/>
+<xs:element name="removeTmpPsmResponse" type="tns:removeTmpPsmResponse"/>
+<xs:element name="saveConfigTemplate" type="tns:saveConfigTemplate"/>
+<xs:element name="saveConfigTemplateResponse" type="tns:saveConfigTemplateResponse"/>
+<xs:element name="seachDestinataireByIdAdresse" type="tns:seachDestinataireByIdAdresse"/>
+<xs:element name="seachDestinataireByIdAdresseResponse" type="tns:seachDestinataireByIdAdresseResponse"/>
+<xs:element name="supprimerPOI" type="tns:supprimerPOI"/>
+<xs:element name="supprimerPOIResponse" type="tns:supprimerPOIResponse"/>
+<xs:element name="supprimerPointRelais" type="tns:supprimerPointRelais"/>
+<xs:element name="supprimerPointRelaisResponse" type="tns:supprimerPointRelaisResponse"/>
+<xs:element name="updateAgenceTourneeListe" type="tns:updateAgenceTourneeListe"/>
+<xs:element name="updateAgenceTourneeListeResponse" type="tns:updateAgenceTourneeListeResponse"/>
+<xs:element name="updateCalendriers" type="tns:updateCalendriers"/>
+<xs:element name="updateCalendriersResponse" type="tns:updateCalendriersResponse"/>
+<xs:element name="updateNomRS" type="tns:updateNomRS"/>
+<xs:element name="updateNomRSResponse" type="tns:updateNomRSResponse"/>
+<xs:element name="updatePeriodesFermeture" type="tns:updatePeriodesFermeture"/>
+<xs:element name="updatePeriodesFermetureResponse" type="tns:updatePeriodesFermetureResponse"/>
+<xs:complexType name="getAgenceByCodeSite">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAgenceByCodeSiteResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getPointsByAgenceAndTournee">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+<xs:element minOccurs="0" name="arg1" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getPointsByAgenceAndTourneeResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:agenceTourneeDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="agenceTourneeDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="adrCodeTournee" type="xs:string"/>
+<xs:element minOccurs="0" name="desIdChrono" type="xs:string"/>
+<xs:element minOccurs="0" name="desNomRS" type="xs:string"/>
+<xs:element minOccurs="0" name="destinataireDetailDto" type="tns:destinataireDetailDto"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="idAgenceTournee" type="xs:long"/>
+<xs:element name="nbPlanches" type="xs:int"/>
+<xs:element minOccurs="0" name="zcaAgence" type="xs:string"/>
+<xs:element minOccurs="0" name="zcaLibAgence" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="destinataireDetailDto">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="aliases" nillable="true" type="tns:aliasDto"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="calendiers" nillable="true" type="tns:calendrierDto"/>
+<xs:element minOccurs="0" name="destinataireDto" type="tns:destinataireDto"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="periodeFermetures" nillable="true" type="tns:periodeFermetureDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="aliasDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="dateMaj" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="destinataire" type="tns:destinataireDto"/>
+<xs:element minOccurs="0" name="id" type="tns:aliasIdDto"/>
+<xs:element minOccurs="0" name="origineMaj" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="destinataireDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresseNorme" type="tns:adresseNormeDto"/>
+<xs:element minOccurs="0" name="consigne" type="xs:string"/>
+<xs:element minOccurs="0" name="consigneChauffeur" type="xs:string"/>
+<xs:element minOccurs="0" name="desAdrLigne2" type="xs:string"/>
+<xs:element minOccurs="0" name="desContact" type="xs:string"/>
+<xs:element minOccurs="0" name="desDateCreation" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="desDateMaj" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="desFax" type="xs:long"/>
+<xs:element minOccurs="0" name="desIdChrono" type="xs:string"/>
+<xs:element minOccurs="0" name="desIdPOI" type="xs:long"/>
+<xs:element minOccurs="0" name="desIdPoiParent" type="xs:long"/>
+<xs:element minOccurs="0" name="desLatitudePerso" type="xs:string"/>
+<xs:element minOccurs="0" name="desLongitudePerso" type="xs:string"/>
+<xs:element minOccurs="0" name="desMail1" type="xs:string"/>
+<xs:element minOccurs="0" name="desMail2" type="xs:string"/>
+<xs:element minOccurs="0" name="desMobile" type="xs:string"/>
+<xs:element minOccurs="0" name="desNomRS" type="xs:string"/>
+<xs:element minOccurs="0" name="desNumeRuePerso" type="xs:string"/>
+<xs:element minOccurs="0" name="desOrigineCreation" type="xs:string"/>
+<xs:element minOccurs="0" name="desOrigineMaj" type="xs:string"/>
+<xs:element minOccurs="0" name="desPhone1" type="xs:string"/>
+<xs:element minOccurs="0" name="desPhone2" type="xs:string"/>
+<xs:element minOccurs="0" name="desSiret" type="xs:string"/>
+<xs:element minOccurs="0" name="desTypePoint" type="xs:string"/>
+<xs:element name="desVip" type="xs:boolean"/>
+<xs:element minOccurs="0" name="destinataireParent" type="tns:destinataireDto"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="services" nillable="true" type="tns:destinataireDetailDto"/>
+<xs:element minOccurs="0" name="tempsAccess" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="adresseNormeDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="adrCodePays" type="xs:string"/>
+<xs:element minOccurs="0" name="adrCodeTournee" type="xs:string"/>
+<xs:element minOccurs="0" name="adrCommune" type="xs:string"/>
+<xs:element minOccurs="0" name="adrCp" type="xs:long"/>
+<xs:element minOccurs="0" name="adrCpStr" type="xs:string"/>
+<xs:element minOccurs="0" name="adrDateMaj" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="adrIdAdresse" type="xs:long"/>
+<xs:element minOccurs="0" name="adrLatitudeCalculee" type="xs:string"/>
+<xs:element minOccurs="0" name="adrLatitudeReel" type="xs:string"/>
+<xs:element minOccurs="0" name="adrLigne3" type="xs:string"/>
+<xs:element minOccurs="0" name="adrLigne4" type="xs:string"/>
+<xs:element minOccurs="0" name="adrLigne5" type="xs:string"/>
+<xs:element minOccurs="0" name="adrLongitudeCalculee" type="xs:string"/>
+<xs:element minOccurs="0" name="adrLongitudeReel" type="xs:string"/>
+<xs:element minOccurs="0" name="adrOrigineMaj" type="xs:string"/>
+<xs:element minOccurs="0" name="adrPrecisionGeo" type="xs:long"/>
+<xs:element name="adrRueNumerotation" type="xs:int"/>
+<xs:element minOccurs="0" name="codePorte1" type="xs:string"/>
+<xs:element minOccurs="0" name="codePorte2" type="xs:string"/>
+<xs:element minOccurs="0" name="comIdAdresse" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="destinataires" nillable="true" type="tns:destinataireDto"/>
+<xs:element name="gardien" type="xs:boolean"/>
+<xs:element minOccurs="0" name="hexaclCea" type="xs:string"/>
+<xs:element minOccurs="0" name="hexal3CleGeo" type="xs:string"/>
+<xs:element minOccurs="0" name="hexavMatriculeVoie" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element name="zoneSensible" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="aliasIdDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresseNorme" type="tns:adresseNormeDto"/>
+<xs:element minOccurs="0" name="libelle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="calendrierDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresseNorme" type="tns:adresseNormeDto"/>
+<xs:element minOccurs="0" name="calIdCalendrier" type="xs:long"/>
+<xs:element minOccurs="0" name="dateMaj" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="destinataire" type="tns:destinataireDto"/>
+<xs:element minOccurs="0" name="heureDebutAM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureDebutPM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureDebutPrefAM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureDebutPrefPM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureFinAM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureFinPM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureFinPrefAM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureFinPrefPM" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element name="jour" type="xs:int"/>
+<xs:element minOccurs="0" name="origine" type="xs:string"/>
+<xs:element minOccurs="0" name="origineMaj" type="xs:string"/>
+<xs:element name="typeSemaine" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="periodeFermetureDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="dateFin" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="dateMaj" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="id" type="tns:periodeFermetureIdDto"/>
+<xs:element minOccurs="0" name="motifFermeture" type="xs:string"/>
+<xs:element minOccurs="0" name="origineMaj" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="periodeFermetureIdDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="dateDebut" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="destinataire" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTypesPoints">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getTypesPointsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:typePointDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="typePointDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="description" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="label" type="xs:string"/>
+<xs:element minOccurs="0" name="libelle" type="xs:string"/>
+<xs:element minOccurs="0" name="mask" type="xs:string"/>
+<xs:element minOccurs="0" name="nordre" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="updateAgenceTourneeListe">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="tns:agenceTourneeDto"/>
+<xs:element minOccurs="0" name="arg1" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="updateAgenceTourneeListeResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="modifierPOI">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="tns:destinataireDetailDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifierPOIResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:destinataireDetailDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getVoieByCleCp">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getVoieByCleCpResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getConfigByAgence">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getConfigByAgenceResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:stickersConfigDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="stickersConfigDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="fontSizeAdresse" type="xs:string"/>
+<xs:element minOccurs="0" name="fontSizeAutresColonnes" type="xs:string"/>
+<xs:element minOccurs="0" name="fontSizeEntete" type="xs:string"/>
+<xs:element minOccurs="0" name="fontSizeHeure" type="xs:string"/>
+<xs:element minOccurs="0" name="fontSizeStickers" type="xs:string"/>
+<xs:element minOccurs="0" name="hauteurStickers" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:string"/>
+<xs:element minOccurs="0" name="margeBasDoc" type="xs:string"/>
+<xs:element minOccurs="0" name="margeHautDoc" type="xs:string"/>
+<xs:element minOccurs="0" name="minHauteurStickers" type="xs:string"/>
+<xs:element minOccurs="0" name="nbStickersHorizontal" type="xs:long"/>
+<xs:element minOccurs="0" name="nbStickersVertical" type="xs:long"/>
+<xs:element minOccurs="0" name="zcaAgence" type="xs:string"/>
+<xs:element minOccurs="0" name="zcaLibAgence" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getListAgencesTournee">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getListAgencesTourneeResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:agenceTourneeDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCalendriersById">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:long"/>
+<xs:element minOccurs="0" name="arg1" type="tns:origine"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCalendriersByIdResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:calendrierDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recherchePOIDetail">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recherchePOIDetailResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:destinataireDetailDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findDestinataireDetailByIdChrono">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findDestinataireDetailByIdChronoResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireDetailDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getMotifsFermeture">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getMotifsFermetureResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:motifFermetureDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="motifFermetureDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="libelle" type="xs:string"/>
+<xs:element minOccurs="0" name="nordre" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getPsmRejectedPoints">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getPsmRejectedPointsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tmpPsmDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="tmpPsmDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="errorCode" type="xs:string"/>
+<xs:element minOccurs="0" name="errorText" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:decimal"/>
+<xs:element minOccurs="0" name="psmCalJour" type="xs:string"/>
+<xs:element minOccurs="0" name="psmConsChauff" type="xs:string"/>
+<xs:element minOccurs="0" name="psmDateTour" type="xs:string"/>
+<xs:element minOccurs="0" name="psmDesti1" type="xs:string"/>
+<xs:element minOccurs="0" name="psmDesti2" type="xs:string"/>
+<xs:element minOccurs="0" name="psmDiffDist" type="xs:decimal"/>
+<xs:element minOccurs="0" name="psmDigicode1" type="xs:string"/>
+<xs:element minOccurs="0" name="psmDigicode2" type="xs:string"/>
+<xs:element minOccurs="0" name="psmGardien" type="xs:string"/>
+<xs:element minOccurs="0" name="psmHFerAm" type="xs:string"/>
+<xs:element minOccurs="0" name="psmHFerPm" type="xs:string"/>
+<xs:element minOccurs="0" name="psmHOuvAm" type="xs:string"/>
+<xs:element minOccurs="0" name="psmHOuvPm" type="xs:string"/>
+<xs:element minOccurs="0" name="psmHeureTour" type="xs:string"/>
+<xs:element minOccurs="0" name="psmIdAdresse" type="xs:string"/>
+<xs:element minOccurs="0" name="psmIdAgence" type="xs:string"/>
+<xs:element minOccurs="0" name="psmIdPoi" type="xs:string"/>
+<xs:element minOccurs="0" name="psmIdPsm" type="xs:string"/>
+<xs:element minOccurs="0" name="psmIdService" type="xs:string"/>
+<xs:element minOccurs="0" name="psmLatPerso" type="xs:string"/>
+<xs:element minOccurs="0" name="psmLatRelevee" type="xs:string"/>
+<xs:element minOccurs="0" name="psmLibService" type="xs:string"/>
+<xs:element minOccurs="0" name="psmLongPerso" type="xs:string"/>
+<xs:element minOccurs="0" name="psmLongRelevee" type="xs:string"/>
+<xs:element minOccurs="0" name="psmPersoNumRue" type="xs:string"/>
+<xs:element minOccurs="0" name="psmRue1Annonce" type="xs:string"/>
+<xs:element name="psmStatus" type="xs:int"/>
+<xs:element minOccurs="0" name="psmTel1" type="xs:string"/>
+<xs:element minOccurs="0" name="psmTel2" type="xs:string"/>
+<xs:element minOccurs="0" name="psmTournee" type="xs:string"/>
+<xs:element minOccurs="0" name="psmTypeClient" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="annoncePOI">
+<xs:sequence>
+<xs:element minOccurs="0" name="nom1" type="xs:string"/>
+<xs:element minOccurs="0" name="nom2" type="xs:string"/>
+<xs:element minOccurs="0" name="adresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="adresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="cp" type="xs:string"/>
+<xs:element minOccurs="0" name="ville" type="xs:string"/>
+<xs:element minOccurs="0" name="idChrono" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="annoncePOIResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:annonceResult"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="annonceResult">
+<xs:sequence>
+<xs:element minOccurs="0" name="idAdresse" type="xs:long"/>
+<xs:element minOccurs="0" name="idPOI" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getByCpVilleLibVoie">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:long"/>
+<xs:element minOccurs="0" name="arg1" type="xs:string"/>
+<xs:element minOccurs="0" name="arg2" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getByCpVilleLibVoieResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:adresseNormeDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recherchePOIDetailList">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recherchePOIDetailListResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireDetailDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="purgeHorairesByTournee">
+<xs:sequence>
+<xs:element minOccurs="0" name="agence" type="xs:string"/>
+<xs:element minOccurs="0" name="tournee" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="purgeHorairesByTourneeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="afficherPoiDetails">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="afficherPoiDetailsResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:destinataireDetailDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getPoiById">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:long"/>
+<xs:element minOccurs="0" name="arg1" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getPoiByIdResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCommuneByCp">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCommuneByCpResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findAdresseById">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findAdresseByIdResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:adresseNormeDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="creerPOI">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="tns:destinataireDetailDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="creerPOIResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:destinataireDetailDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getListTourneesByAgence">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getListTourneesByAgenceResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAgenceByTrigramme">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAgenceByTrigrammeResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:zcaDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="zcaDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="id" type="tns:zcaIdDto"/>
+<xs:element minOccurs="0" name="libAgence" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="zcaIdDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="agence" type="xs:string"/>
+<xs:element minOccurs="0" name="cp" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getByDestinataire">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getByDestinataireResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:periodeFermetureDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getListNumVoie">
+<xs:sequence>
+<xs:element minOccurs="0" name="hexavMatriculeVoie" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getListNumVoieResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:adresseNumero"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="adresseNumero">
+<xs:sequence>
+<xs:element minOccurs="0" name="adrIdAdresse" type="xs:long"/>
+<xs:element minOccurs="0" name="hexaclCea" type="xs:string"/>
+<xs:element minOccurs="0" name="latCalc" type="xs:string"/>
+<xs:element minOccurs="0" name="latReel" type="xs:string"/>
+<xs:element minOccurs="0" name="longCalc" type="xs:string"/>
+<xs:element minOccurs="0" name="longReel" type="xs:string"/>
+<xs:element minOccurs="0" name="numVoie" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deleteByCodeTournee">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deleteByCodeTourneeResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getNumTelDoublonsByIdTournee">
+<xs:sequence>
+<xs:element minOccurs="0" name="tournee" type="xs:string"/>
+<xs:element minOccurs="0" name="trigramme" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getNumTelDoublonsByIdTourneeResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireInfoDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="destinataireInfoDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="destinataire" type="tns:destinataireDto"/>
+<xs:element minOccurs="0" name="horaires">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="horaire" type="tns:horaireDto"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="horaireDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="dateMaj" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="heureDebutAM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureDebutPM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureDebutPrefAM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureDebutPrefPM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureFinAM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureFinPM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureFinPrefAM" type="xs:string"/>
+<xs:element minOccurs="0" name="heureFinPrefPM" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="origine" type="xs:string"/>
+<xs:element minOccurs="0" name="origineMaj" type="xs:string"/>
+<xs:element name="typeSemaine" type="xs:boolean"/>
+</xs:sequence>
+<xs:attribute name="jour" type="xs:int" use="required"/>
+</xs:complexType>
+<xs:complexType name="supprimerPointRelais">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="tns:pointRelaisDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pointRelaisDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="adresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="adresse3" type="xs:string"/>
+<xs:element minOccurs="0" name="commune" type="xs:string"/>
+<xs:element minOccurs="0" name="cp" type="xs:string"/>
+<xs:element minOccurs="0" name="descriptionRejet" type="xs:string"/>
+<xs:element minOccurs="0" name="enseigne" type="xs:string"/>
+<xs:element minOccurs="0" name="gerant" type="xs:string"/>
+<xs:element minOccurs="0" name="horsDimanche" type="xs:string"/>
+<xs:element minOccurs="0" name="horsJeudi" type="xs:string"/>
+<xs:element minOccurs="0" name="horsLundi" type="xs:string"/>
+<xs:element minOccurs="0" name="horsMardi" type="xs:string"/>
+<xs:element minOccurs="0" name="horsMercredi" type="xs:string"/>
+<xs:element minOccurs="0" name="horsSamedi" type="xs:string"/>
+<xs:element minOccurs="0" name="horsvendredi" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="tns:pointRelaisIdDto"/>
+<xs:element minOccurs="0" name="periodeFermDeb1" type="xs:string"/>
+<xs:element minOccurs="0" name="periodeFermDeb2" type="xs:string"/>
+<xs:element minOccurs="0" name="periodeFermDeb3" type="xs:string"/>
+<xs:element minOccurs="0" name="periodeFermFin1" type="xs:string"/>
+<xs:element minOccurs="0" name="periodeFermFin2" type="xs:string"/>
+<xs:element minOccurs="0" name="periodeFermFin3" type="xs:string"/>
+<xs:element minOccurs="0" name="status" type="xs:string"/>
+<xs:element minOccurs="0" name="typePoint" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pointRelaisIdDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="idChrono" type="xs:string"/>
+<xs:element minOccurs="0" name="idHisto" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="supprimerPointRelaisResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getVoiesByMatriculeHexavia">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getVoiesByMatriculeHexaviaResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="updateCalendriers">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="tns:calendrierDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="updateCalendriersResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getCalendriersByDestinataire">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCalendriersByDestinataireResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:calendrierDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getDestinataireFromIdAdrAndRaisonSociale">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:long"/>
+<xs:element minOccurs="0" name="arg1" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getDestinataireFromIdAdrAndRaisonSocialeResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findMultiDestinataireByIdChrono">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="idChrono" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findMultiDestinataireByIdChronoResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="destinataireInfo" type="tns:destinataireInfoDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAddressByCEA">
+<xs:sequence>
+<xs:element minOccurs="0" name="hexaclCea" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAddressByCEAResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:adresseNormeDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="creerAliasPOI">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="tns:aliasDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="creerAliasPOIResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="updatePeriodesFermeture">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="tns:periodeFermetureDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="updatePeriodesFermetureResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="isZCA">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+<xs:element minOccurs="0" name="arg1" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="isZCAResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="importDestinatairePOI">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="tns:destinataireDetailImportDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="destinataireDetailImportDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="destImport" type="tns:destinataireDetailDto"/>
+<xs:element minOccurs="0" name="reject" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="importDestinatairePOIResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireRetourImportDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="destinataireRetourImportDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="action" type="xs:string"/>
+<xs:element minOccurs="0" name="destImport" type="tns:destinataireDetailDto"/>
+<xs:element minOccurs="0" name="error" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deleteAliasByIdPoiEtLibelle">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:long"/>
+<xs:element minOccurs="0" name="arg1" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="deleteAliasByIdPoiEtLibelleResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getNumTelDoublonsByCP">
+<xs:sequence>
+<xs:element minOccurs="0" name="cp" type="xs:decimal"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getNumTelDoublonsByCPResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireInfoDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="annoncePOIMulti">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="annonce" type="tns:annonceParam"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="annonceParam">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="adresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="codePostale" type="xs:string"/>
+<xs:element minOccurs="0" name="idChrono" type="xs:string"/>
+<xs:element minOccurs="0" name="nom1" type="xs:string"/>
+<xs:element minOccurs="0" name="nom2" type="xs:string"/>
+<xs:element minOccurs="0" name="ville" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="annoncePOIMultiResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:annonceResult"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getPointsRelaisEnRejet">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getPointsRelaisEnRejetResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:pointRelaisDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="seachDestinataireByIdAdresse">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="seachDestinataireByIdAdresseResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getStatistiqueTauxRemplissageEtAlias">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+<xs:element minOccurs="0" name="arg1" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getStatistiqueTauxRemplissageEtAliasResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:statsTauxRempAliasDTO"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="statsTauxRempAliasDTO">
+<xs:sequence>
+<xs:element minOccurs="0" name="agence" type="xs:string"/>
+<xs:element minOccurs="0" name="alias" type="xs:string"/>
+<xs:element minOccurs="0" name="atleast1Horaire" type="xs:string"/>
+<xs:element minOccurs="0" name="atleast5Horaire" type="xs:string"/>
+<xs:element minOccurs="0" name="codePorte" type="xs:string"/>
+<xs:element minOccurs="0" name="consigne" type="xs:string"/>
+<xs:element minOccurs="0" name="gardien" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="ligne2" type="xs:string"/>
+<xs:element minOccurs="0" name="mail" type="xs:string"/>
+<xs:element minOccurs="0" name="nbAlias" type="xs:string"/>
+<xs:element minOccurs="0" name="nbPoi" type="xs:string"/>
+<xs:element minOccurs="0" name="periodeFermeture" type="xs:string"/>
+<xs:element minOccurs="0" name="tel" type="xs:string"/>
+<xs:element minOccurs="0" name="tempsAcces" type="xs:string"/>
+<xs:element minOccurs="0" name="typeClient" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="supprimerPOI">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="supprimerPOIResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAgences">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getAgencesResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="checkPOIOnAddress">
+<xs:sequence>
+<xs:element minOccurs="0" name="desNomRS" type="xs:string"/>
+<xs:element minOccurs="0" name="adresseId" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="checkPOIOnAddressResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="checkNumManquantOnAdresse">
+<xs:sequence>
+<xs:element minOccurs="0" name="desNomRS" type="xs:string"/>
+<xs:element minOccurs="0" name="adresseId" type="xs:long"/>
+<xs:element minOccurs="0" name="numManquant" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="checkNumManquantOnAdresseResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="envoyerMail">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+<xs:element minOccurs="0" name="arg1" type="xs:string"/>
+<xs:element minOccurs="0" name="arg2" type="xs:string"/>
+<xs:element minOccurs="0" name="arg3" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="envoyerMailResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getAgenceFromCP">
+<xs:sequence>
+<xs:element minOccurs="0" name="codePostal" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAgenceFromCPResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:zcaDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTourneesByAgence">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTourneesByAgenceResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:agenceTourneeDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="updateNomRS">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:long"/>
+<xs:element minOccurs="0" name="arg1" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="updateNomRSResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="removeTmpPsm">
+<xs:sequence>
+<xs:element minOccurs="0" name="psmCount" type="xs:decimal"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="removeTmpPsmResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getNumTelDoublons">
+<xs:sequence>
+<xs:element minOccurs="0" name="idAdresse" type="xs:long"/>
+<xs:element minOccurs="0" name="num1" type="xs:string"/>
+<xs:element minOccurs="0" name="num2" type="xs:string"/>
+<xs:element minOccurs="0" name="numMobil" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getNumTelDoublonsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="annoncePoiIhm">
+<xs:sequence>
+<xs:element minOccurs="0" name="nom1" type="xs:string"/>
+<xs:element minOccurs="0" name="nom2" type="xs:string"/>
+<xs:element minOccurs="0" name="adresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="adresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="cp" type="xs:string"/>
+<xs:element minOccurs="0" name="ville" type="xs:string"/>
+<xs:element minOccurs="0" name="idChrono" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="annoncePoiIhmResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:annonceResult"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRejectedPointsByTournee">
+<xs:sequence>
+<xs:element minOccurs="0" name="agenceTrigramme" type="xs:string"/>
+<xs:element minOccurs="0" name="idTournee" type="xs:string"/>
+<xs:element minOccurs="0" name="dateTournee" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRejectedPointsByTourneeResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tmpPsmDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getNbRejectedPoints">
+<xs:sequence>
+<xs:element minOccurs="0" name="agenceTrigramme" type="xs:string"/>
+<xs:element minOccurs="0" name="idTournee" type="xs:string"/>
+<xs:element minOccurs="0" name="dateTournee" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getNbRejectedPointsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCpByCommune">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCpByCommuneResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recherchePOI">
+<xs:sequence>
+<xs:element minOccurs="0" name="criteres" type="tns:criteresRechercheDto"/>
+<xs:element name="maxResult" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="criteresRechercheDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="destinataireDto" type="tns:destinataireDto"/>
+<xs:element minOccurs="0" name="poiParPSMDepuis" type="xs:string"/>
+<xs:element name="poiSansGeocodage" type="xs:boolean"/>
+<xs:element name="poiSansHoraire" type="xs:boolean"/>
+<xs:element name="poiSansTelephone" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="recherchePOIResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rechercheExactePOI">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="tns:destinataireDto"/>
+<xs:element name="arg1" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rechercheExactePOIResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getStatistiqueOrigineDonnees">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+<xs:element minOccurs="0" name="arg1" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getStatistiqueOrigineDonneesResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:statsOrigineDonneesDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="statsOrigineDonneesDto">
+<xs:sequence>
+<xs:element minOccurs="0" name="agence" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="nbPoiCreation" type="xs:string"/>
+<xs:element minOccurs="0" name="nbPoiModification" type="xs:string"/>
+<xs:element minOccurs="0" name="origineCreation" type="xs:string"/>
+<xs:element minOccurs="0" name="origineModification" type="xs:string"/>
+<xs:element minOccurs="0" name="trigramme" type="xs:string"/>
+<xs:element minOccurs="0" name="typeClient" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifierPointRelais">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="tns:pointRelaisDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="modifierPointRelaisResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getListePointsRelaisByAgence">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getListePointsRelaisByAgenceResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getDestinataireFromIdAdr">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getDestinataireFromIdAdrResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:destinataireDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="saveConfigTemplate">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="tns:stickersConfigDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="saveConfigTemplateResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="callProcedureTmpPsm">
+<xs:sequence>
+<xs:element minOccurs="0" name="tmpPsm" type="tns:tmpPsmDto"/>
+<xs:element minOccurs="0" name="ihmLatCalc" type="xs:string"/>
+<xs:element minOccurs="0" name="ihmLongCalc" type="xs:string"/>
+<xs:element minOccurs="0" name="ihmTelMobile" type="xs:string"/>
+<xs:element name="isManeulGeo" type="xs:boolean"/>
+<xs:element name="ignoreNmcrt" type="xs:boolean"/>
+<xs:element name="ignoreEcartGeo" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="callProcedureTmpPsmResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:tmpPsmDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="origine">
+<xs:restriction base="xs:string">
+<xs:enumeration value="TOUT"/>
+<xs:enumeration value="DESTINATAIRE"/>
+<xs:enumeration value="ADRESSE"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="ServiceException" type="tns:ServiceException"/>
+<xs:complexType name="ServiceException">
+<xs:sequence>
+<xs:element name="message" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Exception" type="tns:Exception"/>
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="getDestinataireFromIdAdrAndRaisonSociale">
+<wsdl:part element="ns1:getDestinataireFromIdAdrAndRaisonSociale" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getDestinataireFromIdAdrAndRaisonSocialeResponse">
+<wsdl:part element="ns1:getDestinataireFromIdAdrAndRaisonSocialeResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getByCpVilleLibVoie">
+<wsdl:part element="ns1:getByCpVilleLibVoie" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getMotifsFermetureResponse">
+<wsdl:part element="ns1:getMotifsFermetureResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getAddressByCEAResponse">
+<wsdl:part element="ns1:getAddressByCEAResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="checkPOIOnAddressResponse">
+<wsdl:part element="ns1:checkPOIOnAddressResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="afficherPoiDetails">
+<wsdl:part element="ns1:afficherPoiDetails" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getTypesPointsResponse">
+<wsdl:part element="ns1:getTypesPointsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="checkNumManquantOnAdresseResponse">
+<wsdl:part element="ns1:checkNumManquantOnAdresseResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getListAgencesTourneeResponse">
+<wsdl:part element="ns1:getListAgencesTourneeResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getListNumVoie">
+<wsdl:part element="ns1:getListNumVoie" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="findAdresseById">
+<wsdl:part element="ns1:findAdresseById" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="saveConfigTemplateResponse">
+<wsdl:part element="ns1:saveConfigTemplateResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="rechercheExactePOIResponse">
+<wsdl:part element="ns1:rechercheExactePOIResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="recherchePOI">
+<wsdl:part element="ns1:recherchePOI" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getAgenceByCodeSite">
+<wsdl:part element="ns1:getAgenceByCodeSite" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="checkNumManquantOnAdresse">
+<wsdl:part element="ns1:checkNumManquantOnAdresse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getAgenceByTrigrammeResponse">
+<wsdl:part element="ns1:getAgenceByTrigrammeResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getListTourneesByAgenceResponse">
+<wsdl:part element="ns1:getListTourneesByAgenceResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="recherchePOIDetailListResponse">
+<wsdl:part element="ns1:recherchePOIDetailListResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="supprimerPOI">
+<wsdl:part element="ns1:supprimerPOI" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="recherchePOIDetail">
+<wsdl:part element="ns1:recherchePOIDetail" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getStatistiqueTauxRemplissageEtAlias">
+<wsdl:part element="ns1:getStatistiqueTauxRemplissageEtAlias" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="supprimerPointRelais">
+<wsdl:part element="ns1:supprimerPointRelais" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getNbRejectedPointsResponse">
+<wsdl:part element="ns1:getNbRejectedPointsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importDestinatairePOIResponse">
+<wsdl:part element="ns1:importDestinatairePOIResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="seachDestinataireByIdAdresse">
+<wsdl:part element="ns1:seachDestinataireByIdAdresse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="saveConfigTemplate">
+<wsdl:part element="ns1:saveConfigTemplate" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getCpByCommune">
+<wsdl:part element="ns1:getCpByCommune" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getPsmRejectedPoints">
+<wsdl:part element="ns1:getPsmRejectedPoints" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="updatePeriodesFermetureResponse">
+<wsdl:part element="ns1:updatePeriodesFermetureResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="updatePeriodesFermeture">
+<wsdl:part element="ns1:updatePeriodesFermeture" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="purgeHorairesByTournee">
+<wsdl:part element="ns1:purgeHorairesByTournee" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getAgencesResponse">
+<wsdl:part element="ns1:getAgencesResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="afficherPoiDetailsResponse">
+<wsdl:part element="ns1:afficherPoiDetailsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getAgences">
+<wsdl:part element="ns1:getAgences" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="supprimerPOIResponse">
+<wsdl:part element="ns1:supprimerPOIResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getStatistiqueOrigineDonnees">
+<wsdl:part element="ns1:getStatistiqueOrigineDonnees" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getPoiById">
+<wsdl:part element="ns1:getPoiById" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getPointsRelaisEnRejet">
+<wsdl:part element="ns1:getPointsRelaisEnRejet" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getAddressByCEA">
+<wsdl:part element="ns1:getAddressByCEA" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="supprimerPointRelaisResponse">
+<wsdl:part element="ns1:supprimerPointRelaisResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getConfigByAgenceResponse">
+<wsdl:part element="ns1:getConfigByAgenceResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="deleteAliasByIdPoiEtLibelle">
+<wsdl:part element="ns1:deleteAliasByIdPoiEtLibelle" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="annoncePoiIhmResponse">
+<wsdl:part element="ns1:annoncePoiIhmResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="creerPOI">
+<wsdl:part element="ns1:creerPOI" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getRejectedPointsByTourneeResponse">
+<wsdl:part element="ns1:getRejectedPointsByTourneeResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getAgenceFromCP">
+<wsdl:part element="ns1:getAgenceFromCP" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="findAdresseByIdResponse">
+<wsdl:part element="ns1:findAdresseByIdResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="purgeHorairesByTourneeResponse">
+<wsdl:part element="ns1:purgeHorairesByTourneeResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="updateNomRS">
+<wsdl:part element="ns1:updateNomRS" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getMotifsFermeture">
+<wsdl:part element="ns1:getMotifsFermeture" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getByDestinataire">
+<wsdl:part element="ns1:getByDestinataire" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getNumTelDoublonsByCPResponse">
+<wsdl:part element="ns1:getNumTelDoublonsByCPResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="deleteAliasByIdPoiEtLibelleResponse">
+<wsdl:part element="ns1:deleteAliasByIdPoiEtLibelleResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getListePointsRelaisByAgence">
+<wsdl:part element="ns1:getListePointsRelaisByAgence" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="findMultiDestinataireByIdChrono">
+<wsdl:part element="ns1:findMultiDestinataireByIdChrono" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getDestinataireFromIdAdr">
+<wsdl:part element="ns1:getDestinataireFromIdAdr" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="rechercheExactePOI">
+<wsdl:part element="ns1:rechercheExactePOI" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="envoyerMailResponse">
+<wsdl:part element="ns1:envoyerMailResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getVoiesByMatriculeHexavia">
+<wsdl:part element="ns1:getVoiesByMatriculeHexavia" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="creerAliasPOIResponse">
+<wsdl:part element="ns1:creerAliasPOIResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="modifierPointRelais">
+<wsdl:part element="ns1:modifierPointRelais" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="recherchePOIResponse">
+<wsdl:part element="ns1:recherchePOIResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="deleteByCodeTournee">
+<wsdl:part element="ns1:deleteByCodeTournee" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="recherchePOIDetailList">
+<wsdl:part element="ns1:recherchePOIDetailList" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getCalendriersByDestinataire">
+<wsdl:part element="ns1:getCalendriersByDestinataire" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getListTourneesByAgence">
+<wsdl:part element="ns1:getListTourneesByAgence" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getPsmRejectedPointsResponse">
+<wsdl:part element="ns1:getPsmRejectedPointsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getPointsByAgenceAndTournee">
+<wsdl:part element="ns1:getPointsByAgenceAndTournee" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getAgenceFromCPResponse">
+<wsdl:part element="ns1:getAgenceFromCPResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getPoiByIdResponse">
+<wsdl:part element="ns1:getPoiByIdResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="updateAgenceTourneeListe">
+<wsdl:part element="ns1:updateAgenceTourneeListe" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getCalendriersById">
+<wsdl:part element="ns1:getCalendriersById" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="annoncePoiIhm">
+<wsdl:part element="ns1:annoncePoiIhm" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getCalendriersByIdResponse">
+<wsdl:part element="ns1:getCalendriersByIdResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getListePointsRelaisByAgenceResponse">
+<wsdl:part element="ns1:getListePointsRelaisByAgenceResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getCpByCommuneResponse">
+<wsdl:part element="ns1:getCpByCommuneResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getRejectedPointsByTournee">
+<wsdl:part element="ns1:getRejectedPointsByTournee" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="recherchePOIDetailResponse">
+<wsdl:part element="ns1:recherchePOIDetailResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getListAgencesTournee">
+<wsdl:part element="ns1:getListAgencesTournee" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="deleteByCodeTourneeResponse">
+<wsdl:part element="ns1:deleteByCodeTourneeResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="removeTmpPsmResponse">
+<wsdl:part element="ns1:removeTmpPsmResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="annoncePOIResponse">
+<wsdl:part element="ns1:annoncePOIResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="updateCalendriersResponse">
+<wsdl:part element="ns1:updateCalendriersResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getCalendriersByDestinataireResponse">
+<wsdl:part element="ns1:getCalendriersByDestinataireResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getByCpVilleLibVoieResponse">
+<wsdl:part element="ns1:getByCpVilleLibVoieResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getTourneesByAgence">
+<wsdl:part element="ns1:getTourneesByAgence" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getVoiesByMatriculeHexaviaResponse">
+<wsdl:part element="ns1:getVoiesByMatriculeHexaviaResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getNumTelDoublonsByIdTourneeResponse">
+<wsdl:part element="ns1:getNumTelDoublonsByIdTourneeResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getStatistiqueTauxRemplissageEtAliasResponse">
+<wsdl:part element="ns1:getStatistiqueTauxRemplissageEtAliasResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="findDestinataireDetailByIdChronoResponse">
+<wsdl:part element="ns1:findDestinataireDetailByIdChronoResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="updateCalendriers">
+<wsdl:part element="ns1:updateCalendriers" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importDestinatairePOI">
+<wsdl:part element="ns1:importDestinatairePOI" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="ServiceException">
+<wsdl:part element="ns1:ServiceException" name="ServiceException"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="annoncePOIMulti">
+<wsdl:part element="ns1:annoncePOIMulti" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getConfigByAgence">
+<wsdl:part element="ns1:getConfigByAgence" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="findMultiDestinataireByIdChronoResponse">
+<wsdl:part element="ns1:findMultiDestinataireByIdChronoResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getAgenceByTrigramme">
+<wsdl:part element="ns1:getAgenceByTrigramme" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getStatistiqueOrigineDonneesResponse">
+<wsdl:part element="ns1:getStatistiqueOrigineDonneesResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="callProcedureTmpPsm">
+<wsdl:part element="ns1:callProcedureTmpPsm" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getCommuneByCp">
+<wsdl:part element="ns1:getCommuneByCp" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getPointsByAgenceAndTourneeResponse">
+<wsdl:part element="ns1:getPointsByAgenceAndTourneeResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="envoyerMail">
+<wsdl:part element="ns1:envoyerMail" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getDestinataireFromIdAdrResponse">
+<wsdl:part element="ns1:getDestinataireFromIdAdrResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getNumTelDoublonsByCP">
+<wsdl:part element="ns1:getNumTelDoublonsByCP" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="modifierPOI">
+<wsdl:part element="ns1:modifierPOI" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="callProcedureTmpPsmResponse">
+<wsdl:part element="ns1:callProcedureTmpPsmResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="updateAgenceTourneeListeResponse">
+<wsdl:part element="ns1:updateAgenceTourneeListeResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getAgenceByCodeSiteResponse">
+<wsdl:part element="ns1:getAgenceByCodeSiteResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="updateNomRSResponse">
+<wsdl:part element="ns1:updateNomRSResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getTypesPoints">
+<wsdl:part element="ns1:getTypesPoints" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getCommuneByCpResponse">
+<wsdl:part element="ns1:getCommuneByCpResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="annoncePOI">
+<wsdl:part element="ns1:annoncePOI" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="creerAliasPOI">
+<wsdl:part element="ns1:creerAliasPOI" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="findDestinataireDetailByIdChrono">
+<wsdl:part element="ns1:findDestinataireDetailByIdChrono" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="annoncePOIMultiResponse">
+<wsdl:part element="ns1:annoncePOIMultiResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="checkPOIOnAddress">
+<wsdl:part element="ns1:checkPOIOnAddress" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="removeTmpPsm">
+<wsdl:part element="ns1:removeTmpPsm" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getNumTelDoublonsResponse">
+<wsdl:part element="ns1:getNumTelDoublonsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="isZCAResponse">
+<wsdl:part element="ns1:isZCAResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="modifierPointRelaisResponse">
+<wsdl:part element="ns1:modifierPointRelaisResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getNumTelDoublonsByIdTournee">
+<wsdl:part element="ns1:getNumTelDoublonsByIdTournee" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getVoieByCleCp">
+<wsdl:part element="ns1:getVoieByCleCp" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getVoieByCleCpResponse">
+<wsdl:part element="ns1:getVoieByCleCpResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="seachDestinataireByIdAdresseResponse">
+<wsdl:part element="ns1:seachDestinataireByIdAdresseResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getListNumVoieResponse">
+<wsdl:part element="ns1:getListNumVoieResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="isZCA">
+<wsdl:part element="ns1:isZCA" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getNumTelDoublons">
+<wsdl:part element="ns1:getNumTelDoublons" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="Exception">
+<wsdl:part element="ns1:Exception" name="Exception"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getPointsRelaisEnRejetResponse">
+<wsdl:part element="ns1:getPointsRelaisEnRejetResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getTourneesByAgenceResponse">
+<wsdl:part element="ns1:getTourneesByAgenceResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="modifierPOIResponse">
+<wsdl:part element="ns1:modifierPOIResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getByDestinataireResponse">
+<wsdl:part element="ns1:getByDestinataireResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getNbRejectedPoints">
+<wsdl:part element="ns1:getNbRejectedPoints" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="creerPOIResponse">
+<wsdl:part element="ns1:creerPOIResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:portType name="PoiService">
+<wsdl:operation name="getAgenceByCodeSite">
+<wsdl:input message="ns1:getAgenceByCodeSite" name="getAgenceByCodeSite"></wsdl:input>
+<wsdl:output message="ns1:getAgenceByCodeSiteResponse" name="getAgenceByCodeSiteResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getPointsByAgenceAndTournee">
+<wsdl:input message="ns1:getPointsByAgenceAndTournee" name="getPointsByAgenceAndTournee"></wsdl:input>
+<wsdl:output message="ns1:getPointsByAgenceAndTourneeResponse" name="getPointsByAgenceAndTourneeResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getTypesPoints">
+<wsdl:input message="ns1:getTypesPoints" name="getTypesPoints"></wsdl:input>
+<wsdl:output message="ns1:getTypesPointsResponse" name="getTypesPointsResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="updateAgenceTourneeListe">
+<wsdl:input message="ns1:updateAgenceTourneeListe" name="updateAgenceTourneeListe"></wsdl:input>
+<wsdl:output message="ns1:updateAgenceTourneeListeResponse" name="updateAgenceTourneeListeResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="modifierPOI">
+<wsdl:input message="ns1:modifierPOI" name="modifierPOI"></wsdl:input>
+<wsdl:output message="ns1:modifierPOIResponse" name="modifierPOIResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getVoieByCleCp">
+<wsdl:input message="ns1:getVoieByCleCp" name="getVoieByCleCp"></wsdl:input>
+<wsdl:output message="ns1:getVoieByCleCpResponse" name="getVoieByCleCpResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getConfigByAgence">
+<wsdl:input message="ns1:getConfigByAgence" name="getConfigByAgence"></wsdl:input>
+<wsdl:output message="ns1:getConfigByAgenceResponse" name="getConfigByAgenceResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getListAgencesTournee">
+<wsdl:input message="ns1:getListAgencesTournee" name="getListAgencesTournee"></wsdl:input>
+<wsdl:output message="ns1:getListAgencesTourneeResponse" name="getListAgencesTourneeResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getCalendriersById">
+<wsdl:input message="ns1:getCalendriersById" name="getCalendriersById"></wsdl:input>
+<wsdl:output message="ns1:getCalendriersByIdResponse" name="getCalendriersByIdResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="recherchePOIDetail">
+<wsdl:input message="ns1:recherchePOIDetail" name="recherchePOIDetail"></wsdl:input>
+<wsdl:output message="ns1:recherchePOIDetailResponse" name="recherchePOIDetailResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="findDestinataireDetailByIdChrono">
+<wsdl:input message="ns1:findDestinataireDetailByIdChrono" name="findDestinataireDetailByIdChrono"></wsdl:input>
+<wsdl:output message="ns1:findDestinataireDetailByIdChronoResponse" name="findDestinataireDetailByIdChronoResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getMotifsFermeture">
+<wsdl:input message="ns1:getMotifsFermeture" name="getMotifsFermeture"></wsdl:input>
+<wsdl:output message="ns1:getMotifsFermetureResponse" name="getMotifsFermetureResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getPsmRejectedPoints">
+<wsdl:input message="ns1:getPsmRejectedPoints" name="getPsmRejectedPoints"></wsdl:input>
+<wsdl:output message="ns1:getPsmRejectedPointsResponse" name="getPsmRejectedPointsResponse"></wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="annoncePOI">
+<wsdl:input message="ns1:annoncePOI" name="annoncePOI"></wsdl:input>
+<wsdl:output message="ns1:annoncePOIResponse" name="annoncePOIResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getByCpVilleLibVoie">
+<wsdl:input message="ns1:getByCpVilleLibVoie" name="getByCpVilleLibVoie"></wsdl:input>
+<wsdl:output message="ns1:getByCpVilleLibVoieResponse" name="getByCpVilleLibVoieResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="recherchePOIDetailList">
+<wsdl:input message="ns1:recherchePOIDetailList" name="recherchePOIDetailList"></wsdl:input>
+<wsdl:output message="ns1:recherchePOIDetailListResponse" name="recherchePOIDetailListResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="purgeHorairesByTournee">
+<wsdl:input message="ns1:purgeHorairesByTournee" name="purgeHorairesByTournee"></wsdl:input>
+<wsdl:output message="ns1:purgeHorairesByTourneeResponse" name="purgeHorairesByTourneeResponse"></wsdl:output>
+<wsdl:fault message="ns1:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="afficherPoiDetails">
+<wsdl:input message="ns1:afficherPoiDetails" name="afficherPoiDetails"></wsdl:input>
+<wsdl:output message="ns1:afficherPoiDetailsResponse" name="afficherPoiDetailsResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getPoiById">
+<wsdl:input message="ns1:getPoiById" name="getPoiById"></wsdl:input>
+<wsdl:output message="ns1:getPoiByIdResponse" name="getPoiByIdResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getCommuneByCp">
+<wsdl:input message="ns1:getCommuneByCp" name="getCommuneByCp"></wsdl:input>
+<wsdl:output message="ns1:getCommuneByCpResponse" name="getCommuneByCpResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="findAdresseById">
+<wsdl:input message="ns1:findAdresseById" name="findAdresseById"></wsdl:input>
+<wsdl:output message="ns1:findAdresseByIdResponse" name="findAdresseByIdResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="creerPOI">
+<wsdl:input message="ns1:creerPOI" name="creerPOI"></wsdl:input>
+<wsdl:output message="ns1:creerPOIResponse" name="creerPOIResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getListTourneesByAgence">
+<wsdl:input message="ns1:getListTourneesByAgence" name="getListTourneesByAgence"></wsdl:input>
+<wsdl:output message="ns1:getListTourneesByAgenceResponse" name="getListTourneesByAgenceResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getAgenceByTrigramme">
+<wsdl:input message="ns1:getAgenceByTrigramme" name="getAgenceByTrigramme"></wsdl:input>
+<wsdl:output message="ns1:getAgenceByTrigrammeResponse" name="getAgenceByTrigrammeResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getByDestinataire">
+<wsdl:input message="ns1:getByDestinataire" name="getByDestinataire"></wsdl:input>
+<wsdl:output message="ns1:getByDestinataireResponse" name="getByDestinataireResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getListNumVoie">
+<wsdl:input message="ns1:getListNumVoie" name="getListNumVoie"></wsdl:input>
+<wsdl:output message="ns1:getListNumVoieResponse" name="getListNumVoieResponse"></wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="deleteByCodeTournee">
+<wsdl:input message="ns1:deleteByCodeTournee" name="deleteByCodeTournee"></wsdl:input>
+<wsdl:output message="ns1:deleteByCodeTourneeResponse" name="deleteByCodeTourneeResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getNumTelDoublonsByIdTournee">
+<wsdl:input message="ns1:getNumTelDoublonsByIdTournee" name="getNumTelDoublonsByIdTournee"></wsdl:input>
+<wsdl:output message="ns1:getNumTelDoublonsByIdTourneeResponse" name="getNumTelDoublonsByIdTourneeResponse"></wsdl:output>
+<wsdl:fault message="ns1:Exception" name="Exception"></wsdl:fault>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="supprimerPointRelais">
+<wsdl:input message="ns1:supprimerPointRelais" name="supprimerPointRelais"></wsdl:input>
+<wsdl:output message="ns1:supprimerPointRelaisResponse" name="supprimerPointRelaisResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getVoiesByMatriculeHexavia">
+<wsdl:input message="ns1:getVoiesByMatriculeHexavia" name="getVoiesByMatriculeHexavia"></wsdl:input>
+<wsdl:output message="ns1:getVoiesByMatriculeHexaviaResponse" name="getVoiesByMatriculeHexaviaResponse"></wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="updateCalendriers">
+<wsdl:input message="ns1:updateCalendriers" name="updateCalendriers"></wsdl:input>
+<wsdl:output message="ns1:updateCalendriersResponse" name="updateCalendriersResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getCalendriersByDestinataire">
+<wsdl:input message="ns1:getCalendriersByDestinataire" name="getCalendriersByDestinataire"></wsdl:input>
+<wsdl:output message="ns1:getCalendriersByDestinataireResponse" name="getCalendriersByDestinataireResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getDestinataireFromIdAdrAndRaisonSociale">
+<wsdl:input message="ns1:getDestinataireFromIdAdrAndRaisonSociale" name="getDestinataireFromIdAdrAndRaisonSociale"></wsdl:input>
+<wsdl:output message="ns1:getDestinataireFromIdAdrAndRaisonSocialeResponse" name="getDestinataireFromIdAdrAndRaisonSocialeResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="findMultiDestinataireByIdChrono">
+<wsdl:input message="ns1:findMultiDestinataireByIdChrono" name="findMultiDestinataireByIdChrono"></wsdl:input>
+<wsdl:output message="ns1:findMultiDestinataireByIdChronoResponse" name="findMultiDestinataireByIdChronoResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getAddressByCEA">
+<wsdl:input message="ns1:getAddressByCEA" name="getAddressByCEA"></wsdl:input>
+<wsdl:output message="ns1:getAddressByCEAResponse" name="getAddressByCEAResponse"></wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="creerAliasPOI">
+<wsdl:input message="ns1:creerAliasPOI" name="creerAliasPOI"></wsdl:input>
+<wsdl:output message="ns1:creerAliasPOIResponse" name="creerAliasPOIResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="updatePeriodesFermeture">
+<wsdl:input message="ns1:updatePeriodesFermeture" name="updatePeriodesFermeture"></wsdl:input>
+<wsdl:output message="ns1:updatePeriodesFermetureResponse" name="updatePeriodesFermetureResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="isZCA">
+<wsdl:input message="ns1:isZCA" name="isZCA"></wsdl:input>
+<wsdl:output message="ns1:isZCAResponse" name="isZCAResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="importDestinatairePOI">
+<wsdl:input message="ns1:importDestinatairePOI" name="importDestinatairePOI"></wsdl:input>
+<wsdl:output message="ns1:importDestinatairePOIResponse" name="importDestinatairePOIResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="deleteAliasByIdPoiEtLibelle">
+<wsdl:input message="ns1:deleteAliasByIdPoiEtLibelle" name="deleteAliasByIdPoiEtLibelle"></wsdl:input>
+<wsdl:output message="ns1:deleteAliasByIdPoiEtLibelleResponse" name="deleteAliasByIdPoiEtLibelleResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getNumTelDoublonsByCP">
+<wsdl:input message="ns1:getNumTelDoublonsByCP" name="getNumTelDoublonsByCP"></wsdl:input>
+<wsdl:output message="ns1:getNumTelDoublonsByCPResponse" name="getNumTelDoublonsByCPResponse"></wsdl:output>
+<wsdl:fault message="ns1:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="annoncePOIMulti">
+<wsdl:input message="ns1:annoncePOIMulti" name="annoncePOIMulti"></wsdl:input>
+<wsdl:output message="ns1:annoncePOIMultiResponse" name="annoncePOIMultiResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getPointsRelaisEnRejet">
+<wsdl:input message="ns1:getPointsRelaisEnRejet" name="getPointsRelaisEnRejet"></wsdl:input>
+<wsdl:output message="ns1:getPointsRelaisEnRejetResponse" name="getPointsRelaisEnRejetResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="seachDestinataireByIdAdresse">
+<wsdl:input message="ns1:seachDestinataireByIdAdresse" name="seachDestinataireByIdAdresse"></wsdl:input>
+<wsdl:output message="ns1:seachDestinataireByIdAdresseResponse" name="seachDestinataireByIdAdresseResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getStatistiqueTauxRemplissageEtAlias">
+<wsdl:input message="ns1:getStatistiqueTauxRemplissageEtAlias" name="getStatistiqueTauxRemplissageEtAlias"></wsdl:input>
+<wsdl:output message="ns1:getStatistiqueTauxRemplissageEtAliasResponse" name="getStatistiqueTauxRemplissageEtAliasResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="supprimerPOI">
+<wsdl:input message="ns1:supprimerPOI" name="supprimerPOI"></wsdl:input>
+<wsdl:output message="ns1:supprimerPOIResponse" name="supprimerPOIResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getAgences">
+<wsdl:input message="ns1:getAgences" name="getAgences"></wsdl:input>
+<wsdl:output message="ns1:getAgencesResponse" name="getAgencesResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="checkPOIOnAddress">
+<wsdl:input message="ns1:checkPOIOnAddress" name="checkPOIOnAddress"></wsdl:input>
+<wsdl:output message="ns1:checkPOIOnAddressResponse" name="checkPOIOnAddressResponse"></wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="checkNumManquantOnAdresse">
+<wsdl:input message="ns1:checkNumManquantOnAdresse" name="checkNumManquantOnAdresse"></wsdl:input>
+<wsdl:output message="ns1:checkNumManquantOnAdresseResponse" name="checkNumManquantOnAdresseResponse"></wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="envoyerMail">
+<wsdl:input message="ns1:envoyerMail" name="envoyerMail"></wsdl:input>
+<wsdl:output message="ns1:envoyerMailResponse" name="envoyerMailResponse"></wsdl:output>
+<wsdl:fault message="ns1:Exception" name="Exception"></wsdl:fault>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getAgenceFromCP">
+<wsdl:input message="ns1:getAgenceFromCP" name="getAgenceFromCP"></wsdl:input>
+<wsdl:output message="ns1:getAgenceFromCPResponse" name="getAgenceFromCPResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getTourneesByAgence">
+<wsdl:input message="ns1:getTourneesByAgence" name="getTourneesByAgence"></wsdl:input>
+<wsdl:output message="ns1:getTourneesByAgenceResponse" name="getTourneesByAgenceResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="updateNomRS">
+<wsdl:input message="ns1:updateNomRS" name="updateNomRS"></wsdl:input>
+<wsdl:output message="ns1:updateNomRSResponse" name="updateNomRSResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="removeTmpPsm">
+<wsdl:input message="ns1:removeTmpPsm" name="removeTmpPsm"></wsdl:input>
+<wsdl:output message="ns1:removeTmpPsmResponse" name="removeTmpPsmResponse"></wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getNumTelDoublons">
+<wsdl:input message="ns1:getNumTelDoublons" name="getNumTelDoublons"></wsdl:input>
+<wsdl:output message="ns1:getNumTelDoublonsResponse" name="getNumTelDoublonsResponse"></wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="annoncePoiIhm">
+<wsdl:input message="ns1:annoncePoiIhm" name="annoncePoiIhm"></wsdl:input>
+<wsdl:output message="ns1:annoncePoiIhmResponse" name="annoncePoiIhmResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getRejectedPointsByTournee">
+<wsdl:input message="ns1:getRejectedPointsByTournee" name="getRejectedPointsByTournee"></wsdl:input>
+<wsdl:output message="ns1:getRejectedPointsByTourneeResponse" name="getRejectedPointsByTourneeResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getNbRejectedPoints">
+<wsdl:input message="ns1:getNbRejectedPoints" name="getNbRejectedPoints"></wsdl:input>
+<wsdl:output message="ns1:getNbRejectedPointsResponse" name="getNbRejectedPointsResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getCpByCommune">
+<wsdl:input message="ns1:getCpByCommune" name="getCpByCommune"></wsdl:input>
+<wsdl:output message="ns1:getCpByCommuneResponse" name="getCpByCommuneResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="recherchePOI">
+<wsdl:input message="ns1:recherchePOI" name="recherchePOI"></wsdl:input>
+<wsdl:output message="ns1:recherchePOIResponse" name="recherchePOIResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="rechercheExactePOI">
+<wsdl:input message="ns1:rechercheExactePOI" name="rechercheExactePOI"></wsdl:input>
+<wsdl:output message="ns1:rechercheExactePOIResponse" name="rechercheExactePOIResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getStatistiqueOrigineDonnees">
+<wsdl:input message="ns1:getStatistiqueOrigineDonnees" name="getStatistiqueOrigineDonnees"></wsdl:input>
+<wsdl:output message="ns1:getStatistiqueOrigineDonneesResponse" name="getStatistiqueOrigineDonneesResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="modifierPointRelais">
+<wsdl:input message="ns1:modifierPointRelais" name="modifierPointRelais"></wsdl:input>
+<wsdl:output message="ns1:modifierPointRelaisResponse" name="modifierPointRelaisResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getListePointsRelaisByAgence">
+<wsdl:input message="ns1:getListePointsRelaisByAgence" name="getListePointsRelaisByAgence"></wsdl:input>
+<wsdl:output message="ns1:getListePointsRelaisByAgenceResponse" name="getListePointsRelaisByAgenceResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="getDestinataireFromIdAdr">
+<wsdl:input message="ns1:getDestinataireFromIdAdr" name="getDestinataireFromIdAdr"></wsdl:input>
+<wsdl:output message="ns1:getDestinataireFromIdAdrResponse" name="getDestinataireFromIdAdrResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="saveConfigTemplate">
+<wsdl:input message="ns1:saveConfigTemplate" name="saveConfigTemplate"></wsdl:input>
+<wsdl:output message="ns1:saveConfigTemplateResponse" name="saveConfigTemplateResponse"></wsdl:output>
+<wsdl:fault message="ns1:ServiceException" name="ServiceException"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="callProcedureTmpPsm">
+<wsdl:input message="ns1:callProcedureTmpPsm" name="callProcedureTmpPsm"></wsdl:input>
+<wsdl:output message="ns1:callProcedureTmpPsmResponse" name="callProcedureTmpPsmResponse"></wsdl:output>
+</wsdl:operation>
+</wsdl:portType>
+</wsdl:definitions>
